@@ -9,9 +9,15 @@ import {
 } from 'native-base';
 
 export default class SmallCard extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render() {
+    const nav = this.props.nav
     return (
-      <ListItem avatar>
+      <ListItem avatar onPress={ () => nav('PatientDetail') }>
         <Left>
           <Thumbnail source={ require('../../assets/inpitar.jpg') } />
         </Left>

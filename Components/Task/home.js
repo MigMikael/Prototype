@@ -53,12 +53,23 @@ class Task extends Component {
     console.log('Task WILL UNMOUNT');
   }
 
-  renderAccordionContent() {
+  handleTodayPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('Task')
+  }
+
+  handleCalendarPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('CalendarTask')
+  }
+
+  renderAccordionContent = () => {
+    const { navigation: { navigate }} = this.props
     return (
       <List>
-        <SmallCard />
-        <SmallCard />
-        <SmallCard />
+        <SmallCard nav={ navigate }/>
+        {/* <SmallCard onPress={ this.handleCardPress } />
+        <SmallCard onPress={ this.handleCardPress } /> */}
       </List>
     )
   }
@@ -103,16 +114,6 @@ class Task extends Component {
         </Content>
       </Container>
     )
-  }
-
-  handleTodayPress = () => {
-    const { navigation: { navigate }} = this.props
-    navigate('Task')
-  }
-
-  handleCalendarPress = () => {
-    const { navigation: { navigate }} = this.props
-    navigate('CalendarTask')
   }
 }
 
