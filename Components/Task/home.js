@@ -19,7 +19,9 @@ import {
   Picker,
   List,
   ListItem,
-  Thumbnail
+  Thumbnail,
+  Card,
+  CardItem
 } from 'native-base';
 
 class Task extends Component {
@@ -67,9 +69,9 @@ class Task extends Component {
     const { navigation: { navigate }} = this.props
     return (
       <List>
-        <SmallCard nav={ navigate }/>
-        {/* <SmallCard onPress={ this.handleCardPress } />
-        <SmallCard onPress={ this.handleCardPress } /> */}
+        <SmallCard nav={ navigate } />
+        <SmallCard nav={ navigate } />
+        <SmallCard nav={ navigate } />
       </List>
     )
   }
@@ -88,29 +90,44 @@ class Task extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Picker
-            mode="dropdown"
-            iosIcon={<Icon name="arrow-down" />}
-            style={{ width: undefined, flex: 2 }}
-            placeholder="Select your Department"
-            placeholderStyle={{ color: "#bfc6ea" }}
-            placeholderIconColor="#007aff">
-            <Picker.Item label="Wallet" value="key0" />
-            <Picker.Item label="ATM Card" value="key1" />
-            <Picker.Item label="Debit Card" value="key2" />
-            <Picker.Item label="Credit Card" value="key3" />
-            <Picker.Item label="Net Banking" value="key4" />
-          </Picker>
-          <View style={{ flexDirection: "row" }}>
-            <Button primary style={{ flex: 1}} onPress={this.handleTodayPress}>
-              <Text>Today</Text>
-            </Button>
-            <Button success style={{ flex: 1}} onPress={this.handleCalendarPress}>
-              <Text>Calendar</Text>
-            </Button>
-          </View>
-          <Accordion dataArray={ this.data } renderContent={ this.renderAccordionContent } />
+        <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+          <Card>
+            <CardItem style={{ 
+              flexDirection: "row",
+              paddingLeft: 0,
+              paddingRight: 0,
+              paddingTop: 0,
+              paddingBottom: 0
+            }}>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{ width: undefined, flex: 1}}
+                placeholder="Select your Department"
+                placeholderStyle={{ color: "#bfc6ea" }}
+                placeholderIconColor="#007aff">
+                <Picker.Item label="หน่วยงาน 1" value="key0" />
+                <Picker.Item label="หน่วยงาน 2" value="key1" />
+                <Picker.Item label="หน่วยงาน 3" value="key2" />
+                <Picker.Item label="หน่วยงาน 4" value="key3" />
+                <Picker.Item label="หน่วยงาน 5" value="key4" />
+              </Picker>
+              <Button primary full style={{ flex: 0.35 }} onPress={ this.handleTodayPress }>
+                <Text>วันนี้</Text>
+              </Button>
+              <Button info full style={{ flex: 0.35 }} onPress={ this.handleCalendarPress }>
+                <Text>ปฏิทิน</Text>
+              </Button>
+            </CardItem>
+          </Card>
+
+          <Card>
+            <Accordion 
+              expanded={0}
+              dataArray={ this.data } 
+              headerStyle={{ backgroundColor: "#b7daf8" }}
+              renderContent={ this.renderAccordionContent } />
+          </Card>
         </Content>
       </Container>
     )

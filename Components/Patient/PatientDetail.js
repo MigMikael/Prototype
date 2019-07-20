@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Care from '../Care/index'
+import Wound from '../Wound/index'
+import History from '../History/index'
+import Overview from '../Overview/index'
 import { 
   Container, 
   Header, 
@@ -14,7 +18,8 @@ import {
   Title,
   Text,
   Tab, 
-  Tabs
+  Tabs,
+  Thumbnail
 } from 'native-base';
 
 class PatientDetail extends Component {
@@ -31,27 +36,33 @@ class PatientDetail extends Component {
     return (
       <Container>
         <Header hasTabs style={{ height: 100 }}>
-          <Left>
+          <Left style={{ flexDirection: 'row' }}>
             <Button transparent>
-              <Icon name='menu' />
+              <Icon name='md-arrow-round-back' />
             </Button>
+            <Thumbnail source={ require('../../assets/inpitar.jpg') } />
           </Left>
           <Body>
             <Title>นาย รักษา หายโดยไว</Title>
+            <Text style={{
+              color: "#ffffff",
+              fontSize: 12,
+              marginTop: "1%"
+            }}>AN 0958029-1  AN 0958029-1  ตึก 2008 พิเศษ</Text>
           </Body>
         </Header>
         <Tabs>
           <Tab heading="ดูแล">
-            <Text>Tab</Text>
+            <Care />
           </Tab>
           <Tab heading="ทำแผล">
-            <Text>Tab</Text>
+            <Wound />
           </Tab>
           <Tab heading="ประวัติ">
-            <Text>Tab</Text>
+            <History />
           </Tab>
           <Tab heading="ภาพรวม">
-            <Text>Tab</Text>
+            <Overview />
           </Tab>
         </Tabs>
       </Container>

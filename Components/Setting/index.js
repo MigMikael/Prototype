@@ -36,7 +36,7 @@ export default class Setting extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
+        <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Text>This is Settings</Text>
         </Content>
       </Container>

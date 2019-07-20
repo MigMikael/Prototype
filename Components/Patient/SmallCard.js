@@ -5,7 +5,9 @@ import {
   Body,
   Text,
   ListItem,
-  Thumbnail
+  Thumbnail,
+  Card,
+  Badge
 } from 'native-base';
 
 export default class SmallCard extends Component {
@@ -26,7 +28,9 @@ export default class SmallCard extends Component {
           <Text note>Doing what you like will always keep you happy . .</Text>
         </Body>
         <Right>
-          <Text note>3:43 pm</Text>
+          <Badge style={{ backgroundColor: '#fbc02d' }}>
+            <Text style={{ fontWeight: 'bold' }}>!</Text>
+          </Badge>
         </Right>
       </ListItem>
     )

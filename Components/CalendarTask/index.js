@@ -14,10 +14,14 @@ import {
   Title,
   Text,
   View,
-  Picker
+  Picker,
+  Card,
+  CardItem,
+  List
 } from 'native-base';
 
 import { ScrollView, Dimensions } from 'react-native'
+import SmallCard from '../Patient/SmallCard'
 
 const w = Dimensions.get('window').width; //full width
 const h = Dimensions.get('window').height; //full height
@@ -33,6 +37,7 @@ class CalendarTask extends Component {
   }
 
   render() {
+    const { navigation: { navigate }} = this.props
     return (
       <Container>
         <Header>
@@ -46,46 +51,137 @@ class CalendarTask extends Component {
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Picker
-            mode="dropdown"
-            iosIcon={<Icon name="arrow-down" />}
-            style={{ width: undefined, flex: 2 }}
-            placeholder="Select your Department"
-            placeholderStyle={{ color: "#bfc6ea" }}
-            placeholderIconColor="#007aff">
-            <Picker.Item label="Wallet" value="key0" />
-            <Picker.Item label="ATM Card" value="key1" />
-            <Picker.Item label="Debit Card" value="key2" />
-            <Picker.Item label="Credit Card" value="key3" />
-            <Picker.Item label="Net Banking" value="key4" />
-          </Picker>
-          <View style={{ flexDirection: "row" }}>
-            <Button primary style={{ flex: 1}} onPress={this.handleTodayPress}>
-              <Text>Today</Text>
-            </Button>
-            <Button success style={{ flex: 1}} onPress={this.handleCalendarPress}>
-              <Text>Calendar</Text>
-            </Button>
-          </View>
+        <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+          <Card>
+            <CardItem style={{ 
+              flexDirection: "row",
+              paddingLeft: 0,
+              paddingRight: 0,
+              paddingTop: 0,
+              paddingBottom: 0
+            }}>
+              <Picker
+                mode="dropdown"
+                iosIcon={<Icon name="arrow-down" />}
+                style={{ width: undefined, flex: 1}}
+                placeholder="Select your Department"
+                placeholderStyle={{ color: "#bfc6ea" }}
+                placeholderIconColor="#007aff">
+                <Picker.Item label="หน่วยงาน 1" value="key0" />
+                <Picker.Item label="หน่วยงาน 2" value="key1" />
+                <Picker.Item label="หน่วยงาน 3" value="key2" />
+                <Picker.Item label="หน่วยงาน 4" value="key3" />
+                <Picker.Item label="หน่วยงาน 5" value="key4" />
+              </Picker>
+              <Button primary full style={{ flex: 0.35 }} onPress={ this.handleTodayPress }>
+                <Text>วันนี้</Text>
+              </Button>
+              <Button info full style={{ flex: 0.35 }} onPress={ this.handleCalendarPress }>
+                <Text>ปฏิทิน</Text>
+              </Button>
+            </CardItem>
+          </Card>
           <ScrollView horizontal={true}>
-            <View padder style={{width: (w*0.8), height: h, backgroundColor: "#e5e5e5" }}>
-              <View style={{ width: (w*0.8), height: h, backgroundColor: "#ffcca9" }}>
-                <Text>Column1</Text>
-              </View>
-            </View>
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#fff59d" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Monday 1</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                  <SmallCard nav={ navigate } />
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
 
-            <View padder style={{width: (w*0.8), height: h, backgroundColor: "#e5e5e5" }}>
-              <View style={{ width: (w*0.8), height: h, backgroundColor: "#64a56a" }}>
-                <Text>Column2</Text>
-              </View>
-            </View>
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#f48fb1" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Tuesday 2</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
 
-            <View padder style={{width: (w*0.8), height: h, backgroundColor: "#e5e5e5" }}>
-              <View style={{ width: (w*0.8), height: h, backgroundColor: "#6aa6d7" }}>
-                <Text>Column3</Text>
-              </View>
-            </View>
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#a5d6a7" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Wednesday 3</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#ffcc80" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Thursday 4</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#81d4fa" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Friday 5</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#b39ddb" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Saturday 6</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.8), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#e57373" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>Sunday 7</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                  <SmallCard nav={ navigate } />
+                </List>
+              </Card>
           </ScrollView>
         </Content>
       </Container>
