@@ -38,11 +38,12 @@ class CalendarTask extends Component {
 
   render() {
     const { navigation: { navigate }} = this.props
+    const { openDrawer } = this.props.navigation
     return (
       <Container>
         <Header>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={() => openDrawer()}>
               <Icon name='menu' />
             </Button>
           </Left>

@@ -26,6 +26,7 @@ import {
 
 class Care extends Component {
     render() {
+        const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
                 <Card>
@@ -45,7 +46,7 @@ class Care extends Component {
                                 marginBottom: "2%",
                                 flex: 1  
                             }}>Braden Score : 18 (17/07/2562)</Text>
-                            <Button primary small style={{ flex: 0.3 }}>
+                            <Button primary small style={{ flex: 0.3 }} onPress={ () => nav('Assessment')} >
                                 <Text>ประเมิน</Text>
                             </Button>
                         </View>

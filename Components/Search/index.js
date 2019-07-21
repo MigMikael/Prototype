@@ -26,11 +26,12 @@ class Search extends Component {
   }
 
   render() {
+    const { openDrawer } = this.props.navigation
     return (
       <Container>
         <Header>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={() => openDrawer()}>
               <Icon name='menu' />
             </Button>
           </Left>
@@ -44,7 +45,6 @@ class Search extends Component {
             <Item>
               <Input placeholder="AN" />
             </Item>
-
             <Button primary block rounded style={{ marginTop: "5%" }}>
               <Text>Search</Text>
             </Button>

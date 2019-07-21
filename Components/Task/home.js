@@ -77,11 +77,12 @@ class Task extends Component {
   }
 
   render() {
+    const { openDrawer } = this.props.navigation
     return (
       <Container>
         <Header>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={() => openDrawer()}>
               <Icon name='menu' />
             </Button>
           </Left>
