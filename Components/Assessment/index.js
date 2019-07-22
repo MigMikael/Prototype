@@ -84,7 +84,7 @@ export default class Setting extends Component {
             <Accordion 
               expanded={0}
               dataArray={ this.data } 
-              headerStyle={{ backgroundColor: "#81c784", fontSize: 20 }}
+              headerStyle={{ backgroundColor: "#81c784" }}
               renderContent={ this.renderAccordionContent } />
         </Content>
       </Container>

@@ -3,13 +3,14 @@ import Task from './home'
 import CalendarTask from '../CalendarTask/index'
 import PatientDetail from '../Patient/PatientDetail'
 import Assessment from '../Assessment/index'
-import Care from '../Care/index'
+import WoundDetail from '../WoundDetail/index'
 
 export default createStackNavigator({
   Task,
   CalendarTask,
   PatientDetail,
-  Assessment
+  Assessment,
+  WoundDetail
 },
 {
   initialRouteName: 'Task',

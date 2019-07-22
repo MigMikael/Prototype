@@ -25,13 +25,14 @@ import {
 
 class Wound extends Component {
     render() {
+        const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-                <WoundCard />
-                <WoundCard />
-                <WoundCard />
-                <WoundCard />
-                <WoundCard />
+                <WoundCard nav={nav}/>
+                <WoundCard nav={nav} />
+                <WoundCard nav={nav} />
+                <WoundCard nav={nav} />
+                <WoundCard nav={nav} />
             </Content>
         )
     }

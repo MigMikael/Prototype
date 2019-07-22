@@ -63,10 +63,10 @@ class PatientDetail extends Component {
         </Header>
         <Tabs>
           <Tab heading="ดูแล">
-            <Care nav={ navigate} />
+            <Care nav={ navigate } />
           </Tab>
           <Tab heading="ทำแผล">
-            <Wound />
+            <Wound nav={ navigate } />
           </Tab>
           <Tab heading="ประวัติ">
             <History />
