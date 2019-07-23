@@ -22,19 +22,20 @@ import {
 
 import { ScrollView, Dimensions } from 'react-native'
 import SmallCard from '../Patient/SmallCard'
+import patients from '../../Data/patient'
 
 const w = Dimensions.get('window').width; //full width
 const h = Dimensions.get('window').height; //full height
 
 class CalendarTask extends Component {
 
-  componentDidMount() {
-    console.log('Search DID MOUNT');
-  }
+  // componentDidMount() {
+  //   console.log('Search DID MOUNT');
+  // }
 
-  componentWillUnmount() {
-    console.log('Search WILL UNMOUNT');
-  }
+  // componentWillUnmount() {
+  //   console.log('Search WILL UNMOUNT');
+  // }
 
   render() {
     const { navigation: { navigate }} = this.props
@@ -56,30 +57,41 @@ class CalendarTask extends Component {
           <Card>
             <CardItem style={{ 
               flexDirection: "row",
+              flex: 1,
               paddingLeft: 0,
               paddingRight: 0,
               paddingTop: 0,
-              paddingBottom: 0
+              paddingBottom: 0,
             }}>
-              <Picker
-                mode="dropdown"
-                iosIcon={<Icon name="arrow-down" />}
-                style={{ width: undefined, flex: 1}}
-                placeholder="Select your Department"
-                placeholderStyle={{ color: "#bfc6ea" }}
-                placeholderIconColor="#007aff">
-                <Picker.Item label="หน่วยงาน 1" value="key0" />
-                <Picker.Item label="หน่วยงาน 2" value="key1" />
-                <Picker.Item label="หน่วยงาน 3" value="key2" />
-                <Picker.Item label="หน่วยงาน 4" value="key3" />
-                <Picker.Item label="หน่วยงาน 5" value="key4" />
-              </Picker>
-              <Button primary full style={{ flex: 0.35 }} onPress={ this.handleTodayPress }>
-                <Text>วันนี้</Text>
-              </Button>
-              <Button info full style={{ flex: 0.35 }} onPress={ this.handleCalendarPress }>
-                <Text>ปฏิทิน</Text>
-              </Button>
+              <Left>
+                <Picker
+                  mode="dropdown"
+                  iosIcon={<Icon name="arrow-down" />}
+                  style={{ width: undefined, flex: 0.5}}
+                  placeholder="หน่วยงาน"
+                  placeholderStyle={{ color: "#bfc6ea" }}
+                  placeholderIconColor="#007aff">
+                  <Picker.Item label="หน่วยงาน 1" value="key0" />
+                  <Picker.Item label="หน่วยงาน 2" value="key1" />
+                  <Picker.Item label="หน่วยงาน 3" value="key2" />
+                  <Picker.Item label="หน่วยงาน 4" value="key3" />
+                  <Picker.Item label="หน่วยงาน 5" value="key4" />
+                </Picker>
+              </Left>
+              <Right style={{ 
+                flexDirection: "row",
+                paddingLeft: 0,
+                paddingRight: 0,
+                paddingTop: 0,
+                paddingBottom: 0, 
+              }}>
+                <Button primary full style={{ flex: 0.5 }} onPress={ this.handleTodayPress }>
+                  <Text>วันนี้</Text>
+                </Button>
+                <Button info full style={{ flex: 0.5 }} onPress={ this.handleCalendarPress }>
+                  <Text>ปฏิทิน</Text>
+                </Button>
+              </Right>
             </CardItem>
           </Card>
           <ScrollView horizontal={true}>
@@ -93,9 +105,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
-                  <SmallCard nav={ navigate } />
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 18
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -109,7 +125,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 9
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -123,7 +145,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -137,8 +165,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 9
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -152,7 +185,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -166,7 +205,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 9
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
 
@@ -180,7 +225,13 @@ class CalendarTask extends Component {
                   </Right>
                 </CardItem>
                 <List>
-                  <SmallCard nav={ navigate } />
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
                 </List>
               </Card>
           </ScrollView>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SmallCard from '../Patient/SmallCard'
+import patients from '../../Data/patient'
 import { 
   Container, 
   Header, 
@@ -28,22 +29,11 @@ class Task extends Component {
 
   constructor() {
     super()
-    this.data = [
-      { title: "Bradon Score : <= 9", content: "Lorem ipsum dolor sit amet" },
-      { title: "Bradon Score : 10-12", content: "Lorem ipsum dolor sit amet" },
-      { title: "Bradon Score : 13-14", content: "Lorem ipsum dolor sit amet" },
-      { title: "Bradon Score : 15-18", content: "Lorem ipsum dolor sit amet" }
-    ]
-
-    this.patients = [
-      'Simon Mignolet',
-      'Nathaniel Clyne',
-      'Dejan Lovren',
-      'Mama Sakho',
-      'Alberto Moreno',
-      'Emre Can',
-      'Joe Allen',
-      'Phil Coutinho',
+    this.sections = [
+      { title: "Bradon Score : <= 9",  content: 1 },
+      { title: "Bradon Score : 10-12", content: 2 },
+      { title: "Bradon Score : 13-14", content: 3 },
+      { title: "Bradon Score : 15-18", content: 4 }
     ]
   }
 
@@ -65,13 +55,41 @@ class Task extends Component {
     navigate('CalendarTask')
   }
 
-  renderAccordionContent = () => {
+  renderAccordionHeader = (section) => {
+    return (
+      <View>
+        <Text>{section.title}</Text>
+      </View>
+    )
+  }
+
+  renderAccordionContent = (section) => {
     const { navigation: { navigate }} = this.props
+    let patientBySection = {}
+    if (section.content === 1) {
+      patientBySection = patients.filter(function(patient) {
+        return patient.braden <= 9
+      })
+    } else if (section.content === 2) {
+      patientBySection = patients.filter(function(patient) {
+        return patient.braden >= 10 && patient.braden <= 12 
+      })
+    } else if (section.content === 3) {
+      patientBySection = patients.filter(function(patient) {
+        return patient.braden >= 13 && patient.braden <= 14 
+      })
+    } else {
+      patientBySection = patients.filter(function(patient) {
+        return patient.braden >= 15
+      })
+    }
     return (
       <List>
-        <SmallCard nav={ navigate } />
-        <SmallCard nav={ navigate } />
-        <SmallCard nav={ navigate } />
+        {
+          patientBySection.map(patient => {
+            return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+          })
+        }
       </List>
     )
   }
@@ -95,37 +113,48 @@ class Task extends Component {
           <Card>
             <CardItem style={{ 
               flexDirection: "row",
+              flex: 1,
               paddingLeft: 0,
               paddingRight: 0,
               paddingTop: 0,
-              paddingBottom: 0
+              paddingBottom: 0,
             }}>
-              <Picker
-                mode="dropdown"
-                iosIcon={<Icon name="arrow-down" />}
-                style={{ width: undefined, flex: 1}}
-                placeholder="Select your Department"
-                placeholderStyle={{ color: "#bfc6ea" }}
-                placeholderIconColor="#007aff">
-                <Picker.Item label="หน่วยงาน 1" value="key0" />
-                <Picker.Item label="หน่วยงาน 2" value="key1" />
-                <Picker.Item label="หน่วยงาน 3" value="key2" />
-                <Picker.Item label="หน่วยงาน 4" value="key3" />
-                <Picker.Item label="หน่วยงาน 5" value="key4" />
-              </Picker>
-              <Button primary full style={{ flex: 0.35 }} onPress={ this.handleTodayPress }>
-                <Text>วันนี้</Text>
-              </Button>
-              <Button info full style={{ flex: 0.35 }} onPress={ this.handleCalendarPress }>
-                <Text>ปฏิทิน</Text>
-              </Button>
+              <Left>
+                <Picker
+                  mode="dropdown"
+                  iosIcon={<Icon name="arrow-down" />}
+                  style={{ width: undefined, flex: 0.5}}
+                  placeholder="หน่วยงาน"
+                  placeholderStyle={{ color: "#bfc6ea" }}
+                  placeholderIconColor="#007aff">
+                  <Picker.Item label="หน่วยงาน 1" value="key0" />
+                  <Picker.Item label="หน่วยงาน 2" value="key1" />
+                  <Picker.Item label="หน่วยงาน 3" value="key2" />
+                  <Picker.Item label="หน่วยงาน 4" value="key3" />
+                  <Picker.Item label="หน่วยงาน 5" value="key4" />
+                </Picker>
+              </Left>
+              <Right style={{ 
+                flexDirection: "row",
+                paddingLeft: 0,
+                paddingRight: 0,
+                paddingTop: 0,
+                paddingBottom: 0, 
+              }}>
+                <Button primary full style={{ flex: 0.5 }} onPress={ this.handleTodayPress }>
+                  <Text>วันนี้</Text>
+                </Button>
+                <Button info full style={{ flex: 0.5 }} onPress={ this.handleCalendarPress }>
+                  <Text>ปฏิทิน</Text>
+                </Button>
+              </Right>
             </CardItem>
           </Card>
 
           <Card>
             <Accordion 
               expanded={0}
-              dataArray={ this.data } 
+              dataArray={ this.sections } 
               headerStyle={{ backgroundColor: "#b7daf8" }}
               renderContent={ this.renderAccordionContent } />
           </Card>

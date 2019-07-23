@@ -33,7 +33,7 @@ class Care extends Component {
                     <CardItem bordered>
                         <Text style={{ 
                             fontSize: 30,
-                            fontStyle: "bold",
+                            fontWeight: "bold",
                             marginTop: "4%",
                             marginBottom: "4%" 
                         }}>งานประจำวัน</Text>
