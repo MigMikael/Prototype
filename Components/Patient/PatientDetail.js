@@ -23,7 +23,8 @@ import {
   Tab, 
   Tabs,
   Thumbnail,
-  View
+  View,
+  Fab
 } from 'native-base';
 
 class PatientDetail extends Component {
@@ -36,9 +37,15 @@ class PatientDetail extends Component {
     console.log('Search WILL UNMOUNT');
   }
 
+  handleFabPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('HarshPosition')
+  }
+
   render() {
     const { navigation: { navigate }} = this.props
     const { goBack } = this.props.navigation
+    const nav = this.props.navigation
 
     const style = {
       headerAndroid: {
@@ -64,28 +71,6 @@ class PatientDetail extends Component {
 
     return (
       <Container>
-        {/* <Header hasTabs={true} style={{ height: 90 }}>
-          <Left style={{ flexDirection: 'row' }}>
-            <Button transparent onPress={() => goBack()}>
-              <Icon name='md-arrow-round-back' />
-            </Button>
-            <Thumbnail source={ require('../../assets/inpitar.jpg') } />
-            <View style={{ 
-              flexDirection: 'column',
-              marginLeft: "10%"
-            }}>
-              <Text style={ Platform.OS === "android" ? style.headerAndroid: style.headerIos }>นาย รักษา หายโดยไว</Text>
-              <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>HN 0958029-1  AN 0958029-1  ตึก 2008 พิเศษ</Text>
-              <View style={{ flexDirection: 'row', marginTop: "1%", paddingTop: '1%', paddingBottom: '1%' }}>
-                <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>20%</Text>
-                <View style={{ paddingTop: "2%", paddingBottom: "1%" }}>
-                  <Progress.Bar progress={0.2} width={210} color={ Platform.OS === "android" ? '#ffffff': '#000000'} />
-                </View>
-              </View>
-            </View>
-          </Left>
-          <Body />
-        </Header> */}
         <LargeHeader hasTab={true} navigation={this.props.navigation}/>
         <Tabs>
           <Tab heading="ดูแล">
@@ -93,6 +78,12 @@ class PatientDetail extends Component {
           </Tab>
           <Tab heading="ทำแผล">
             <Wound nav={ navigate } />
+            <Fab
+              onPress={ this.handleFabPress } 
+              style={{ backgroundColor: '#1b5e20' }} 
+              position="bottomRight">
+              <Icon name="share" />
+            </Fab>
           </Tab>
           <Tab heading="ประวัติ">
             <History />

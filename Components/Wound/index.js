@@ -20,7 +20,7 @@ import {
     List,
     ListItem,
     Thumbnail,
-    CheckBox
+    CheckBox,
 } from 'native-base';
 
 class Wound extends Component {
@@ -28,7 +28,7 @@ class Wound extends Component {
         const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-                <WoundCard nav={nav}/>
+                <WoundCard nav={nav} />
                 <WoundCard nav={nav} />
                 <WoundCard nav={nav} />
                 <WoundCard nav={nav} />
