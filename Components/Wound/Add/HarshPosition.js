@@ -48,10 +48,10 @@ class HarshPosition extends Component {
               <Text>หลัง</Text>
             </Button>
           </View>
-          <ImageBackground source={ require('../../../assets/human_body_front.png') } style={{ 
-            height: (h * 0.8), 
-            width: (w * 0.78),
-            alignSelf: 'center'
+          <ImageBackground source={ require('../../../assets/human_body_front.png') } resizeMode="contain" style={{ 
+            height: undefined,
+            width: '100%',
+            aspectRatio: 1
           }}>
             <Button primary rounded style={{ alignSelf: 'flex-end'}} onPress={ this.handlePositionPress }>
               <Text>1</Text>

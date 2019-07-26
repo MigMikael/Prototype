@@ -7,6 +7,10 @@ import WoundDetail from '../WoundDetail/index'
 import HarshPosition from '../Wound/Add/HarshPosition'
 import ChoosePosition from '../Wound/Add/ChoosePosition'
 import AccuratePosition from '../Wound/Add/AccuratePosition'
+import ChoosePicture from '../Wound/Add/ChoosePicture'
+import TakePicture from '../Wound/Add/TakePicture'
+import ChooseSeverity from '../Wound/Add/ChooseSeverity'
+import WoundAssessment from '../Wound/WoundAssessment'
 
 export default createStackNavigator({
   Task,
@@ -16,7 +20,11 @@ export default createStackNavigator({
   WoundDetail,
   HarshPosition,
   ChoosePosition,
-  AccuratePosition
+  AccuratePosition,
+  ChoosePicture,
+  TakePicture,
+  ChooseSeverity,
+  WoundAssessment
 },
 {
   initialRouteName: 'Task',
