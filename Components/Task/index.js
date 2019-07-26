@@ -11,6 +11,9 @@ import ChoosePicture from '../Wound/Add/ChoosePicture'
 import TakePicture from '../Wound/Add/TakePicture'
 import ChooseSeverity from '../Wound/Add/ChooseSeverity'
 import WoundAssessment from '../Wound/WoundAssessment'
+import CriteriaGroup from '../Assessment/CriteriaGroup'
+import ChooseTask from '../Task/ChooseTask'
+import BradenDetail from '../Overview/BradenDetail'
 
 export default createStackNavigator({
   Task,
@@ -24,7 +27,10 @@ export default createStackNavigator({
   ChoosePicture,
   TakePicture,
   ChooseSeverity,
-  WoundAssessment
+  WoundAssessment,
+  CriteriaGroup,
+  ChooseTask,
+  BradenDetail
 },
 {
   initialRouteName: 'Task',

@@ -37,7 +37,7 @@ const styles = {
     borderRadius: 70/2,
   },
   text: {
-    paddingStart: "10%",
+    paddingStart: "3%",
   }
 }
 
@@ -45,7 +45,7 @@ class ChooseSeverity extends Component {
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('PatientDetail')
+    navigate('WoundAssessment')
   }
 
   render() {
@@ -100,7 +100,7 @@ class ChooseSeverity extends Component {
               </Text>
             </CardItem>
           </Card>
-          <Button dark block>
+          <Button dark block onPress={ this.handleNextPress }>
             <Text>ต่อไป</Text>
           </Button>
         </Content>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import tasks from '../../Data/task'
 import { 
     Container, 
     Header, 
@@ -60,40 +61,24 @@ class Care extends Component {
                             fontSize: 20  
                         }}>รายการงาน</Text>
                     </CardItem>
-
-                    <ListItem bordered>
-                        <CheckBox checked={true} color="green"/>
-                        <Body>
-                            <Text>Daily Stand Up</Text>
-                        </Body>
-                    </ListItem>
-                    <ListItem>
-                        <CheckBox checked={false} color="green"/>
-                        <Body>
-                            <Text>Discussion with Client</Text>
-                        </Body>
-                    </ListItem>
-                    <ListItem>
-                        <CheckBox checked={false} color="green"/>
-                        <Body>
-                            <Text>Finish list Screen</Text>
-                        </Body>
-                    </ListItem>
-                    <ListItem>
-                        <CheckBox checked={false} color="green"/>
-                        <Body>
-                            <Text>Finish list Screen</Text>
-                        </Body>
-                    </ListItem>
-                    <ListItem>
-                        <CheckBox checked={false} color="green"/>
-                        <Body>
-                            <Text>Finish list Screen</Text>
-                        </Body>
-                    </ListItem>
+                    {
+                        tasks.filter(function(task) {
+                            return task.isCheck === true
+                        }).map(task => {
+                            return (
+                                <ListItem bordered>
+                                    <CheckBox checked={false} color="green"/>
+                                    <Body>
+                                        <Text>{task.name}</Text>
+                                    </Body>
+                                </ListItem>
+                            )
+                        })
+                    }
+                    
                     <CardItem footer>
                         <Body style={{ paddingStart: "30%", paddingEnd: "30%" }}>
-                            <Button primary block>
+                            <Button primary block onPress={ () => nav('ChooseTask')} >
                                 <Text>Edit</Text>
                             </Button>
                         </Body>

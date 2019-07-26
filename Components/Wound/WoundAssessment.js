@@ -30,13 +30,9 @@ export default class WoundAssessment extends Component {
   constructor() {
     super()
     this.data = [
-      { title: "ข้อมูลส่วนบุคคล", content: "Lorem ipsum dolor sit amet" },
-      { title: "ประเมินการรับรู้", content: "Lorem ipsum dolor sit amet" },
-      { title: "ประเมินความเปียกชื้นของผิวหนัง", content: "Lorem ipsum dolor sit amet" },
-      { title: "ประเมินการมีกิจกรรม", content: "Lorem ipsum dolor sit amet" },
-      { title: "ประเมินการเคลื่อนไหว", content: "Lorem ipsum dolor sit amet" },
-      { title: "ประเมินภาวะโภชนาการ", content: "Lorem ipsum dolor sit amet" },
-      { title: "การเสียดสี", content: "Lorem ipsum dolor sit amet" }
+      { title: "ลักษณะของแผล", content: "Lorem ipsum dolor sit amet" },
+      { title: "วิธีการทำแผล", content: "Lorem ipsum dolor sit amet" },
+      { title: "หมายเหตุ", content: "Lorem ipsum dolor sit amet" },
     ]
   }
 
@@ -44,26 +40,39 @@ export default class WoundAssessment extends Component {
     return (
       <Form style={{ backgroundColor: "#ffffff" }}>
         <Item>
-          <Input placeholder="Username" />
+          <Input placeholder="Field 1" />
         </Item>
         <Item last>
-          <Input placeholder="Password" />
+          <Input placeholder="Field 2" />
         </Item>
       </Form>
     )
   }
 
+  handleNextPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('PatientDetail', {
+      message: "add wound success"
+    })
+  }
+
   render() {
-    const { goBack } = this.props.navigation
     return (
       <Container>
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-            <Accordion 
-              expanded={0}
-              dataArray={ this.data } 
-              headerStyle={{ backgroundColor: "#81c784" }}
-              renderContent={ this.renderAccordionContent } />
+          <Accordion 
+            expanded={0}
+            dataArray={ this.data } 
+            headerStyle={{ backgroundColor: "#81c784" }}
+            renderContent={ this.renderAccordionContent } />
+            <Card>
+              <CardItem>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </CardItem>
+            </Card>
         </Content>
       </Container>
     )

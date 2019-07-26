@@ -69,6 +69,7 @@ class PatientDetail extends Component {
       }
     }
 
+    //const message = navigation.getParam('message', '')
     return (
       <Container>
         <LargeHeader hasTab={true} navigation={this.props.navigation}/>
@@ -89,7 +90,7 @@ class PatientDetail extends Component {
             <History />
           </Tab>
           <Tab heading="ภาพรวม">
-            <Overview />
+            <Overview nav={ navigate }/>
           </Tab>
         </Tabs>
       </Container>

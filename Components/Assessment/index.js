@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LargeHeader from '../Header/LargeHeader'
+import CriteriaGroup from './CriteriaGroup'
 import * as Progress from 'react-native-progress';
 import { 
     Container, 
@@ -55,6 +56,11 @@ export default class Setting extends Component {
     )
   }
 
+  handleNextPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('CriteriaGroup')
+  }
+
   render() {
     const { goBack } = this.props.navigation
     return (
@@ -66,6 +72,19 @@ export default class Setting extends Component {
               dataArray={ this.data } 
               headerStyle={{ backgroundColor: "#81c784" }}
               renderContent={ this.renderAccordionContent } />
+
+            <Card>
+              <CardItem>
+                <Body>
+                  <Text>Braden Score = 14</Text>
+                </Body>
+              </CardItem>
+              <CardItem>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </CardItem>
+            </Card>
         </Content>
       </Container>
     )
