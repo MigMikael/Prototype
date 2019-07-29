@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Image, TouchableOpacity } from 'react-native'
+import { Image, TouchableOpacity, Alert } from 'react-native'
 import { 
     Container, 
     Header, 
@@ -23,22 +23,40 @@ import {
     CheckBox,
     Card,
     CardItem,
-    Badge
+    Badge,
 } from 'native-base';
 
 class WoundCard extends Component {
+
+    handleLongPress() {
+        Alert.alert(
+            'Alert Title',
+            'My Alert Msg',
+            [
+              {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+              {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {text: 'OK', onPress: () => console.log('OK Pressed')},
+            ],
+            {cancelable: false},
+        );
+    }
+
     render() {
         const nav = this.props.nav
         return(
           <Card>
-            <CardItem button onPress={ () => nav('WoundDetail')} style={{
+            <CardItem button onPress={ () => nav('WoundDetail')} onLongPress={ this.handleLongPress } style={{
                     paddingLeft: 0,
                     paddingRight: 0,
                     paddingTop: 0,
                     paddingBottom: 0
                 }}>
                 <Left style={{ paddingRight: "2%" }}>
-                    <Image source={ require('../../assets/inpitar.jpg') } style={{ height: 180, width: null , flex: 1 }} />
+                    <Image source={ require('../../assets/specific_body_part.png') } style={{ height: 180, width: null , flex: 1 }} />
                 </Left>
                 <Right style={{ 
                     alignItems: "flex-start",

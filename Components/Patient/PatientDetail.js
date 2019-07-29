@@ -73,7 +73,7 @@ class PatientDetail extends Component {
     return (
       <Container>
         <LargeHeader hasTab={true} navigation={this.props.navigation}/>
-        <Tabs>
+        <Tabs scrollWithoutAnimation={true} locked>
           <Tab heading="ดูแล">
             <Care nav={ navigate } />
           </Tab>
