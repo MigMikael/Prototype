@@ -73,7 +73,7 @@ class PatientDetail extends Component {
     return (
       <Container>
         <LargeHeader hasTab={true} navigation={this.props.navigation}/>
-        <Tabs scrollWithoutAnimation={true} locked>
+        <Tabs scrollWithoutAnimation={true} >
           <Tab heading="ดูแล">
             <Care nav={ navigate } />
           </Tab>
@@ -83,11 +83,11 @@ class PatientDetail extends Component {
               onPress={ this.handleFabPress } 
               style={{ backgroundColor: '#1b5e20' }} 
               position="bottomRight">
-              <Icon name="share" />
+              <Icon name="add" />
             </Fab>
           </Tab>
           <Tab heading="ประวัติ">
-            <History />
+            <History nav={ navigate } />
           </Tab>
           <Tab heading="ภาพรวม">
             <Overview nav={ navigate }/>

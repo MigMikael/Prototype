@@ -49,8 +49,10 @@ class ChoosePicture extends Component {
       <Container>
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-          <Text>รูปบาดแผล</Text>
           <Card style={{ height: (h*0.7)}}>
+            <CardItem bordered>
+              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>รูปบาดแผล</Text>
+            </CardItem>
             <CardItem style={{ flexDirection: 'column' }}>
               <Button primary block onPress={ this.handleTakePicturePress }>
                 <Text>ถ่ายภาพ</Text>

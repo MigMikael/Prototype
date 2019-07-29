@@ -22,7 +22,8 @@ import {
     Thumbnail,
     CheckBox,
     CardItem,
-    Card
+    Card,
+    Badge
 } from 'native-base';
 
 class Care extends Component {
@@ -31,23 +32,31 @@ class Care extends Component {
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
                 <Card>
-                    <CardItem bordered>
+                    {/* <CardItem bordered>
                         <Text style={{ 
-                            fontSize: 30,
+                            fontSize: 25,
                             fontWeight: "bold",
-                            marginTop: "4%",
-                            marginBottom: "4%" 
+                            marginTop: "1%",
+                            marginBottom: "1%" 
                         }}>งานประจำวัน</Text>
-                    </CardItem>
+                    </CardItem> */}
                     
                     <CardItem bordered>
                         <View style={{ flexDirection: "row" }}>
-                            <Text style={{ 
-                                marginTop: "2%",
-                                marginBottom: "2%",
-                                flex: 1  
-                            }}>Braden Score : 18 (17/07/2562)</Text>
-                            <Button primary small style={{ flex: 0.3 }} onPress={ () => nav('Assessment')} >
+                            <View style={{flex:1, flexDirection: "column"}}>
+                                <Text style={{ 
+                                    marginTop: "1%",
+                                    flex: 1,
+                                    fontSize: 25,
+                                    fontWeight: 'bold'  
+                                }}>Braden Score : 18</Text>
+                                <Text style={{ 
+                                    marginBottom: "1%",
+                                    flex: 1,  
+                                }}>(19/ม.ค./2562 - 11.00)</Text>
+                            </View>
+                            
+                            <Button primary style={{ flex: 0.3 }} onPress={ () => nav('Assessment')} >
                                 <Text>ประเมิน</Text>
                             </Button>
                         </View>
@@ -56,9 +65,10 @@ class Care extends Component {
                     <CardItem bordered>
                         <Text style={{ 
                             textDecorationLine: "underline",
-                            marginTop: "2%",
-                            marginBottom: "2%",
-                            fontSize: 20  
+                            marginTop: "1%",
+                            marginBottom: "1%",
+                            fontSize: 19,
+                            fontWeight: 'bold'  
                         }}>รายการงาน</Text>
                     </CardItem>
                     {
@@ -67,22 +77,62 @@ class Care extends Component {
                         }).map(task => {
                             return (
                                 <ListItem bordered>
-                                    <CheckBox checked={false} color="green"/>
+                                    <Icon active name='add-circle' style={{ color: "#000000"}} />
                                     <Body>
                                         <Text>{task.name}</Text>
                                     </Body>
+                                    {
+                                        task.count > 0 ? 
+                                        <Badge success>
+                                            <Text>{task.count}</Text>
+                                        </Badge>    
+                                        : 
+                                        <Badge danger>
+                                            <Text>{task.count}</Text>
+                                        </Badge>
+                                    }
                                 </ListItem>
                             )
                         })
                     }
                     
-                    <CardItem footer>
-                        <Body style={{ paddingStart: "30%", paddingEnd: "30%" }}>
-                            <Button primary block onPress={ () => nav('ChooseTask')} >
-                                <Text>Edit</Text>
+                    <CardItem footer style={{ flex: 1}}>
+                        <Body style={{ alignItems: 'flex-end' }}>
+                            <Button small primary onPress={ () => nav('ChooseTask')} >
+                                <Text>แก้ไข</Text>
                             </Button>
                         </Body>
                     </CardItem>
+                </Card>
+
+                <Card>
+                    <CardItem bordered>
+                        <Text style={{ 
+                            textDecorationLine: "underline",
+                            marginTop: "1%",
+                            marginBottom: "1%",
+                            fontSize: 19,
+                            fontWeight: 'bold'  
+                        }}>สถานะผู้ป่วย</Text>
+                    </CardItem>
+                    <ListItem bordered>
+                        <Icon active name='remove' style={{ color: "#000000"}} />
+                        <Body>
+                            <Text>NG Tube</Text>
+                        </Body>
+                    </ListItem>
+                    <ListItem bordered>
+                        <Icon active name='remove' style={{ color: "#000000"}} />
+                        <Body>
+                            <Text>Retention suture</Text>
+                        </Body>
+                    </ListItem>
+                    <ListItem bordered>
+                        <Icon active name='remove' style={{ color: "#000000"}} />
+                        <Body>
+                            <Text>กลั้นอุจจาระและปัสสาวะไม่ได้</Text>
+                        </Body>
+                    </ListItem>
                 </Card>
             </Content>
         )

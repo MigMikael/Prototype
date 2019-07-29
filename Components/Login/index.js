@@ -20,6 +20,11 @@ class Login extends Component {
     console.log('Login WILL UNMOUNT');
   }
 
+  handleLoginPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('Search')
+  }
+
   render() {
     return (
       <Container>
@@ -35,7 +40,7 @@ class Login extends Component {
               <Input />
             </Item>
 
-            <Button primary block rounded style={{ marginTop: "5%" }}>
+            <Button primary block rounded style={{ marginTop: "5%" }} onPress={ this.handleLoginPress }>
               <Text>Login</Text>
             </Button>
           </Form>

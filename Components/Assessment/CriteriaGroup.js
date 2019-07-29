@@ -44,8 +44,8 @@ export default class CriteriaGroup extends Component {
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
-            <CardItem>
-              <Text>Criteria กลุ่มเสี่ยง</Text>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Criteria กลุ่มเสี่ยง</Text>
               <Text>(เลือกได้มากกว่า 1 ข้อ)</Text>
             </CardItem>
             {
@@ -61,9 +61,13 @@ export default class CriteriaGroup extends Component {
               })
             }
             <CardItem>
-              <Button dark block onPress={ this.handleNextPress }>
-                <Text>ต่อไป</Text>
-              </Button>
+              <Left/>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </Body>
+              <Right/>
             </CardItem>
           </Card>
         </Content>

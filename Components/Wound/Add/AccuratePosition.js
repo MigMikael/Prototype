@@ -40,7 +40,7 @@ class AccuratePosition extends Component {
       <Container>
         <SmallHeader navigation={this.props.navigation}/>
         <Content style={{ flexDirection: "column"}} centerContent>
-          <Text>เลือกตำแหน่งของแผล</Text>
+          <Text style={{ fontSize: 21, fontWeight: 'bold' , width: "100%", marginTop: "10%", alignContent: 'center' }}>เลือกตำแหน่งของแผล</Text>
           <TouchableOpacity onPress={ this.handlePositionPress }>
             <Image source={ require('../../../assets/specific_body_part.png') } resizeMode="contain" style={{
               height: undefined,

@@ -7,7 +7,8 @@ import {
   ListItem,
   Thumbnail,
   Card,
-  Badge
+  Badge,
+  Icon
 } from 'native-base';
 
 import img1 from '../../assets/1.jpg'
@@ -17,6 +18,7 @@ import img4 from '../../assets/4.jpg'
 import img5 from '../../assets/5.jpg'
 import img6 from '../../assets/6.jpg'
 import img7 from '../../assets/7.jpg'
+import { thisExpression } from '@babel/types';
 
 export default class SmallCard extends Component {
 
@@ -31,26 +33,28 @@ export default class SmallCard extends Component {
     return (
       <ListItem avatar onPress={ () => nav('PatientDetail') }>
         <Left>
-          <Thumbnail source={ imgArray[this.props.patient.id-1] } />
+          <Thumbnail source={ imgArray[this.props.patient.id-1] } small />
         </Left>
         <Body>
           <Text>{this.props.patient.name}</Text>
-          <Text note>HN: {this.props.patient.hn}</Text>
-          <Text note>AN: {this.props.patient.an}</Text>
+          <Text note>
+            AN: {this.props.patient.an} {this.props.patient.gender === 'male' ? `ชาย`: `หญิง`} {this.props.patient.age} ปี
+          </Text>
           {/* <Text note>Age: {this.props.patient.age}</Text> */}
         </Body>
         <Right>
           {
             this.props.patient.isTakeCare ? 
-            <Badge style={{ backgroundColor: '#00ff00' }}>
-              <Text style={{ fontWeight: 'bold' }}>O</Text>
-            </Badge>
+              <Icon active name='checkmark-circle' style={{ color: "#00ff00"}} />
             :
-            <Badge style={{ backgroundColor: '#fbc02d' }}>
-              <Text style={{ fontWeight: 'bold' }}>! </Text>
-            </Badge>
+              <Icon active name='close-circle' style={{ color: "#fbc02d"}} />
           }
-          
+          {
+            this.props.patient.braden <= 8 ?
+            <Icon name='alarm' style={{ color: "#ff0000"}}/>
+            :
+            null
+          }
         </Right>
       </ListItem>
     )

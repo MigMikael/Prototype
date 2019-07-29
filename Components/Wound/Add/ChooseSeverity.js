@@ -54,51 +54,63 @@ class ChooseSeverity extends Component {
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ flex: 1, flexDirection: "column", backgroundColor: "#e5e5e5"}}>
           <Card style={{ height: (h*0.8), marginLeft:0, marginRight:0, paddingLeft:0, paddingRight:0 }}>
-            <CardItem header bordered style={{ flex: 1 }}>
-                <Text style={{ fontWeight: 'bold' }}>ความรุนแรงของแผล</Text>
+            <CardItem bordered style={{ flex: 1 }}>
+                <Text style={{ fontSize: 21, fontWeight: 'bold'}}>ความรุนแรงของแผล</Text>
             </CardItem>
             
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#ec407a', ...styles.circle }} />
-              <Text style={styles.text}>
-              ระดับที่ 1 บริเวณที่ถูกกดทับจะเป็นรอยแดง
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#ec407a', ...styles.circle }} />
+                <Text style={styles.text}>
+                ระดับที่ 1 บริเวณที่ถูกกดทับจะเป็นรอยแดง
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
             
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#d50000', ...styles.circle }} />
-              <Text style={styles.text}>
-              ระดับที่ 2 มีการฉีกขาดของผิวหนังชั้นนอก
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#d50000', ...styles.circle }} />
+                <Text style={styles.text}>
+                ระดับที่ 2 มีการฉีกขาดของผิวหนังชั้นนอก
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
 
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#ffeb3b', ...styles.circle }} />
-              <Text style={styles.text}>
-              ระดับที่ 3 เกิดแผลลึกถึงชั้นใต้ผิวหนัง
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#ffeb3b', ...styles.circle }} />
+                <Text style={styles.text}>
+                ระดับที่ 3 เกิดแผลลึกถึงชั้นใต้ผิวหนัง
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
 
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#1b5e20', ...styles.circle }} />
-              <Text style={styles.text}>
-              ระดับที่ 4 มีการตายของเนื้อเยื่อ 
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#1b5e20', ...styles.circle }} />
+                <Text style={styles.text}>
+                ระดับที่ 4 มีการตายของเนื้อเยื่อ 
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
 
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#4a148c', ...styles.circle }} />
-              <Text style={styles.text}>
-              การบาดเจ็บของเนื้อเยื่อส่วนลึก
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#4a148c', ...styles.circle }} />
+                <Text style={styles.text}>
+                การบาดเจ็บของเนื้อเยื่อส่วนลึก
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
 
-            <CardItem style={{ flex: 2, flexDirection: 'row' }}>
-              <View style={{ backgroundColor: '#000000', ...styles.circle }} />
-              <Text style={styles.text}>
-              ไม่สามารถประเมินระดับได้
-              </Text>
-            </CardItem>
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: '#000000', ...styles.circle }} />
+                <Text style={styles.text}>
+                ไม่สามารถประเมินระดับได้
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
           </Card>
           <Button dark block onPress={ this.handleNextPress }>
             <Text>ต่อไป</Text>

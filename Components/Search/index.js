@@ -12,10 +12,16 @@ import {
   Button,
   Icon,
   Title,
-  Text
+  Text,
+  View
 } from 'native-base';
 
 class Search extends Component {
+
+  handleScanPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('Scan')
+  }
 
   componentDidMount() {
     console.log('Search DID MOUNT');
@@ -41,14 +47,35 @@ class Search extends Component {
           <Right />
         </Header>
         <Content padder>
-          <Form style={{ marginTop: "30%"}}>
-            <Item>
-              <Input placeholder="AN" />
+          <Text style={{ marginTop: "30%" ,textAlign: "center", fontSize: 25 }}>
+            ผู้ป่วยที่มีประวัติการรักษาแล้ว
+          </Text>
+          <Form style={{ marginTop: "5%", marginStart: "5%", marginEnd: "5%"}}>
+            <Item regular>
+              <Input placeholder='HN/AN'/>
+              <Icon active name='search' />
             </Item>
-            <Button primary block rounded style={{ marginTop: "5%" }}>
-              <Text>Search</Text>
-            </Button>
           </Form>
+
+          <View style={{ marginTop: "10%", marginStart: "5%", marginEnd: "5%"}}>
+            <Button primary block onPress={this.handleScanPress}>
+              <Text>Scan Barcode</Text>
+            </Button>
+          </View>
+
+          <View style={{
+            marginTop: "25%",
+            marginStart: "5%", 
+            marginEnd: "5%",
+            borderBottomColor: '#e5e5e5',
+            borderBottomWidth: 1,
+          }}/>
+
+          <View style={{ marginTop: "25%", marginStart: "15%", marginEnd: "15%"}}>
+            <Button primary block bordered>
+              <Text>ลงทะเบียนผู้ป่วยใหม่</Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     );

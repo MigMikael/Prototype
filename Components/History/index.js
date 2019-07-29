@@ -25,9 +25,10 @@ import {
 
 class History extends Component {
     render() {
+        const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-                <WoundCard />
+                <WoundCard nav={nav} history={true} image={6} />
             </Content>
         )
     }

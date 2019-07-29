@@ -37,7 +37,7 @@ class HistoryCard extends Component {
                     paddingBottom: 0
                 }}>
                 <Left style={{ paddingRight: "2%" }}>
-                    <Image source={ require('../../assets/inpitar.jpg') } style={{ height: 180, width: null , flex: 1 }} />
+                    <Image source={ require('../../assets/wound_1.png') } style={{ height: 180, width: null , flex: 1 }} />
                 </Left>
                 <Right style={{ 
                     alignItems: "flex-start",

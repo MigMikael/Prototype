@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import BradenCard from './BradenCard'
 import { 
     Container, 
     Header, 
@@ -32,14 +33,20 @@ import {
 } from 'react-native-chart-kit'
 
 import { Dimensions } from 'react-native'
+import bradens from '../../Data/braden'
+
+const bradenData = [
+    
+]
 
 class Overview extends Component {
     render() {
+        const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
                 <Card>
                     <CardItem header>
-                        <Text>Presure Ulcer Healing History</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 21 }}>Presure Ulcer Healing History</Text>
                     </CardItem>
                     <CardItem style={{
                         paddingLeft: "2%",
@@ -90,7 +97,7 @@ class Overview extends Component {
                 </Card>
                 <Card>
                     <CardItem header>
-                        <Text>Braden Score History</Text>
+                        <Text style={{ fontWeight: 'bold', fontSize: 21 }}>Braden Score History</Text>
                     </CardItem>
                     <CardItem style={{
                         paddingLeft: "2%",
@@ -100,21 +107,14 @@ class Overview extends Component {
                     }}>
                         <LineChart
                             data={{
-                                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                                labels: ['02/ม.ค.', '03/ม.ค.', '04/ม.ค.', '05/ม.ค.', '06/ม.ค.', '07/ม.ค.'],
                                 datasets: [{
-                                    data: [
-                                        Math.random() * 100,
-                                        Math.random() * 100,
-                                        Math.random() * 100,
-                                        Math.random() * 100,
-                                        Math.random() * 100,
-                                        Math.random() * 100
-                                    ]
+                                    data: [20, 45, 28, 80, 99, 43]
                                 }]
                             }}
                             width={ Dimensions.get('window').width * 0.9 }
                             height={220}
-                            yAxisLabel={'$'}
+                            yAxisLabel={'P'}
                             chartConfig={{
                                 backgroundColor: '#1cc910',
                                 backgroundGradientFrom: '#eff3ff',
@@ -133,98 +133,20 @@ class Overview extends Component {
                         />
                     </CardItem>
                 </Card>
-                <Card>
-                    <CardItem header bordered>
-                        <Text>Braden Score : 13 (02/ม.ค./2562) </Text>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            การรับรู้ : 2    
-                            </Text>
-                        </Body>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            ความชื้นของผิวหนัง : 1
-                            </Text>
-                        </Body>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            การมีกิจกรรม : 3
-                            </Text>
-                        </Body>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            การเคลื่อนไหว : 4 
-                            </Text>
-                        </Body>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            ภาวะโภชนาการ : 3
-                            </Text>
-                        </Body>
-                    </CardItem>
-                    <CardItem bordered>
-                        <Body>
-                            <Text>
-                            การเสียดสี : 4
-                            </Text>
-                        </Body>
-                    </CardItem>
-                </Card>
-                <Card>
-                    <CardItem header>
-                        <Text>13/ม.ค./2562 (Braden Score : 13) </Text>
-                    </CardItem>
-                    <CardItem style={{
-                        paddingLeft: "2%",
-                        paddingRight: "2%",
-                        paddingTop: "2%",
-                        paddingBottom: "2%"
-                    }}>
-                        <BarChart
-                            data={{
-                                labels: [
-                                    'รับรู้',
-                                    'ความชื้น',
-                                    'กิจกรรม',
-                                    'เคลื่อนไหว',
-                                    'โภชนาการ',
-                                    'เสียดสี',
-                                ],
-                                datasets: [
-                                    {
-                                        data: [2, 1, 3, 4, 3, 4],
-                                    },
-                                ],
-                            }}
-                            width={ Dimensions.get('window').width * 0.9 }
-                            height={250}
-                            chartConfig={{
-                                backgroundColor: '#1cc910',
-                                backgroundGradientFrom: '#eff3ff',
-                                backgroundGradientTo: '#efefef',
-                                decimalPlaces: 2,
-                                color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
-                                style: {
-                                borderRadius: 16,
-                                },
-                            }}
-                            style={{
-                                marginVertical: 8,
-                                borderRadius: 16,
-                            }}
-                        />
-                    </CardItem>
-                </Card>
+
+                {
+                    bradens.map((braden) => {
+                        return (
+                            <BradenCard braden={braden} nav={nav} key={braden.id}/>
+                        )
+                    })
+                }
+                
+                {/* <BradenCard date={"06/ม.ค./2562"} score={13} />
+                <BradenCard date={"05/ม.ค./2562"} score={13} />
+                <BradenCard date={"04/ม.ค./2562"} score={13} />
+                <BradenCard date={"03/ม.ค./2562"} score={13} />
+                <BradenCard date={"02/ม.ค./2562"} score={13} /> */}
             </Content>
         )
     }

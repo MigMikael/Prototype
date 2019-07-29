@@ -46,8 +46,8 @@ export default class ChooseTask extends Component {
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
-            <CardItem>
-              <Text>เลือกงานการดูแลผู้ป่วย</Text>
+            <CardItem bordered>
+              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>เลือกงานการดูแลผู้ป่วย</Text>
             </CardItem>
             {
               tasks.map((task) => {
@@ -62,9 +62,13 @@ export default class ChooseTask extends Component {
               })
             }
             <CardItem>
-              <Button dark block onPress={ this.handleNextPress }>
-                <Text>ยืนยัน</Text>
-              </Button>
+              <Left/>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ยืนยัน</Text>
+                </Button>
+              </Body>
+              <Right/>
             </CardItem>
           </Card>
         </Content>

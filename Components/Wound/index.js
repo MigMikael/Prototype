@@ -28,11 +28,11 @@ class Wound extends Component {
         const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-                <WoundCard nav={nav} />
-                <WoundCard nav={nav} />
-                <WoundCard nav={nav} />
-                <WoundCard nav={nav} />
-                <WoundCard nav={nav} />
+                <WoundCard nav={nav} history={false} image={1} />
+                <WoundCard nav={nav} history={false} image={1} />
+                <WoundCard nav={nav} history={false} image={2} />
+                <WoundCard nav={nav} history={false} image={3} />
+                <WoundCard nav={nav} history={false} image={4} />
             </Content>
         )
     }

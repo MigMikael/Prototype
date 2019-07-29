@@ -46,10 +46,10 @@ export default class Setting extends Component {
       
         <Form style={{ backgroundColor: "#ffffff" }}>
           <Item>
-            <Input placeholder="Username" />
+            <Input placeholder="Field" />
           </Item>
           <Item last>
-            <Input placeholder="Password" />
+            <Input placeholder="Field" />
           </Item>
         </Form>
       
