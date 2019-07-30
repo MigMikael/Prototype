@@ -69,7 +69,7 @@ class ChoosePicture extends Component {
                   aspectRatio: 1
                 }}></ImageBackground>
                 :
-                <Text>This</Text>
+                null
               }
             </CardItem>
           </Card>

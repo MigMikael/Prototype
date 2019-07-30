@@ -37,9 +37,16 @@ import { Dimensions } from 'react-native'
 import Wound from '../Wound';
 
 class WoundDetail extends Component {
+
+  handleAssessmentPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('ChoosePicture')
+  }
+
   render() {
     const { navigation: { navigate }} = this.props
     const { goBack } = this.props.navigation
+    const nav = this.props.nav
     return (
       <Container>
         <LargeHeader hasTab={false} navigation={this.props.navigation}/>
@@ -93,8 +100,8 @@ class WoundDetail extends Component {
                     <Button primary full style={{ flex: 1, justifyContent: 'center' }}>
                       <Text>ออกรายงาน</Text>
                     </Button>
-                    <Button info full style={{ flex: 1, justifyContent: 'center' }}>
-                      <Text>รักษาแผล</Text>
+                    <Button info full style={{ flex: 1, justifyContent: 'center' }} onPress={ this.handleAssessmentPress }>
+                      <Text>ประเมินแผล</Text>
                     </Button>
                   </View>
                 </CardItem>

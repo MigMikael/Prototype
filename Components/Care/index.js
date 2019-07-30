@@ -45,7 +45,7 @@ class Care extends Component {
                         <View style={{ flexDirection: "row" }}>
                             <View style={{flex:1, flexDirection: "column"}}>
                                 <Text style={{ 
-                                    marginTop: "1%",
+                                    marginTop: "0%",
                                     flex: 1,
                                     fontSize: 25,
                                     fontWeight: 'bold'  

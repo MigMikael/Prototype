@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SmallHeader from '../Header/SmallHeader'
+import LargeHeader from '../Header/LargeHeader'
 import tasks from '../../Data/task'
 import { 
     Container, 
@@ -43,7 +43,7 @@ export default class ChooseTask extends Component {
     const { goBack } = this.props.navigation
     return (
       <Container>
-        <SmallHeader navigation={this.props.navigation}/>
+        <LargeHeader hasTab={true} navigation={this.props.navigation}/> 
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
             <CardItem bordered>

@@ -14,6 +14,7 @@ import WoundAssessment from '../Wound/WoundAssessment'
 import CriteriaGroup from '../Assessment/CriteriaGroup'
 import ChooseTask from '../Task/ChooseTask'
 import BradenDetail from '../Overview/BradenDetail'
+import SkinAssessment from '../Assessment/SkinAssessment'
 
 export default createStackNavigator({
   Task,
@@ -30,7 +31,8 @@ export default createStackNavigator({
   WoundAssessment,
   CriteriaGroup,
   ChooseTask,
-  BradenDetail
+  BradenDetail,
+  SkinAssessment
 },
 {
   initialRouteName: 'Task',

@@ -42,6 +42,15 @@ class LargeHeader extends Component {
         fontSize: 11,
         color: '#000000',
         marginTop: "1%"
+      },
+
+      moreIconAndroid: {
+        color: '#ffffff',
+        flex: 1
+      },
+      moreIconIos: {
+        color: '#000000',
+        flex: 1
       }
     }
 
@@ -49,7 +58,7 @@ class LargeHeader extends Component {
 
     return (
       <Header style={{ height: 90 }} hasTabs={ this.props.hasTabs }>
-        <Left style={{ flexDirection: 'row', flex: 1 }}>
+        <Left style={{ flexDirection: 'row', flex: 29 }}>
           <Button transparent onPress={() => goBack()}>
             <Icon name='md-arrow-round-back' />
           </Button>
@@ -69,6 +78,9 @@ class LargeHeader extends Component {
             </View> */}
           </View>
         </Left>
+        <Right>
+          <Icon name='more' style={ Platform.OS === "android" ? style.moreIconAndroid: style.moreIconIos }></Icon>
+        </Right>
       </Header>
     )
   }

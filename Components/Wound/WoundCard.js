@@ -119,14 +119,14 @@ class WoundCard extends Component {
                         justifyContent:'center'
                     }}>
                         <Button info style={{ flex: 1, justifyContent: 'center' }}>
-                            <Text>รายงาน</Text>
+                            <Text>ลบ</Text>
                         </Button>
                         {
                             this.props.history? 
                                 null
                             :
-                            <Button primary style={{ flex: 1, justifyContent: 'center' }} onPress={ () => nav('ChoosePicture')}>
-                                <Text>ประเมิน</Text>
+                            <Button primary style={{ flex: 1, justifyContent: 'center' }}>
+                                <Text>จำหน่าย</Text>
                             </Button>
                         }
                     </CardItem>

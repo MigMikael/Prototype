@@ -24,17 +24,18 @@ import {
     Card,
     CardItem,
     Label,
-    CheckBox
+    CheckBox,
+    Radio
 } from 'native-base';
 
-export default class CriteriaGroup extends Component {
+export default class SkinAssessment extends Component {
   constructor() {
     super()
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('SkinAssessment')
+    navigate('ChooseTask')
   }
 
   render() {
@@ -45,21 +46,37 @@ export default class CriteriaGroup extends Component {
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
             <CardItem bordered style={{ flexDirection: 'column'}}>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Criteria กลุ่มเสี่ยง</Text>
-              <Text>(เลือกได้มากกว่า 1 ข้อ)</Text>
+              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>ประเมินผิวหนัง IAD</Text>
+              <Text>(ไม่ใช่ปุ่มกระดูก)</Text>
             </CardItem>
-            {
-              riskCriteria.map((criteria) => {
-                return (
-                  <ListItem key={criteria.id}>
-                    <CheckBox checked={criteria.isCheck} />
-                    <Body>
-                      <Text>{criteria.criteria}</Text>
-                    </Body>
-                  </ListItem>      
-                )
-              })
-            }
+            
+            <ListItem>
+              <Left style={{ flex: 1 }}>
+                <Radio selected={true} />
+              </Left>
+              <Body style={{ flex: 9 }}>
+                <Text>ไม่พบ</Text>
+              </Body>
+            </ListItem>    
+              
+            <ListItem>
+              <Left style={{ flex: 1 }}>
+                <Radio selected={false} />
+              </Left>
+              <Body style={{ flex: 9 }}>
+                <Text>IAD Category 1</Text>
+              </Body>
+            </ListItem>
+
+            <ListItem>
+              <Left style={{ flex: 1 }}>
+                <Radio selected={false} />
+              </Left>
+              <Body style={{ flex: 9 }}>
+                <Text>IAD Category 2</Text>
+              </Body>
+            </ListItem>
+            
             <CardItem>
               <Left/>
               <Body>
