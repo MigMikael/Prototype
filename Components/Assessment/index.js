@@ -41,13 +41,24 @@ export default class Setting extends Component {
       { title: "การเสียดสี", content: 7 }
     ]
     this.state = {
-      score: 0
+      totalScore: 0,
+      groupScore: [0, 0, 0, 0, 0, 0],
     }
     this.handleRadioPress = this.handleRadioPress.bind(this)
   }
 
-  handleRadioPress() {
+  handleRadioPress(group, value) {
+    this.setState(prevState => {
+      const newList = prevState.groupScore
+      newList[group] = value
 
+      const arrSum = arr => arr.reduce((a,b) => a + b, 0)
+
+      return {
+        totalScore: arrSum(newList),
+        groupScore: newList,
+      }
+    })
   }
 
   renderAccordionContent = (section) => {
@@ -98,7 +109,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[0] === 1} onPress={() => this.handleRadioPress(0, 1)}/>
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. ไม่ตอบสนอง</Text>
@@ -107,7 +118,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[0] === 2} onPress={() => this.handleRadioPress(0, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. มี Pain stimuli แต่สื่อสารไม่ได้</Text>
@@ -116,7 +127,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[0] === 3} onPress={() => this.handleRadioPress(0, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. สับสน/สื่อสารไม่ได้ทุกครั้ง</Text>
@@ -125,7 +136,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[0] === 4} onPress={() => this.handleRadioPress(0, 4)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -139,7 +150,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[1] === 1} onPress={() => this.handleRadioPress(1, 1)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. เปียกชุ่มตลอด เปลี่ยนผ้า>1ครั้ง/เวร</Text>
@@ -148,7 +159,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[1] === 2} onPress={() => this.handleRadioPress(1, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เปลี่ยนผ้า 1 ครั้ง/เวร /ทุกครั้งที่พลิกตัว</Text>
@@ -157,7 +168,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[1] === 3} onPress={() => this.handleRadioPress(1, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. เปลี่ยนผ้า 1 ครั้ง/วัน</Text>
@@ -166,7 +177,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[1] === 4} onPress={() => this.handleRadioPress(1, 4)}/>
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ไม่เปียก</Text>
@@ -180,7 +191,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[2] === 1} onPress={() => this.handleRadioPress(2, 1)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. อยู่บนเตียงตลอด</Text>
@@ -189,7 +200,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[2] === 2} onPress={() => this.handleRadioPress(2, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. ทรงตัวไม่อยู่ ใช้รถเข็น</Text>
@@ -198,7 +209,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[2] === 3} onPress={() => this.handleRadioPress(2, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. เดินได้ระยะสั้น ต้องพยุง</Text>
@@ -207,7 +218,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[2] === 4} onPress={() => this.handleRadioPress(2, 4)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -221,7 +232,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[3] === 1} onPress={() => this.handleRadioPress(3, 1)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. เปลี่ยนท่าเองไม่ได้</Text>
@@ -230,7 +241,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[3] === 2} onPress={() => this.handleRadioPress(3, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เปลี่ยนท่าเองได้น้อง ต้องช่วยบ่อย</Text>
@@ -239,7 +250,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[3] === 3} onPress={() => this.handleRadioPress(3, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. ต้องช่วยบ้าง ขยับแขนขาได้</Text>
@@ -248,7 +259,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[3] === 4} onPress={() => this.handleRadioPress(3, 4)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -262,7 +273,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[4] === 1} onPress={() => this.handleRadioPress(4, 1)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. NPO กินได้1/3ถาด(ทางปาก)</Text>
@@ -271,7 +282,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[4] === 2} onPress={() => this.handleRadioPress(4, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. Feedได้บ้าง งดFeedบางมื้อ กินได้1/2ถาด</Text>
@@ -280,7 +291,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[4] === 3} onPress={() => this.handleRadioPress(4, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. Feedได้หมด กินได้>1/2</Text>
@@ -289,7 +300,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[4] === 4} onPress={() => this.handleRadioPress(4, 4)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -303,7 +314,7 @@ export default class Setting extends Component {
         <View>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[5] === 1} onPress={() => this.handleRadioPress(5, 1)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. ข้อกล้ามเนื้อหดเกร็ง ช่วยจัดท่าทุกครั้ง</Text>
@@ -311,7 +322,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[5] === 2} onPress={() => this.handleRadioPress(5, 2)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เสี่ยงเสียดสีขณะเคลื่อนย้าย เปลี่ยนท่าลื่นไถลได้ง่าย</Text>
@@ -319,7 +330,7 @@ export default class Setting extends Component {
           </ListItem>
           <ListItem>
             <Left style={{ flex: 1 }}>
-              <Radio selected={false} />
+              <Radio selected={this.state.groupScore[5] === 3} onPress={() => this.handleRadioPress(5, 3)} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. จัดท่าได้เองอย่างอิสระ</Text>
@@ -352,7 +363,7 @@ export default class Setting extends Component {
             </Form>
             <CardItem>
               <Body style={{ alignItems: 'center' }}>
-                <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Braden Score = {this.state.score}</Text>
+                <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Braden Score = {this.state.totalScore}</Text>
               </Body>
             </CardItem>
             <CardItem>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import tasks from '../../Data/task'
+import TaskListItem from '../Task/TaskListItem'
 import { 
     Container, 
     Header, 
@@ -76,22 +77,7 @@ class Care extends Component {
                             return task.isCheck === true
                         }).map(task => {
                             return (
-                                <ListItem bordered>
-                                    <Icon active name='add-circle' style={{ color: "#000000"}} />
-                                    <Body>
-                                        <Text>{task.name}</Text>
-                                    </Body>
-                                    {
-                                        task.count > 0 ? 
-                                        <Badge success>
-                                            <Text>{task.count}</Text>
-                                        </Badge>    
-                                        : 
-                                        <Badge danger>
-                                            <Text>{task.count}</Text>
-                                        </Badge>
-                                    }
-                                </ListItem>
+                                <TaskListItem task={task} />
                             )
                         })
                     }
