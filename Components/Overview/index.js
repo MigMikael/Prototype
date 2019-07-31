@@ -134,6 +134,7 @@ class Overview extends Component {
                     </CardItem>
                 </Card>
 
+                <Card>
                 {
                     bradens.map((braden) => {
                         return (
@@ -141,6 +142,8 @@ class Overview extends Component {
                         )
                     })
                 }
+                </Card>
+                
                 
                 {/* <BradenCard date={"06/ม.ค./2562"} score={13} />
                 <BradenCard date={"05/ม.ค./2562"} score={13} />

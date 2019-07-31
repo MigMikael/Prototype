@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import WoundCard from '../Wound/WoundCard'
+import wounds from '../../Data/wound'
 import { 
     Container, 
     Header, 
@@ -28,7 +29,15 @@ class History extends Component {
         const nav = this.props.nav
         return(
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-                <WoundCard nav={nav} history={true} image={6} />
+                {
+                    wounds.filter(wound => {
+                        return wound.status === 'archrive'
+                    }).map(wound => {
+                        return(
+                            <WoundCard nav={nav} history={false} wound={wound} />
+                        )
+                    })
+                }
             </Content>
         )
     }

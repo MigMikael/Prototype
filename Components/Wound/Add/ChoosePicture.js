@@ -39,7 +39,7 @@ class ChoosePicture extends Component {
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('ChooseSeverity')
+    navigate('ChooseCause')
   }
 
   render() {

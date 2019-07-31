@@ -26,6 +26,7 @@ import {
     Badge,
 } from 'native-base';
 
+import img0 from '../../assets/inpitar.jpg'
 import img1 from '../../assets/foot_1.png'
 import img2 from '../../assets/foot_2.png'
 import img3 from '../../assets/foot_3.png'
@@ -77,9 +78,28 @@ class WoundCard extends Component {
         })
     }
 
+    handleSeverityColor = (severity) => {
+        let color = ""
+        if (severity === 1) {
+            color = '#ec407a'
+        } else if (severity === 2) {
+            color = '#d50000'
+        } else if (severity === 3) {
+            color = '#ffeb3b'
+        } else if (severity === 4) {
+            color = '#1b5e20'
+        } else if (severity === 5) {
+            color = '#4a148c'
+        } else {
+            color = '#000000'
+        }
+        return color
+    }
+
     render() {
         const nav = this.props.nav
         const imgArray = [img1, img2, img3, img4, img5, img6]
+        const severityColor = this.handleSeverityColor(this.props.wound.severity)
         return(
           <Card>
             {
@@ -90,8 +110,8 @@ class WoundCard extends Component {
                         paddingTop: 0,
                         paddingBottom: 0
                     }}>
-                        <Left style={{ paddingRight: "2%" }}>
-                            <Image source={ imgArray[this.props.image - 1] } style={{ height: 180, width: null , flex: 1 }} />
+                        <Left style={{ paddingRight: "2%", borderRightWidth: 1, borderRightColor: "#e5e5e5" }}>
+                            <Image source={ imgArray[this.props.wound.image - 1] } style={{ height: 180, width: null , flex: 1 }} />
                         </Left>
                         <Right style={{ 
                             alignItems: "flex-start",
@@ -100,15 +120,24 @@ class WoundCard extends Component {
                             paddingTop: 0,
                             paddingBottom: 0
                         }}>
-                            <Badge danger style={{ alignSelf: "flex-end" }}>
+                            {/* <Badge danger style={{ alignSelf: "flex-end" }}>
                                 <Text>4</Text>
-                            </Badge>
-                            <Text style={{ fontWeight: 'bold', lineHeight: 25 }}>วันที่ 01/ม.ค./2562</Text>
-                            <Text style={{ lineHeight: 25 }}>Healing Score : 14</Text>
-                            <Text style={{ lineHeight: 25 }}>กว้าง x ยาว : 0.2 x 0.2</Text>
-                            <Text style={{ lineHeight: 25 }}>ปริมาณสารคัดหลั่ง : 7</Text>
-                            <Text style={{ lineHeight: 25 }}>พื้นแผล : Granulation</Text>
+                            </Badge> */}
+                            <Text style={{ 
+                                fontSize: 17,
+                                fontWeight: 'bold', 
+                                lineHeight: 25 
+                            }}>Healing Score : {this.props.wound.healingScore}</Text>
+                            <Text style={{ lineHeight: 25 }}>วันที่ {this.props.wound.date}</Text>
+                            <Text style={{ lineHeight: 25 }}>พื้นที่ : {this.props.wound.width} x {this.props.wound.height}</Text>
+                            <Text style={{ lineHeight: 25 }}>สารคัดหลั่ง : {this.props.wound.exudate}</Text>
+                            <Text style={{ lineHeight: 25 }}>พื้นแผล : {this.props.wound.woundBed}</Text>
                         </Right>
+                        <View style={{
+                            height: 180,
+                            borderLeftWidth: 12,
+                            borderLeftColor: severityColor,
+                        }}/>
                     </CardItem>
                 :
                 <TouchableOpacity onPress={ this.handlePress }>

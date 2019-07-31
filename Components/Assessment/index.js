@@ -38,6 +38,7 @@ export default class Setting extends Component {
       { title: "ประเมินการมีกิจกรรม", content: 4 },
       { title: "ประเมินการเคลื่อนไหว", content: 5 },
       { title: "ประเมินภาวะโภชนาการ", content: 6 },
+      { title: "ผลการประเมินด้วยระบบ NAF", content: -1 },
       { title: "การเสียดสี", content: 7 }
     ]
     this.state = {
@@ -107,36 +108,36 @@ export default class Setting extends Component {
     } else if (section.content === 2) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(0, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[0] === 1} onPress={() => this.handleRadioPress(0, 1)}/>
+              <Radio selected={this.state.groupScore[0] === 1}/>
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. ไม่ตอบสนอง</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(0, 2)} >
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[0] === 2} onPress={() => this.handleRadioPress(0, 2)} />
+              <Radio selected={this.state.groupScore[0] === 2}/>
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. มี Pain stimuli แต่สื่อสารไม่ได้</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(0, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[0] === 3} onPress={() => this.handleRadioPress(0, 3)} />
+              <Radio selected={this.state.groupScore[0] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. สับสน/สื่อสารไม่ได้ทุกครั้ง</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(0, 4)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[0] === 4} onPress={() => this.handleRadioPress(0, 4)} />
+              <Radio selected={this.state.groupScore[0] === 4} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -148,36 +149,36 @@ export default class Setting extends Component {
     } else if (section.content === 3) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(1, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[1] === 1} onPress={() => this.handleRadioPress(1, 1)} />
+              <Radio selected={this.state.groupScore[1] === 1} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. เปียกชุ่มตลอด เปลี่ยนผ้า>1ครั้ง/เวร</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(1, 2)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[1] === 2} onPress={() => this.handleRadioPress(1, 2)} />
+              <Radio selected={this.state.groupScore[1] === 2} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เปลี่ยนผ้า 1 ครั้ง/เวร /ทุกครั้งที่พลิกตัว</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(1, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[1] === 3} onPress={() => this.handleRadioPress(1, 3)} />
+              <Radio selected={this.state.groupScore[1] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. เปลี่ยนผ้า 1 ครั้ง/วัน</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(1, 4)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[1] === 4} onPress={() => this.handleRadioPress(1, 4)}/>
+              <Radio selected={this.state.groupScore[1] === 4}/>
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ไม่เปียก</Text>
@@ -189,36 +190,36 @@ export default class Setting extends Component {
     } else if (section.content === 4) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(2, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[2] === 1} onPress={() => this.handleRadioPress(2, 1)} />
+              <Radio selected={this.state.groupScore[2] === 1} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. อยู่บนเตียงตลอด</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(2, 2)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[2] === 2} onPress={() => this.handleRadioPress(2, 2)} />
+              <Radio selected={this.state.groupScore[2] === 2} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. ทรงตัวไม่อยู่ ใช้รถเข็น</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(2, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[2] === 3} onPress={() => this.handleRadioPress(2, 3)} />
+              <Radio selected={this.state.groupScore[2] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. เดินได้ระยะสั้น ต้องพยุง</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(2, 4)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[2] === 4} onPress={() => this.handleRadioPress(2, 4)} />
+              <Radio selected={this.state.groupScore[2] === 4} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -230,36 +231,36 @@ export default class Setting extends Component {
     } else if (section.content === 5) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(3, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[3] === 1} onPress={() => this.handleRadioPress(3, 1)} />
+              <Radio selected={this.state.groupScore[3] === 1} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. เปลี่ยนท่าเองไม่ได้</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(3, 2)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[3] === 2} onPress={() => this.handleRadioPress(3, 2)} />
+              <Radio selected={this.state.groupScore[3] === 2} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เปลี่ยนท่าเองได้น้อง ต้องช่วยบ่อย</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem  onPress={() => this.handleRadioPress(3, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[3] === 3} onPress={() => this.handleRadioPress(3, 3)} />
+              <Radio selected={this.state.groupScore[3] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. ต้องช่วยบ้าง ขยับแขนขาได้</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(3, 4)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[3] === 4} onPress={() => this.handleRadioPress(3, 4)} />
+              <Radio selected={this.state.groupScore[3] === 4} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -271,36 +272,36 @@ export default class Setting extends Component {
     } else if (section.content === 6) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(4, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[4] === 1} onPress={() => this.handleRadioPress(4, 1)} />
+              <Radio selected={this.state.groupScore[4] === 1} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. NPO กินได้1/3ถาด(ทางปาก)</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(4, 2)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[4] === 2} onPress={() => this.handleRadioPress(4, 2)} />
+              <Radio selected={this.state.groupScore[4] === 2} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. Feedได้บ้าง งดFeedบางมื้อ กินได้1/2ถาด</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(4, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[4] === 3} onPress={() => this.handleRadioPress(4, 3)} />
+              <Radio selected={this.state.groupScore[4] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. Feedได้หมด กินได้>1/2</Text>
             </Body>
             <Right/>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(4, 4)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[4] === 4} onPress={() => this.handleRadioPress(4, 4)} />
+              <Radio selected={this.state.groupScore[4] === 4} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>4. ปกติ</Text>
@@ -312,28 +313,39 @@ export default class Setting extends Component {
     } else if (section.content === 7) {
       comp = (
         <View>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(5, 1)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[5] === 1} onPress={() => this.handleRadioPress(5, 1)} />
+              <Radio selected={this.state.groupScore[5] === 1} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>1. ข้อกล้ามเนื้อหดเกร็ง ช่วยจัดท่าทุกครั้ง</Text>
             </Body>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(5, 2)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[5] === 2} onPress={() => this.handleRadioPress(5, 2)} />
+              <Radio selected={this.state.groupScore[5] === 2} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>2. เสี่ยงเสียดสีขณะเคลื่อนย้าย เปลี่ยนท่าลื่นไถลได้ง่าย</Text>
             </Body>
           </ListItem>
-          <ListItem>
+          <ListItem onPress={() => this.handleRadioPress(5, 3)}>
             <Left style={{ flex: 1 }}>
-              <Radio selected={this.state.groupScore[5] === 3} onPress={() => this.handleRadioPress(5, 3)} />
+              <Radio selected={this.state.groupScore[5] === 3} />
             </Left>
             <Body style={{ flex: 9 }}>
               <Text>3. จัดท่าได้เองอย่างอิสระ</Text>
+            </Body>
+          </ListItem>
+        </View>
+      )
+    }
+    else if (section.content === -1) {
+      comp = (
+        <View>
+          <ListItem>
+            <Body style={{ flex: 1 }}>
+              <Text>Severe Malnutrition ( >= 11 คะแนน)</Text>
             </Body>
           </ListItem>
         </View>

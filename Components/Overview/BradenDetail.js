@@ -47,61 +47,61 @@ export default class BradenDetail extends Component {
             </CardItem>
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>การรับรู้ : </Text>
-                  <Text>มี Pain stimuli แต่สื่อสารไม่ได้ </Text>
+                <Text style={{ fontWeight: 'bold'}}>การรับรู้ : </Text>
+                <Text>มี Pain stimuli แต่สื่อสารไม่ได้ </Text>
               </Body>
               <Badge success>
-                  <Text>2</Text>
+                <Text>2</Text>
               </Badge>
             </ListItem>
 
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>ความชื้นของผิวหนัง : </Text>
-                  <Text>เปียกชุ่มตลอด เปลี่ยนผ้า1ครั้ง/เวร</Text>
+                <Text style={{ fontWeight: 'bold'}}>ความชื้นของผิวหนัง : </Text>
+                <Text>เปียกชุ่มตลอด เปลี่ยนผ้า1ครั้ง/เวร</Text>
               </Body>
               <Badge success>
-                  <Text>2</Text>
+                <Text>2</Text>
               </Badge>
             </ListItem>
 
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>การมีกิจกรรม : </Text>
-                  <Text>เดินได้ระยะสั้นต้องพยุง</Text>
+                <Text style={{ fontWeight: 'bold'}}>การมีกิจกรรม : </Text>
+                <Text>เดินได้ระยะสั้นต้องพยุง</Text>
               </Body>
               <Badge success>
-                  <Text>3</Text>
+                <Text>3</Text>
               </Badge>
             </ListItem>
 
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>การเคลื่อนไหว : </Text>
-                  <Text>ต้องช่วยบ้าง ขะยบแขนขาได้</Text>
+                <Text style={{ fontWeight: 'bold'}}>การเคลื่อนไหว : </Text>
+                <Text>ต้องช่วยบ้าง ขะยบแขนขาได้</Text>
               </Body>
               <Badge success>
-                  <Text>3</Text>
+                <Text>3</Text>
               </Badge>
             </ListItem>
 
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>ภาวะโภชนาการ : </Text>
-                  <Text>NPO กินได้1/3ถาด(ทางปาก)</Text>
+                <Text style={{ fontWeight: 'bold'}}>ภาวะโภชนาการ : </Text>
+                <Text>NPO กินได้1/3ถาด(ทางปาก)</Text>
               </Body>
               <Badge success>
-                  <Text>1</Text>
+                <Text>1</Text>
               </Badge>
             </ListItem>
 
             <ListItem bordered>                      
               <Body>
-                  <Text style={{ fontWeight: 'bold'}}>การเสียดสี : </Text>
-                  <Text>จัดท่าได้อย่างอิสระ</Text>
+                <Text style={{ fontWeight: 'bold'}}>การเสียดสี : </Text>
+                <Text>จัดท่าได้อย่างอิสระ</Text>
               </Body>
               <Badge success>
-                  <Text>3</Text>
+                <Text>3</Text>
               </Badge>
             </ListItem>
           </Card>
@@ -115,20 +115,46 @@ export default class BradenDetail extends Component {
             <ListItem bordered>
                 <Icon active name='remove' style={{ color: "#000000"}} />
                 <Body>
-                    <Text>ไม่รู้สึกตัว / เป็นอัมพาต</Text>
+                  <Text>ไม่รู้สึกตัว / เป็นอัมพาต</Text>
                 </Body>
             </ListItem>
             <ListItem bordered>
                 <Icon active name='remove' style={{ color: "#000000"}} />
                 <Body>
-                    <Text>ถ่ายอุจจาระปัสสาวะราดบ่อยครั้ง</Text>
+                  <Text>ถ่ายอุจจาระปัสสาวะราดบ่อยครั้ง</Text>
                 </Body>
             </ListItem>
             <ListItem bordered>
                 <Icon active name='remove' style={{ color: "#000000"}} />
                 <Body>
-                    <Text>ได้รับ Steroid ระยะยาว</Text>
+                  <Text>ได้รับ Steroid ระยะยาว</Text>
                 </Body>
+            </ListItem>
+          </Card>
+
+          <Card>
+            <CardItem>
+              <Text style={{ fontSize: 25, fontWeight: 'bold'}}>
+                สถานะผู้ป่วย
+              </Text>
+            </CardItem>
+            <ListItem bordered>
+              <Icon active name='remove' style={{ color: "#000000"}} />
+              <Body>
+                <Text>NG Tube</Text>
+              </Body>
+            </ListItem>
+            <ListItem bordered>
+              <Icon active name='remove' style={{ color: "#000000"}} />
+              <Body>
+                <Text>Retention suture</Text>
+              </Body>
+            </ListItem>
+            <ListItem bordered>
+              <Icon active name='remove' style={{ color: "#000000"}} />
+              <Body>
+                <Text>กลั้นอุจจาระและปัสสาวะไม่ได้</Text>
+              </Body>
             </ListItem>
           </Card>
         </Content>

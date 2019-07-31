@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { TouchableOpacity } from 'react-native'
 import { 
   Container, 
   Header, 
@@ -53,7 +54,7 @@ class Search extends Component {
           <Form style={{ marginTop: "5%", marginStart: "5%", marginEnd: "5%"}}>
             <Item regular>
               <Input placeholder='HN/AN'/>
-              <Icon active name='search' />
+              <Icon active name='search'/>
             </Item>
           </Form>
 

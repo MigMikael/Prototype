@@ -33,14 +33,16 @@ export default class SmallCard extends Component {
     return (
       <ListItem avatar onPress={ () => nav('PatientDetail') }>
         <Left>
-          <Thumbnail source={ imgArray[this.props.patient.id-1] } small />
+          <Thumbnail source={ imgArray[this.props.patient.id-1] } />
         </Left>
         <Body>
-          <Text>{this.props.patient.name}</Text>
+          <Text style={{ fontSize: 17 }}>{this.props.patient.name} (Braden = {this.props.patient.braden})</Text>
           <Text note>
-            AN: {this.props.patient.an} {this.props.patient.gender === 'male' ? `ชาย`: `หญิง`} {this.props.patient.age} ปี
+            AN: {this.props.patient.an}
           </Text>
-          {/* <Text note>Age: {this.props.patient.age}</Text> */}
+          <Text note>
+            {this.props.patient.gender === 'male' ? `ชาย`: `หญิง`} {this.props.patient.age} ปี
+          </Text>
         </Body>
         <Right>
           {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LargeHeader from '../Header/LargeHeader'
+import SmallHeader from '../../Header/SmallHeader'
 import { 
     Container, 
     Header, 
@@ -27,26 +27,25 @@ import {
     Radio
 } from 'native-base';
 
-export default class SkinAssessment extends Component {
+export default class ChooseCause extends Component {
   constructor() {
     super()
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('PatientAssessment')
+    navigate('ChooseSeverity')
   }
 
   render() {
     const { goBack } = this.props.navigation
     return (
       <Container>
-        <LargeHeader hasTab={true} navigation={this.props.navigation}/> 
+        <SmallHeader navigation={this.props.navigation}/> 
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
             <CardItem bordered style={{ flexDirection: 'column'}}>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>ประเมินผิวหนัง IAD</Text>
-              <Text>(ไม่ใช่ปุ่มกระดูก)</Text>
+              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>สาเหตุของการเกิดแผล</Text>
             </CardItem>
             
             <ListItem>
@@ -54,7 +53,7 @@ export default class SkinAssessment extends Component {
                 <Radio selected={true} />
               </Left>
               <Body style={{ flex: 9 }}>
-                <Text>ไม่พบ</Text>
+                <Text>เกิดจากที่บ้าน</Text>
               </Body>
             </ListItem>    
               
@@ -63,7 +62,7 @@ export default class SkinAssessment extends Component {
                 <Radio selected={false} />
               </Left>
               <Body style={{ flex: 9 }}>
-                <Text>IAD Category 1</Text>
+                <Text>PU Related Medical device</Text>
               </Body>
             </ListItem>
 
@@ -72,7 +71,16 @@ export default class SkinAssessment extends Component {
                 <Radio selected={false} />
               </Left>
               <Body style={{ flex: 9 }}>
-                <Text>IAD Category 2</Text>
+                <Text>Mucosal Membrane Pressure Ulcer</Text>
+              </Body>
+            </ListItem>
+
+            <ListItem>
+              <Left style={{ flex: 1 }}>
+                <Radio selected={false} />
+              </Left>
+              <Body style={{ flex: 9 }}>
+                <Text>อื่นๆ</Text>
               </Body>
             </ListItem>
             
