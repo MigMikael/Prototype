@@ -54,8 +54,8 @@ class ChooseSeverity extends Component {
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ flex: 1, flexDirection: "column", backgroundColor: "#e5e5e5"}}>
           <Card style={{ height: (h*0.8), marginLeft:0, marginRight:0, paddingLeft:0, paddingRight:0 }}>
-            <CardItem bordered style={{ flex: 1 }}>
-                <Text style={{ fontSize: 21, fontWeight: 'bold'}}>ความรุนแรงของแผล</Text>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>ความรุนแรงของแผล</Text>
             </CardItem>
             
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
@@ -111,10 +111,14 @@ class ChooseSeverity extends Component {
                 </Text>
               </CardItem>
             </TouchableOpacity>
+            <CardItem>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </Body>
+            </CardItem>
           </Card>
-          <Button dark block onPress={ this.handleNextPress }>
-            <Text>ต่อไป</Text>
-          </Button>
         </Content>
       </Container>
     )

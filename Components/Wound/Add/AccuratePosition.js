@@ -23,6 +23,8 @@ import {
   Thumbnail,
   CheckBox,
   Badge,
+  Card,
+  CardItem
 } from 'native-base'
 
 const w = Dimensions.get('window').width; //full width
@@ -39,15 +41,19 @@ class AccuratePosition extends Component {
     return (
       <Container>
         <SmallHeader navigation={this.props.navigation}/>
-        <Content style={{ flexDirection: "column"}} centerContent>
-          <Text style={{ fontSize: 21, fontWeight: 'bold' , width: "100%", marginTop: "10%", alignContent: 'center' }}>เลือกตำแหน่งของแผล</Text>
-          <TouchableOpacity onPress={ this.handlePositionPress }>
-            <Image source={ require('../../../assets/specific_body_part.png') } resizeMode="contain" style={{
-              height: undefined,
-              width: '100%',
-              aspectRatio: 1
-            }}/>
-          </TouchableOpacity>
+        <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+          <Card>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>เลือกตำแหน่งแผล</Text>
+            </CardItem>
+            <TouchableOpacity onPress={ this.handlePositionPress }>
+              <Image source={ require('../../../assets/specific_body_part.png') } resizeMode="contain" style={{
+                height: undefined,
+                width: '100%',
+                aspectRatio: 1
+              }}/>
+            </TouchableOpacity>
+          </Card>
         </Content>
       </Container>
     )

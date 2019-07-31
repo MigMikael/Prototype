@@ -95,7 +95,7 @@ class CalendarTask extends Component {
             </CardItem>
           </Card>
           <ScrollView horizontal={true}>
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#fff59d" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Monday 1</Text>
@@ -115,7 +115,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#f48fb1" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Tuesday 2</Text>
@@ -135,7 +135,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#a5d6a7" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Wednesday 3</Text>
@@ -155,7 +155,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#ffcc80" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Thursday 4</Text>
@@ -175,7 +175,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#81d4fa" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Friday 5</Text>
@@ -195,7 +195,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#b39ddb" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Saturday 6</Text>
@@ -215,7 +215,7 @@ class CalendarTask extends Component {
                 </List>
               </Card>
 
-              <Card style={{ width: (w*0.8), height: h }}>
+              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#e57373" }}>
                   <Body>
                     <Text style={{ color: "#000000" }}>Sunday 7</Text>

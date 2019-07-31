@@ -35,10 +35,6 @@ import {
 import { Dimensions } from 'react-native'
 import bradens from '../../Data/braden'
 
-const bradenData = [
-    
-]
-
 class Overview extends Component {
     render() {
         const nav = this.props.nav
@@ -77,7 +73,6 @@ class Overview extends Component {
                             }}
                             width={ Dimensions.get('window').width * 0.9 } // from react-native
                             height={220}
-                            yAxisLabel={'$'}
                             chartConfig={{
                                 backgroundColor: '#1cc910',
                                 backgroundGradientFrom: '#eff3ff',
@@ -114,7 +109,6 @@ class Overview extends Component {
                             }}
                             width={ Dimensions.get('window').width * 0.9 }
                             height={220}
-                            yAxisLabel={'P'}
                             chartConfig={{
                                 backgroundColor: '#1cc910',
                                 backgroundGradientFrom: '#eff3ff',
@@ -135,21 +129,12 @@ class Overview extends Component {
                 </Card>
 
                 <Card>
-                {
-                    bradens.map((braden) => {
-                        return (
-                            <BradenCard braden={braden} nav={nav} key={braden.id}/>
-                        )
-                    })
-                }
+                { bradens.map((braden) => {
+                    return (
+                        <BradenCard braden={braden} nav={nav} key={braden.id}/>
+                    )
+                })}
                 </Card>
-                
-                
-                {/* <BradenCard date={"06/ม.ค./2562"} score={13} />
-                <BradenCard date={"05/ม.ค./2562"} score={13} />
-                <BradenCard date={"04/ม.ค./2562"} score={13} />
-                <BradenCard date={"03/ม.ค./2562"} score={13} />
-                <BradenCard date={"02/ม.ค./2562"} score={13} /> */}
             </Content>
         )
     }

@@ -409,8 +409,8 @@ export default class WoundAssessment extends Component {
                 renderContent={ this.renderAccordionContent } />  
             </Form>
             <CardItem>
-              <Body style={{ alignItems: 'center' }}>
-                <Button dark onPress={ this.handleNextPress }>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
                   <Text>ต่อไป</Text>
                 </Button>
               </Body>

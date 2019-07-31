@@ -42,7 +42,11 @@ class ChoosePosition extends Component {
       <Container>
         <SmallHeader navigation={this.props.navigation}/>
         <Content style={{ flex: 1 ,flexDirection: "column", backgroundColor: '#e5e5e5'}} padder>
-          <Text style={{ fontSize: 21, fontWeight: 'bold' , width: "100%", marginTop: "10%", alignContent: 'center' }}>เลือกตำแหน่งของแผล</Text>
+          <Card>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>เลือกตำแหน่งแผล</Text>
+            </CardItem>
+          </Card>
           {/* <TouchableOpacity onPress={ this.handlePositionPress }>
             <Image source={ require('../../../assets/body_part.png') } resizeMode="contain" style={{
               height: undefined,

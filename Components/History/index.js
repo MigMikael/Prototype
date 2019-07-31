@@ -34,7 +34,7 @@ class History extends Component {
                         return wound.status === 'archrive'
                     }).map(wound => {
                         return(
-                            <WoundCard nav={nav} history={false} wound={wound} />
+                            <WoundCard nav={nav} history={false} wound={wound} key={wound.id}/>
                         )
                     })
                 }

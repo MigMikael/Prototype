@@ -43,8 +43,8 @@ class Care extends Component {
                     </CardItem> */}
                     
                     <CardItem bordered>
-                        <View style={{ flexDirection: "row" }}>
-                            <View style={{flex:1, flexDirection: "column"}}>
+                        <View style={{ flexDirection: "row", flex: 12 }}>
+                            <View style={{flex:9, flexDirection: "column"}}>
                                 <Text style={{ 
                                     marginTop: "0%",
                                     flex: 1,
@@ -57,20 +57,16 @@ class Care extends Component {
                                 }}>(19/ม.ค./2562 - 11.00)</Text>
                             </View>
                             
-                            <Button primary style={{ flex: 0.3 }} onPress={ () => nav('Assessment')} >
+                            <Button primary style={{ flex: 3, alignItems: 'center' }} onPress={ () => nav('Assessment')} >
                                 <Text>ประเมิน</Text>
                             </Button>
                         </View>
                     </CardItem>
                     
-                    <CardItem bordered>
-                        <Text style={{ 
-                            textDecorationLine: "underline",
-                            marginTop: "1%",
-                            marginBottom: "1%",
-                            fontSize: 19,
-                            fontWeight: 'bold'  
-                        }}>รายการงาน</Text>
+                    <CardItem>
+                        <Text style={{ fontSize: 25, fontWeight: 'bold'}}>
+                            รายการงาน
+                        </Text>
                     </CardItem>
                     {
                         tasks.filter(function(task) {
@@ -84,7 +80,7 @@ class Care extends Component {
                     
                     <CardItem footer style={{ flex: 1}}>
                         <Body style={{ alignItems: 'flex-end' }}>
-                            <Button small primary onPress={ () => nav('ChooseTask')} >
+                            <Button  primary small bordered onPress={ () => nav('ChooseTask')} >
                                 <Text>แก้ไข</Text>
                             </Button>
                         </Body>
@@ -92,14 +88,10 @@ class Care extends Component {
                 </Card>
 
                 <Card>
-                    <CardItem bordered>
-                        <Text style={{ 
-                            textDecorationLine: "underline",
-                            marginTop: "1%",
-                            marginBottom: "1%",
-                            fontSize: 19,
-                            fontWeight: 'bold'  
-                        }}>สถานะผู้ป่วย</Text>
+                    <CardItem>
+                        <Text style={{ fontSize: 25, fontWeight: 'bold'}}>
+                            สถานะผู้ป่วย
+                        </Text>
                     </CardItem>
                     <ListItem bordered>
                         <Icon active name='remove' style={{ color: "#000000"}} />

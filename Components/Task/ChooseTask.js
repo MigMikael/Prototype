@@ -46,8 +46,8 @@ export default class ChooseTask extends Component {
         <LargeHeader hasTab={true} navigation={this.props.navigation}/> 
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
-            <CardItem bordered>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>เลือกงานการดูแลผู้ป่วย</Text>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>เลือกงานการดูแลผู้ป่วย</Text>
             </CardItem>
             {
               tasks.map((task) => {
@@ -62,13 +62,11 @@ export default class ChooseTask extends Component {
               })
             }
             <CardItem>
-              <Left/>
               <Body>
                 <Button dark block onPress={ this.handleNextPress }>
                   <Text>ยืนยัน</Text>
                 </Button>
               </Body>
-              <Right/>
             </CardItem>
           </Card>
         </Content>

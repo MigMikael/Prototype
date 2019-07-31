@@ -67,20 +67,16 @@ export default class TaskListItem extends Component {
 
   render() {
     return (
-        <ListItem bordered>
-            <TouchableOpacity onPress={ this.handlePlusPress }>
-                <Icon active name='add-circle' style={{ color: "#000000"}} />
-            </TouchableOpacity>
+        <ListItem bordered onPress={ this.handlePlusPress } onLongPress={ this.handleMinusPress }>
+            <Icon active name='add-circle' style={{ color: "#000000"}} />
             <Body>
                 <Text>{this.props.task.name}</Text>
             </Body>
             {
                 this.state.count > 0 ? 
-                <TouchableOpacity onLongPress={ this.handleMinusPress }>
-                    <Badge success>
-                        <Text>{this.state.count}</Text>
-                    </Badge>    
-                </TouchableOpacity>
+                <Badge success>
+                    <Text>{this.state.count}</Text>
+                </Badge>    
                 : 
                 <Badge danger>
                     <Text>{this.state.count}</Text>

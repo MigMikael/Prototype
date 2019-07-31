@@ -36,7 +36,7 @@ export default class SmallCard extends Component {
           <Thumbnail source={ imgArray[this.props.patient.id-1] } />
         </Left>
         <Body>
-          <Text style={{ fontSize: 17 }}>{this.props.patient.name} (Braden = {this.props.patient.braden})</Text>
+          <Text style={{ fontSize: 17 }}>{this.props.patient.name} (Braden : {this.props.patient.braden})</Text>
           <Text note>
             AN: {this.props.patient.an}
           </Text>

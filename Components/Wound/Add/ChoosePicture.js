@@ -50,17 +50,18 @@ class ChoosePicture extends Component {
         <SmallHeader navigation={this.props.navigation}/>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card style={{ height: (h*0.7)}}>
-            <CardItem bordered>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>รูปบาดแผล</Text>
+            <CardItem bordered style={{ flexDirection: 'column'}}>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>รูปบาดแผล</Text>
             </CardItem>
-            <CardItem style={{ flexDirection: 'column' }}>
-              <Button primary block onPress={ this.handleTakePicturePress }>
+            <CardItem style={{ flexDirection: 'row' }}>
+              <Button primary block onPress={ this.handleTakePicturePress } style={{ flex: 1 }}>
                 <Text>ถ่ายภาพ</Text>
               </Button>
-              <Button info block >
+              <Button info block style={{ flex: 1 }}>
                 <Text>เลือกรูปจากคลัง</Text>
               </Button>
-
+            </CardItem>
+            <CardItem>
               {
                 imgPath !== "" ? 
                 <ImageBackground source={{ uri: imgPath }} resizeMode="contain" style={{ 
@@ -69,13 +70,24 @@ class ChoosePicture extends Component {
                   aspectRatio: 1
                 }}></ImageBackground>
                 :
-                null
+                <View style={{
+                  height: (h*0.4),
+                  width: '100%',
+                  borderLeftWidth: 1,
+                  borderRightWidth: 1,
+                  borderTopWidth: 1,
+                  borderBottomWidth: 1
+                }} />
               }
             </CardItem>
+            <CardItem>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </Body>
+            </CardItem>
           </Card>
-          <Button dark block style={{ flex: 0.5 }} onPress={ this.handleNextPress }>
-            <Text>ต่อไป</Text>
-          </Button>
         </Content>
       </Container>
     )

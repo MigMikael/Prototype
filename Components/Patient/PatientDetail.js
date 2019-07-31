@@ -5,7 +5,7 @@ import History from '../History/index'
 import Overview from '../Overview/index'
 import LargeHeader from '../Header/LargeHeader'
 import * as Progress from 'react-native-progress';
-import { Platform } from 'react-native';
+import { Platform, Alert } from 'react-native';
 import { 
   Container, 
   Header, 
@@ -42,10 +42,25 @@ class PatientDetail extends Component {
     navigate('HarshPosition')
   }
 
+  renderDialog = () => {
+    return (
+      Alert.alert(
+        'บันทึกข้อมูลเรียบร้อย',
+        null,
+        [
+          {text: 'ตกลง', onPress: () => console.log('OK Pressed')},
+        ],
+        {cancelable: true},
+      )
+    )
+  }
+
   render() {
     const { navigation: { navigate }} = this.props
     const { goBack } = this.props.navigation
     const nav = this.props.navigation
+    const { navigation } = this.props
+    const msg = navigation.getParam('message', '')
 
     const style = {
       headerAndroid: {
@@ -93,6 +108,7 @@ class PatientDetail extends Component {
             <Overview nav={ navigate }/>
           </Tab>
         </Tabs>
+        { msg !== '' ? this.renderDialog() : null }
       </Container>
     );
   }

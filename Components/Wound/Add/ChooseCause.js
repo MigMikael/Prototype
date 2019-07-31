@@ -45,7 +45,7 @@ export default class ChooseCause extends Component {
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
             <CardItem bordered style={{ flexDirection: 'column'}}>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>สาเหตุของการเกิดแผล</Text>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>สาเหตุของการเกิดแผล</Text>
             </CardItem>
             
             <ListItem>
@@ -85,13 +85,11 @@ export default class ChooseCause extends Component {
             </ListItem>
             
             <CardItem>
-              <Left/>
               <Body>
                 <Button dark block onPress={ this.handleNextPress }>
                   <Text>ต่อไป</Text>
                 </Button>
               </Body>
-              <Right/>
             </CardItem>
           </Card>
         </Content>

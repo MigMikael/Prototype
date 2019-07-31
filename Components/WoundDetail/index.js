@@ -53,7 +53,7 @@ class WoundDetail extends Component {
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
             <Card>
                 <CardItem header>
-                    <Text>Pressure Ulcer Healing History</Text>
+                  <Text style={{ fontWeight: 'bold', fontSize: 21 }}>Presure Ulcer Healing History</Text>
                 </CardItem>
                 <CardItem style={{
                     paddingLeft: "2%",
@@ -78,7 +78,6 @@ class WoundDetail extends Component {
                         }}
                         width={ Dimensions.get('window').width * 0.9 }
                         height={220}
-                        yAxisLabel={'$'}
                         chartConfig={{
                             backgroundColor: '#1cc910',
                             backgroundGradientFrom: '#eff3ff',

@@ -22,7 +22,7 @@ export default class BradenCard extends Component {
     render() {
         const nav = this.props.nav
         return (
-            <ListItem bordered style={{ flex:1 }} button onPress={() => nav('BradenDetail')}>
+            <ListItem bordered style={{ flex:4 }} button onPress={() => nav('BradenDetail')}>
                 <Body style={{ flex: 3, flexDirection: 'row' }}>
                     <Text >วันที่ {this.props.braden.day}</Text>
                     <Text style={{ fontWeight: 'bold' }}>  Braden Score: {this.props.braden.score}</Text>

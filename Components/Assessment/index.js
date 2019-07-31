@@ -38,7 +38,6 @@ export default class Setting extends Component {
       { title: "ประเมินการมีกิจกรรม", content: 4 },
       { title: "ประเมินการเคลื่อนไหว", content: 5 },
       { title: "ประเมินภาวะโภชนาการ", content: 6 },
-      { title: "ผลการประเมินด้วยระบบ NAF", content: -1 },
       { title: "การเสียดสี", content: 7 }
     ]
     this.state = {
@@ -308,6 +307,12 @@ export default class Setting extends Component {
             </Body>
             <Right/>
           </ListItem>
+          <ListItem>
+            <Body style={{ flex: 1 }}>
+              <Text style={{ fontWeight: 'bold' }}>ผลการประเมินด้วยระบบ NAF</Text>
+              <Text>Severe Malnutrition ( >= 11 คะแนน)</Text>
+            </Body>
+          </ListItem>
         </View>
       )
     } else if (section.content === 7) {
@@ -340,17 +345,6 @@ export default class Setting extends Component {
         </View>
       )
     }
-    else if (section.content === -1) {
-      comp = (
-        <View>
-          <ListItem>
-            <Body style={{ flex: 1 }}>
-              <Text>Severe Malnutrition ( >= 11 คะแนน)</Text>
-            </Body>
-          </ListItem>
-        </View>
-      )
-    }
     return comp
   }
 
@@ -375,12 +369,12 @@ export default class Setting extends Component {
             </Form>
             <CardItem>
               <Body style={{ alignItems: 'center' }}>
-                <Text style={{ fontSize: 21, fontWeight: 'bold' }}>Braden Score = {this.state.totalScore}</Text>
+                <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Braden Score = {this.state.totalScore}</Text>
               </Body>
             </CardItem>
             <CardItem>
-              <Body style={{ alignItems: 'center' }}>
-                <Button dark onPress={ this.handleNextPress }>
+              <Body>
+                <Button dark block onPress={ this.handleNextPress }>
                   <Text>ต่อไป</Text>
                 </Button>
               </Body>

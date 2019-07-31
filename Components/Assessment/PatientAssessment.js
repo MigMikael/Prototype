@@ -47,7 +47,7 @@ export default class PatientAssessment extends Component {
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
           <Card>
             <CardItem bordered style={{ flexDirection: 'column'}}>
-              <Text style={{ fontSize: 21, fontWeight: 'bold' }}>สถานะผู้ป่วย</Text>
+              <Text style={{ fontSize: 25, fontWeight: 'bold' }}>สถานะผู้ป่วย</Text>
             </CardItem>
             <Separator bordered>
               <Text style={{ fontWeight: 'bold', fontSize: 15 }}>On Medical Device (เลือกได้มากกว่า 1 ข้อ)</Text>
@@ -92,13 +92,11 @@ export default class PatientAssessment extends Component {
               </Body>
             </ListItem>
             <CardItem>
-              <Left/>
               <Body>
                 <Button dark block onPress={ this.handleNextPress }>
                   <Text>ต่อไป</Text>
                 </Button>
               </Body>
-              <Right/>
             </CardItem>
           </Card>
         </Content>
