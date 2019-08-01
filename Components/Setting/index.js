@@ -18,7 +18,10 @@ import {
   Picker,
   List,
   ListItem,
-  Thumbnail
+  Thumbnail,
+  Card,
+  CardItem,
+  CheckBox,
 } from 'native-base';
 
 export default class Setting extends Component {
@@ -33,12 +36,26 @@ export default class Setting extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Setting</Title>
+            <Title>ตั้งค่า</Title>
           </Body>
           <Right />
         </Header>
         <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-          <Text>This is Settings</Text>
+          <Card>
+            <CardItem header bordered>
+              <Body>
+                <Text style={{ fontSize: 23, fontWeight: 'bold' }}>การแจ้งเตือน</Text>
+              </Body>
+            </CardItem>
+            <CardItem header bordered>
+              <Body>
+                <Text>รับการแจ้งเตือน</Text>
+              </Body>
+              <Right>
+                <CheckBox checked={true}/>
+              </Right>
+            </CardItem>
+          </Card>
         </Content>
       </Container>
     )

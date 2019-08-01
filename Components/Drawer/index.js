@@ -7,11 +7,30 @@ import Scan from '../Scan/index'
 import PatientDetail from '../Patient/PatientDetail'
 
 const AppNavigator = createDrawerNavigator({
-  Search,
-  Task,
-  Setting,
-  Login,
-  PatientDetail
+  Search: {
+    screen: Search,
+    navigationOptions: {
+      drawerLabel: 'ค้นหาผู้ป่วย'
+    }
+  },
+  Task: {
+    screen: Task,
+    navigationOptions: {
+      drawerLabel: 'ตารางงาน'
+    }
+  },
+  Setting: {
+    screen: Setting,
+    navigationOptions: {
+      drawerLabel: 'ตั้งค่า'
+    }
+  },
+  Login: {
+    screen: Login,
+    navigationOptions: {
+      drawerLabel: 'ออกจากระบบ'
+    }
+  },
 },
 {
   initialRouteName: 'Search',

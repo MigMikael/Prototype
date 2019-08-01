@@ -110,7 +110,7 @@ class Task extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Task</Title>
+            <Title>ตารางงาน</Title>
           </Body>
           <Right />
         </Header>

@@ -27,12 +27,12 @@ import {
 } from 'native-base';
 
 import img0 from '../../assets/inpitar.jpg'
-import img1 from '../../assets/foot_1.png'
-import img2 from '../../assets/foot_2.png'
-import img3 from '../../assets/foot_3.png'
-import img4 from '../../assets/foot_4.png'
-import img5 from '../../assets/foot_5.png'
-import img6 from '../../assets/foot_6.png'
+import img1 from '../../assets/foot_1_mark.png'
+import img2 from '../../assets/foot_2_mark.png'
+import img3 from '../../assets/foot_3_mark.png'
+import img4 from '../../assets/foot_4_mark.png'
+import img5 from '../../assets/foot_5_mark.png'
+import img6 from '../../assets/foot_6_mark.png'
 
 class WoundCard extends Component {
     constructor(props) {
@@ -89,7 +89,9 @@ class WoundCard extends Component {
           <Card>
             {
                 this.state.showCard ? 
-                    <CardItem button onPress={ () => nav('WoundDetail')} onLongPress={ this.handleLongPress } style={{
+                    <CardItem button onPress={ () => nav('WoundDetail', {
+                        history: this.props.history
+                      })} onLongPress={ this.handleLongPress } style={{
                         paddingLeft: 0,
                         paddingRight: 0,
                         paddingTop: 0,

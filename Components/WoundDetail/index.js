@@ -52,6 +52,7 @@ class WoundDetail extends Component {
   render() {
     const { navigation: { navigate }} = this.props
     const { goBack } = this.props.navigation
+    const history = this.props.navigation.getParam('history', false)
     return (
       <Container>
         <LargeHeader hasTab={false} navigation={this.props.navigation}/>
@@ -68,16 +69,9 @@ class WoundDetail extends Component {
                 }}>
                     <LineChart
                         data={{
-                            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                            labels: ['02/ส.ค.', '03/ส.ค.', '04/ส.ค.', '05/ส.ค.', '06/ส.ค.', '07/ส.ค.'],
                             datasets: [{
-                                data: [
-                                    Math.random() * 100,
-                                    Math.random() * 100,
-                                    Math.random() * 100,
-                                    Math.random() * 100,
-                                    Math.random() * 100,
-                                    Math.random() * 100
-                                ],
+                                data: [2.0, 4.5, 2.8, 3.5, 4.2, 4.3],
                                 color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})` 
                             }]
                         }}
@@ -99,15 +93,22 @@ class WoundDetail extends Component {
                         }}
                     />
                 </CardItem>
-                <CardItem>
-                  <View style={{ flex: 1, flexDirection: 'row' }}>
-                    <Button primary full style={{ flex: 1, justifyContent: 'center' }}>
+                <CardItem bordered>
+                  <Left>
+                    <Button primary style={{ justifyContent: 'center' }}>
                       <Text>ออกรายงาน</Text>
                     </Button>
-                    <Button info full style={{ flex: 1, justifyContent: 'center' }} onPress={ this.handleAssessmentPress }>
+                  </Left>
+                  <Right>
+                  {
+                    history ?
+                    null
+                    :
+                    <Button info style={{ justifyContent: 'center' }} onPress={ this.handleAssessmentPress }>
                       <Text>ประเมินแผล</Text>
                     </Button>
-                  </View>
+                  }
+                  </Right>
                 </CardItem>
             </Card>
             <TouchableOpacity onPress={ this.handleHistoryCardPress }>

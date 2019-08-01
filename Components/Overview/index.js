@@ -52,22 +52,36 @@ class Overview extends Component {
                     }}>
                         <LineChart
                             data={{
-                                labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+                                labels: ['02/ส.ค.', '03/ส.ค.', '04/ส.ค.', '05/ส.ค.', '06/ส.ค.', '07/ส.ค.'],
                                 datasets: [
                                     {
-                                        data: [20, 45, 28, 80, 99, 43],
+                                        data: [2.0, 4.5, 2.8, 3.5, 4.2, 4.3],
                                         strokeWidth: 2,
                                         color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`
                                     },
                                     {
-                                        data: [35, 40, 22, 75, 10, 50],
+                                        data: [3.5, 4.0, 2.2, 7.5, 1.0, 5.0],
                                         strokeWidth: 2,
                                         color: (opacity = 1) => `rgba(255, 0, 0, ${opacity})`
                                     },
                                     {
-                                        data: [55, 67, 70, 90, 45, 23],
+                                        data: [5.5, 6.7, 7.0, 9.0, 4.5, 2.3],
                                         strokeWidth: 2,
                                         color: (opacity = 1) => `rgba(0, 255, 0, ${opacity})`
+                                    },
+                                    {
+                                        data: [1.4, 2.7, 5.0, 6.4, 2.1, 1.0],
+                                        strokeWidth: 2,
+                                        color: (opacity = 1) => `rgba(26, 35, 126, ${opacity})`
+                                    },
+                                    {
+                                        data: [2.8, 3.7, 4.2, 5.5, 6.7, 7.9],
+                                        strokeWidth: 2,
+                                        color: (opacity = 1) => `rgba(245, 127, 23, ${opacity})`
+                                    },{
+                                        data: [4.0, 4.1, 4.5, 3.9, 4.2, 4.3],
+                                        strokeWidth: 2,
+                                        color: (opacity = 1) => `rgba(27, 94, 32, ${opacity})`
                                     },
                                 ]
                             }}
@@ -80,12 +94,12 @@ class Overview extends Component {
                                 decimalPlaces: 2, // optional, defaults to 2dp
                                 color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                                 style: {
-                                    borderRadius: 16
+                                    borderRadius: 0
                                 }
                             }}
                             style={{
-                                marginVertical: 8,
-                                borderRadius: 16
+                                marginVertical: 0,
+                                borderRadius: 0
                             }}
                         />
                     </CardItem>
@@ -102,9 +116,10 @@ class Overview extends Component {
                     }}>
                         <LineChart
                             data={{
-                                labels: ['02/ม.ค.', '03/ม.ค.', '04/ม.ค.', '05/ม.ค.', '06/ม.ค.', '07/ม.ค.'],
+                                labels: ['02/ส.ค.', '03/ส.ค.', '04/ส.ค.', '05/ส.ค.', '06/ส.ค.', '07/ส.ค.'],
                                 datasets: [{
-                                    data: [20, 45, 28, 80, 99, 43]
+                                    data: [9, 8, 7, 8, 10, 13],
+                                    color: (opacity = 1) => `rgba(26, 35, 126, ${opacity})`
                                 }]
                             }}
                             width={ Dimensions.get('window').width * 0.9 }
@@ -116,13 +131,13 @@ class Overview extends Component {
                                 decimalPlaces: 2,
                                 color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                                 style: {
-                                    borderRadius: 16
+                                    borderRadius: 0
                                 }
                             }}
                             bezier
                             style={{
-                                marginVertical: 8,
-                                borderRadius: 16
+                                marginVertical: 0,
+                                borderRadius: 0
                             }}
                         />
                     </CardItem>

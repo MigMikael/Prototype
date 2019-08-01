@@ -30,11 +30,22 @@ import {
 export default class ChooseCause extends Component {
   constructor() {
     super()
+    this.state = {
+      isCheck: [true, false, false, false]
+    }
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
     navigate('ChooseSeverity')
+  }
+
+  handleRadioPress = (id) => {
+    let prevIsCheck = [false, false, false, false]
+    prevIsCheck[id] = !prevIsCheck[id]
+    this.setState({
+      isCheck: prevIsCheck
+    })
   }
 
   render() {
@@ -48,36 +59,36 @@ export default class ChooseCause extends Component {
               <Text style={{ fontSize: 25, fontWeight: 'bold' }}>สาเหตุของการเกิดแผล</Text>
             </CardItem>
             
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(0)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={true} />
+                <Radio selected={this.state.isCheck[0]} onPress={() => this.handleRadioPress(0)} />
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>เกิดจากที่บ้าน</Text>
               </Body>
             </ListItem>    
               
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(1)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={false} />
+                <Radio selected={this.state.isCheck[1]} onPress={() => this.handleRadioPress(1)} />
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>PU Related Medical device</Text>
               </Body>
             </ListItem>
 
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(2)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={false} />
+                <Radio selected={this.state.isCheck[2]} onPress={() => this.handleRadioPress(2)} />
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>Mucosal Membrane Pressure Ulcer</Text>
               </Body>
             </ListItem>
 
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(3)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={false} />
+                <Radio selected={this.state.isCheck[3]} onPress={() => this.handleRadioPress(3)} />
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>อื่นๆ</Text>

@@ -19,29 +19,13 @@ import BradenDetail from '../Overview/BradenDetail'
 import SkinAssessment from '../Assessment/SkinAssessment'
 import TreatmentDetail from '../WoundDetail/TreatmentDetail'
 import Scan from '../Scan/index'
-import Search from '../Search/index'
+import Patient from '../Patient/index'
 
 export default createStackNavigator({
   Scan,
   Task,
   CalendarTask,
-  PatientDetail,
-  Assessment,
-  WoundDetail,
-  HarshPosition,
-  ChoosePosition,
-  AccuratePosition,
-  ChoosePicture,
-  TakePicture,
-  ChooseCause,
-  ChooseSeverity,
-  WoundAssessment,
-  CriteriaGroup,
-  PatientAssessment,
-  ChooseTask,
-  BradenDetail,
-  SkinAssessment,
-  TreatmentDetail
+  Patient
 },
 {
   initialRouteName: 'Task',

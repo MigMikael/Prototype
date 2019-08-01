@@ -112,13 +112,13 @@ class ChooseSeverity extends Component {
                 </Text>
               </CardItem>
             </TouchableOpacity>
-            <CardItem>
+            {/* <CardItem>
               <Body>
                 <Button dark block onPress={ this.handleNextPress }>
                   <Text>ต่อไป</Text>
                 </Button>
               </Body>
-            </CardItem>
+            </CardItem> */}
           </Card>
         </Content>
       </Container>

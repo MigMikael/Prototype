@@ -49,6 +49,11 @@ export default class WoundAssessment extends Component {
       exudate: 0,
       woundBed: 0,
       healingScore: 0,
+      cleansing: 0,
+      firstDressing: 0,
+      secondDressing: 0,
+      thirdDressing: 0,
+      adhersive: 0
     }
   }
 
@@ -138,6 +143,38 @@ export default class WoundAssessment extends Component {
         exudate: prevState.exudate,
         woundBed: newWoundBed,
         healingScore: newScore,
+      }
+    })
+  }
+
+  onCleansingValueChange = (value) => {
+    this.setState(prevState => {
+      return {
+        cleansing: value,
+      }
+    })
+  }
+
+  onFirstDressingChange = (value) => {
+    this.setState(prevState => {
+      return {
+        firstDressing: value,
+      }
+    })
+  }
+
+  onSecondDressingChange = (value) => {
+    this.setState(prevState => {
+      return {
+        secondDressing: value,
+      }
+    })
+  }
+
+  onThirdDressingChange = (value) => {
+    this.setState(prevState => {
+      return {
+        thirdDressing: value,
       }
     })
   }
@@ -296,6 +333,8 @@ export default class WoundAssessment extends Component {
             mode="dropdown"
             iosIcon={<Icon name="arrow-down" />}
             style={{ width: undefined, flex: 1}}
+            selectedValue={this.state.cleansing}
+            onValueChange={this.onCleansingValueChange}
             placeholder="เลือก Cleansing Solution"
             placeholderStyle={{ color: "#bfc6ea" }}
             placeholderIconColor="#007aff">
@@ -315,6 +354,8 @@ export default class WoundAssessment extends Component {
               mode="dropdown"
               iosIcon={<Icon name="arrow-down" />}
               style={{ width: undefined, flex: 1}}
+              selectedValue={this.state.firstDressing}
+              onValueChange={this.onFirstDressingChange}
               placeholder="เลือก 1' Dressing"
               placeholderStyle={{ color: "#bfc6ea" }}
               placeholderIconColor="#007aff">
@@ -333,6 +374,8 @@ export default class WoundAssessment extends Component {
               mode="dropdown"
               iosIcon={<Icon name="arrow-down" />}
               style={{ width: undefined, flex: 1}}
+              selectedValue={this.state.secondDressing}
+              onValueChange={this.onSecondDressingChange}
               placeholder="เลือก 2' Dressing"
               placeholderStyle={{ color: "#bfc6ea" }}
               placeholderIconColor="#007aff">
@@ -351,6 +394,8 @@ export default class WoundAssessment extends Component {
               mode="dropdown"
               iosIcon={<Icon name="arrow-down" />}
               style={{ width: undefined, flex: 1}}
+              selectedValue={this.state.thirdDressing}
+              onValueChange={this.onThirdDressingChange}
               placeholder="เลือก 3' Dressing"
               placeholderStyle={{ color: "#bfc6ea" }}
               placeholderIconColor="#007aff">
@@ -380,9 +425,7 @@ export default class WoundAssessment extends Component {
       )
     } else if (section.content === 3) {
       comp = (
-        
-            <Textarea rowSpan={5} bordered placeholder="หมายเหตุ" />
-          
+        <Textarea rowSpan={5} bordered placeholder="หมายเหตุ" />
       )
     }
     return comp

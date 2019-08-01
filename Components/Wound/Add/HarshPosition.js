@@ -76,37 +76,54 @@ class HarshPosition extends Component {
                   width: (w*0.55),
                 }}/>
               </View>
-              <View style={{ flex: 5 , marginTop: '11%'}}>
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}} onPress={ this.handlePositionPress }>
-                  <Text>2. Ear</Text>
-                </Button>
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+              <View style={{ flex: 5 , marginTop: '11%', flexDirection: 'column'}}>
+                <View style={{ marginBottom: '2%'}}>
+                  <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
+                    <Text>2. Ear</Text>
+                  </Button>
+                </View>
+
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>5. Shoulder</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>7. Ilac Crest</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>10. Trochanter</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%', alignContent: 'flex-start'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>11. Knee</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>12. Melleolus</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>14. Tole</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{  alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>15. Other</Text>
                 </Button>
+                </View>
               </View>
             </View>
             :
@@ -118,39 +135,54 @@ class HarshPosition extends Component {
                 }}/>
               </View>
               <View style={{ flex: 5 , marginTop: '11%'}}>
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}} onPress={ this.handlePositionPress }>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>1. Occiput</Text>
                 </Button>
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                </View>
+
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>3. Scapula</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>4. Spinous Process</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}></View>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>6. Elbow</Text>
                 </Button>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%', alignContent: 'flex-start'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>8. Sacrum/Coccyx</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>9. Ischial Tuberosity</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}} onPress={ this.handlePositionPress }>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>13. Heel</Text>
                 </Button>
+                </View>
 
-                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '1%'}}>
+                <View style={{ marginBottom: '2%'}}>
+                <Button primary rounded block style={{ alignSelf: 'flex-start', marginBottom: '0%'}} onPress={ this.handlePositionPress }>
                   <Text>15. Other</Text>
                 </Button>
+                </View>
               </View>
             </View>
-
           }
         </Content>
       </Container>

@@ -78,9 +78,9 @@ class Scan extends Component {
             </View>
           }
           bottomContent={
-            <TouchableOpacity style={styles.buttonTouchable} onPress={() => this.props.navigation.navigate("Search")}>
-              <Text style={styles.buttonText}>Back</Text>
-            </TouchableOpacity>
+            <Button primary block style={styles.buttonTouchable} onPress={() => this.props.navigation.navigate("Search")}>
+              <Text>กลับ</Text>
+            </Button>
           }
           reactivate={true}
           showMarker={true}

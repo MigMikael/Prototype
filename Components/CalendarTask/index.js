@@ -49,7 +49,7 @@ class CalendarTask extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Task</Title>
+            <Title>ตารางงาน</Title>
           </Body>
           <Right />
         </Header>
@@ -96,9 +96,9 @@ class CalendarTask extends Component {
           </Card>
           <ScrollView horizontal={true}>
               <Card style={{ width: (w*0.85), height: h }}>
-                <CardItem header bordered style={{ backgroundColor: "#fff59d" }}>
+                <CardItem header bordered style={{ backgroundColor: "#81d4fa" }}>
                   <Body>
-                    <Text style={{ color: "#000000" }}>Monday 1</Text>
+                    <Text style={{ color: "#000000" }}>ศุกร์ 2 (วันนี้)</Text>
                   </Body>
                   <Right>
                     <Text>(0/3)</Text>
@@ -116,89 +116,9 @@ class CalendarTask extends Component {
               </Card>
 
               <Card style={{ width: (w*0.85), height: h }}>
-                <CardItem header bordered style={{ backgroundColor: "#f48fb1" }}>
-                  <Body>
-                    <Text style={{ color: "#000000" }}>Tuesday 2</Text>
-                  </Body>
-                  <Right>
-                    <Text>(0/3)</Text>
-                  </Right>
-                </CardItem>
-                <List>
-                {
-                  patients.filter((patient) => {
-                    return patient.braden < 9
-                  }).map((patient) => {
-                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
-                  })
-                }
-                </List>
-              </Card>
-
-              <Card style={{ width: (w*0.85), height: h }}>
-                <CardItem header bordered style={{ backgroundColor: "#a5d6a7" }}>
-                  <Body>
-                    <Text style={{ color: "#000000" }}>Wednesday 3</Text>
-                  </Body>
-                  <Right>
-                    <Text>(0/3)</Text>
-                  </Right>
-                </CardItem>
-                <List>
-                {
-                  patients.filter((patient) => {
-                    return patient.braden < 5
-                  }).map((patient) => {
-                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
-                  })
-                }
-                </List>
-              </Card>
-
-              <Card style={{ width: (w*0.85), height: h }}>
-                <CardItem header bordered style={{ backgroundColor: "#ffcc80" }}>
-                  <Body>
-                    <Text style={{ color: "#000000" }}>Thursday 4</Text>
-                  </Body>
-                  <Right>
-                    <Text>(0/3)</Text>
-                  </Right>
-                </CardItem>
-                <List>
-                {
-                  patients.filter((patient) => {
-                    return patient.braden < 9
-                  }).map((patient) => {
-                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
-                  })
-                }
-                </List>
-              </Card>
-
-              <Card style={{ width: (w*0.85), height: h }}>
-                <CardItem header bordered style={{ backgroundColor: "#81d4fa" }}>
-                  <Body>
-                    <Text style={{ color: "#000000" }}>Friday 5</Text>
-                  </Body>
-                  <Right>
-                    <Text>(0/3)</Text>
-                  </Right>
-                </CardItem>
-                <List>
-                {
-                  patients.filter((patient) => {
-                    return patient.braden < 5
-                  }).map((patient) => {
-                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
-                  })
-                }
-                </List>
-              </Card>
-
-              <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#b39ddb" }}>
                   <Body>
-                    <Text style={{ color: "#000000" }}>Saturday 6</Text>
+                    <Text style={{ color: "#000000" }}>เสาร์ 3</Text>
                   </Body>
                   <Right>
                     <Text>(0/3)</Text>
@@ -218,7 +138,7 @@ class CalendarTask extends Component {
               <Card style={{ width: (w*0.85), height: h }}>
                 <CardItem header bordered style={{ backgroundColor: "#e57373" }}>
                   <Body>
-                    <Text style={{ color: "#000000" }}>Sunday 7</Text>
+                    <Text style={{ color: "#000000" }}>อาทิตย์ 4</Text>
                   </Body>
                   <Right>
                     <Text>(0/3)</Text>
@@ -228,6 +148,86 @@ class CalendarTask extends Component {
                 {
                   patients.filter((patient) => {
                     return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.85), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#fff59d" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>จันทร์ 5</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.85), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#f48fb1" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>อังคาร 6</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 9
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.85), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#a5d6a7" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>พุธ 7</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 5
+                  }).map((patient) => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
+                  })
+                }
+                </List>
+              </Card>
+
+              <Card style={{ width: (w*0.85), height: h }}>
+                <CardItem header bordered style={{ backgroundColor: "#ffcc80" }}>
+                  <Body>
+                    <Text style={{ color: "#000000" }}>พฤหัส 8</Text>
+                  </Body>
+                  <Right>
+                    <Text>(0/3)</Text>
+                  </Right>
+                </CardItem>
+                <List>
+                {
+                  patients.filter((patient) => {
+                    return patient.braden < 9
                   }).map((patient) => {
                     return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
                   })

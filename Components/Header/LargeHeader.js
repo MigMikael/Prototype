@@ -59,17 +59,23 @@ class LargeHeader extends Component {
     return (
       <Header style={{ height: 90 }} hasTabs={ this.props.hasTabs }>
         <Left style={{ flexDirection: 'row', flex: 29 }}>
-          <Button transparent onPress={() => goBack()}>
+          <Button transparent onPress={() => goBack(null)}>
             <Icon name='md-arrow-round-back' />
           </Button>
-          <Thumbnail source={ require('../../assets/inpitar.jpg') } />
+          <Thumbnail source={ require('../../assets/2.jpg') } />
           <View style={{ 
             flexDirection: 'column',
             marginLeft: "5%"
           }}>
-            <Text style={ Platform.OS === "android" ? style.headerAndroid: style.headerIos }>พีรวิชญ์ อรรถชิตสถาพร</Text>
-            <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>HN 0958777-1  AN 0958029-1 ชาย 36 ปี</Text>
-            <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>ตึก 2008 พิเศษ</Text>
+            <Text style={ Platform.OS === "android" ? style.headerAndroid: style.headerIos }>
+            มาศิตา ตฤณนิธิ
+            </Text>
+            <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>
+              HN 0958029-1  AN 0958029-1 หญิง 72 ปี
+            </Text>
+            <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>
+              ตึก 2008 พิเศษ
+            </Text>
             {/* <View style={{ flexDirection: 'row', marginTop: "1%", paddingTop: '1%', paddingBottom: '1%' }}>
               <Text style={ Platform.OS === "android" ? style.subHeaderAndroid: style.subHeaderIos }>20%</Text>
               <View style={{ paddingTop: "2%", paddingBottom: "1%" }}>

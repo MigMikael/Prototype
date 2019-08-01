@@ -27,7 +27,7 @@ class TakePicture extends Component {
   takePicture = async() => {
     if (this.camera) {
       const options = { 
-        quality: 0.5, 
+        quality: 0.2, 
         base64: true,
         fixOrientation: true
       };

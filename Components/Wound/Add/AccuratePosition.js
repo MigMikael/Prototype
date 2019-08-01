@@ -46,13 +46,13 @@ class AccuratePosition extends Component {
             <CardItem bordered style={{ flexDirection: 'column'}}>
               <Text style={{ fontSize: 25, fontWeight: 'bold' }}>เลือกตำแหน่งแผล</Text>
             </CardItem>
-            <TouchableOpacity onPress={ this.handlePositionPress }>
-              <Image source={ require('../../../assets/specific_body_part.png') } resizeMode="contain" style={{
+            {/* <TouchableOpacity onPress={ this.handlePositionPress }> */}
+              <Image source={ require('../../../assets/foot_1_mark.png') } resizeMode="contain" style={{
                 height: undefined,
                 width: '100%',
                 aspectRatio: 1
               }}/>
-            </TouchableOpacity>
+            {/* </TouchableOpacity> */}
             <CardItem>
               <Body>
                 <Button dark block onPress={ this.handlePositionPress }>

@@ -43,7 +43,7 @@ class SmallHeader extends Component {
         </Left>
         <Body style={{ paddingLeft: 0, marginLeft: 0, flex: 8, alignContent: 'flex-start' }}>
           <Text style={ Platform.OS === "android" ? style.headerAndroid: style.headerIos }>
-          0958029-1 พีรวิชญ์ อรรถชิตสถาพร 36 ปี
+          0958029-1 มาศิตา ตฤณนิธิ 72 ปี
           </Text>
         </Body>
       </Header>
