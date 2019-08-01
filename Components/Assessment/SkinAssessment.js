@@ -30,11 +30,23 @@ import {
 export default class SkinAssessment extends Component {
   constructor() {
     super()
+
+    this.state = {
+      isCheck: [true, false, false]
+    }
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
     navigate('PatientAssessment')
+  }
+
+  handleRadioPress = (id) => {
+    let prevIsCheck = [false, false, false]
+    prevIsCheck[id] = !prevIsCheck[id]
+    this.setState({
+      isCheck: prevIsCheck
+    })
   }
 
   render() {
@@ -49,27 +61,27 @@ export default class SkinAssessment extends Component {
               <Text>(ไม่ใช่ปุ่มกระดูก)</Text>
             </CardItem>
             
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(0)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={true} />
+                <Radio selected={this.state.isCheck[0]} onPress={() => this.handleRadioPress(0)}/>
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>ไม่พบ</Text>
               </Body>
             </ListItem>    
               
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(1)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={false} />
+                <Radio selected={this.state.isCheck[1]} onPress={() => this.handleRadioPress(1)}/>
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>IAD Category 1</Text>
               </Body>
             </ListItem>
 
-            <ListItem>
+            <ListItem onPress={() => this.handleRadioPress(2)}>
               <Left style={{ flex: 1 }}>
-                <Radio selected={false} />
+                <Radio selected={this.state.isCheck[2]} onPress={() => this.handleRadioPress(2)}/>
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>IAD Category 2</Text>

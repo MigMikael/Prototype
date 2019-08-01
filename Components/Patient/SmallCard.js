@@ -18,6 +18,7 @@ import img4 from '../../assets/4.jpg'
 import img5 from '../../assets/5.jpg'
 import img6 from '../../assets/6.jpg'
 import img7 from '../../assets/7.jpg'
+import img8 from '../../assets/8.jpg'
 import { thisExpression } from '@babel/types';
 
 export default class SmallCard extends Component {
@@ -28,7 +29,7 @@ export default class SmallCard extends Component {
 
   render() {
     const nav = this.props.nav
-    const imgArray = [img1, img2, img3, img4, img5, img6, img7]
+    const imgArray = [img1, img2, img3, img4, img5, img6, img7, img8]
 
     return (
       <ListItem avatar onPress={ () => nav('PatientDetail') }>
@@ -36,7 +37,7 @@ export default class SmallCard extends Component {
           <Thumbnail source={ imgArray[this.props.patient.id-1] } />
         </Left>
         <Body>
-          <Text style={{ fontSize: 17 }}>{this.props.patient.name} (Braden : {this.props.patient.braden})</Text>
+          <Text>{this.props.patient.name} (Braden : {this.props.patient.braden})</Text>
           <Text note>
             AN: {this.props.patient.an}
           </Text>

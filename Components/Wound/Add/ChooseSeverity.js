@@ -32,12 +32,13 @@ const h = Dimensions.get('window').height; //full height
 
 const styles = {
   circle: {
-    width: 70,
-    height: 70,
-    borderRadius: 70/2,
+    width: 60,
+    height: 60,
+    borderRadius: 60/2,
   },
   text: {
     paddingStart: "3%",
+    flexWrap: 'wrap'
   }
 }
 

@@ -53,6 +53,13 @@ class AccuratePosition extends Component {
                 aspectRatio: 1
               }}/>
             </TouchableOpacity>
+            <CardItem>
+              <Body>
+                <Button dark block onPress={ this.handlePositionPress }>
+                  <Text>ต่อไป</Text>
+                </Button>
+              </Body>
+            </CardItem>
           </Card>
         </Content>
       </Container>

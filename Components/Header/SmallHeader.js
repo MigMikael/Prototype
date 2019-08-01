@@ -36,14 +36,14 @@ class SmallHeader extends Component {
 
     return (
       <Header>
-        <Left style={{ flex: 1 }}>
+        <Left style={{ flex: 1, paddingRight: 0, marginRight: 0 }}>
           <Button transparent onPress={() => goBack()}>
             <Icon name='md-arrow-round-back' />
           </Button>
         </Left>
-        <Body style={{ paddingLeft: 0, flex: 4 }}>
+        <Body style={{ paddingLeft: 0, marginLeft: 0, flex: 8, alignContent: 'flex-start' }}>
           <Text style={ Platform.OS === "android" ? style.headerAndroid: style.headerIos }>
-          0958029-1 นาย รักษา หายโดยไว 36 ปี
+          0958029-1 พีรวิชญ์ อรรถชิตสถาพร 36 ปี
           </Text>
         </Body>
       </Header>

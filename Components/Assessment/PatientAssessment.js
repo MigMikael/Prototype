@@ -32,11 +32,32 @@ import {
 export default class PatientAssessment extends Component {
   constructor() {
     super()
+    this.state = {
+      medicalDeviceList: medicalDevices,
+      incontinentList: [false, false, false, true]
+    }
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
     navigate('ChooseTask')
+  }
+
+  handleCheckboxPress = (id) => {
+    let oldList = this.state.medicalDeviceList
+    oldList[id-1].isCheck = !oldList[id-1].isCheck
+
+    this.setState({
+      medicalDeviceList: oldList
+    })
+  }
+
+  handleRadioPress = (id) => {
+    let oldList = [false, false, false, false]
+    oldList[id] = !oldList[id]
+    this.setState({
+      incontinentList: oldList
+    })
   }
 
   render() {
@@ -53,10 +74,10 @@ export default class PatientAssessment extends Component {
               <Text style={{ fontWeight: 'bold', fontSize: 15 }}>On Medical Device (เลือกได้มากกว่า 1 ข้อ)</Text>
             </Separator>   
             {
-              medicalDevices.map((device) => {
+              this.state.medicalDeviceList.map((device) => {
                 return (
-                  <ListItem key={device.id}>
-                    <CheckBox checked={device.isCheck} />
+                  <ListItem key={device.id} onPress={() => this.handleCheckboxPress(device.id)}>
+                    <CheckBox checked={device.isCheck} onPress={() => this.handleCheckboxPress(device.id)}/>
                     <Body>
                       <Text>{device.name}</Text>
                     </Body>
@@ -67,26 +88,26 @@ export default class PatientAssessment extends Component {
             <Separator bordered>
               <Text style={{ fontWeight: 'bold', fontSize: 15  }}>ปัญหา Incontinent</Text>
             </Separator>
-            <ListItem>
-              <Radio selected={false} />
+            <ListItem onPress={() => this.handleRadioPress(0)}>
+              <Radio selected={this.state.incontinentList[0]} onPress={() => this.handleRadioPress(0)}/>
               <Body>
                 <Text>ไม่มี</Text>
               </Body>
             </ListItem>
-            <ListItem>
-              <Radio selected={false} />
+            <ListItem onPress={() => this.handleRadioPress(1)}>
+              <Radio selected={this.state.incontinentList[1]} onPress={() => this.handleRadioPress(1)}/>
               <Body>
                 <Text>กลั้นปัสสาวะไม่ได้</Text>
               </Body>
             </ListItem>
-            <ListItem>
-              <Radio selected={false} />
+            <ListItem onPress={() => this.handleRadioPress(2)}>
+              <Radio selected={this.state.incontinentList[2]} onPress={() => this.handleRadioPress(2)}/>
               <Body>
                 <Text>กลั้นอุจจาระไม่ได้</Text>
               </Body>
             </ListItem>
-            <ListItem>
-              <Radio selected={true} />
+            <ListItem onPress={() => this.handleRadioPress(3)}>
+              <Radio selected={this.state.incontinentList[3]} onPress={() => this.handleRadioPress(3)}/>
               <Body>
                 <Text>กลั้นอุจจาระและปัสสาวะไม่ได้</Text>
               </Body>

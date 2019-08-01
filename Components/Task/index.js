@@ -17,8 +17,12 @@ import PatientAssessment from '../Assessment/PatientAssessment'
 import ChooseTask from '../Task/ChooseTask'
 import BradenDetail from '../Overview/BradenDetail'
 import SkinAssessment from '../Assessment/SkinAssessment'
+import TreatmentDetail from '../WoundDetail/TreatmentDetail'
+import Scan from '../Scan/index'
+import Search from '../Search/index'
 
 export default createStackNavigator({
+  Scan,
   Task,
   CalendarTask,
   PatientDetail,
@@ -36,7 +40,8 @@ export default createStackNavigator({
   PatientAssessment,
   ChooseTask,
   BradenDetail,
-  SkinAssessment
+  SkinAssessment,
+  TreatmentDetail
 },
 {
   initialRouteName: 'Task',

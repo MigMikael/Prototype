@@ -4,16 +4,17 @@ import Search from '../Search/index';
 import Task from '../Task/index';
 import Setting from '../Setting/index';
 import Scan from '../Scan/index'
+import PatientDetail from '../Patient/PatientDetail'
 
 const AppNavigator = createDrawerNavigator({
   Search,
   Task,
   Setting,
   Login,
-  Scan
+  PatientDetail
 },
 {
-  initialRouteName: 'Login',
+  initialRouteName: 'Search',
 });
 
 export default createAppContainer(AppNavigator);

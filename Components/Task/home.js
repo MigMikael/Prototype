@@ -33,7 +33,8 @@ class Task extends Component {
       { title: "Bradon Score : <= 9",  content: 1 },
       { title: "Bradon Score : 10-12", content: 2 },
       { title: "Bradon Score : 13-14", content: 3 },
-      { title: "Bradon Score : 15-18", content: 4 }
+      { title: "Bradon Score : 15-18", content: 4 },
+      { title: "Bradon Score : > 18", content: 5 }
     ]
   }
 
@@ -78,9 +79,13 @@ class Task extends Component {
       patientBySection = patients.filter(function(patient) {
         return patient.braden >= 13 && patient.braden <= 14 
       })
+    } else if (section.content === 4){
+      patientBySection = patients.filter(function(patient) {
+        return patient.braden >= 15 && patient.braden <= 18
+      })
     } else {
       patientBySection = patients.filter(function(patient) {
-        return patient.braden >= 15
+        return patient.braden >= 19
       })
     }
     return (

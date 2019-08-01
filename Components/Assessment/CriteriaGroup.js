@@ -30,11 +30,24 @@ import {
 export default class CriteriaGroup extends Component {
   constructor() {
     super()
+    this.state = {
+      risk: riskCriteria
+    }
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
     navigate('SkinAssessment')
+  }
+
+  handleCheckboxPress = (id) => {
+    console.log(id);
+    let riskArr = this.state.risk
+    riskArr[id - 1].isCheck = !riskArr[id - 1].isCheck 
+
+    this.setState({
+      risk: riskArr
+    })
   }
 
   render() {
@@ -49,10 +62,10 @@ export default class CriteriaGroup extends Component {
               <Text>(เลือกได้มากกว่า 1 ข้อ)</Text>
             </CardItem>
             {
-              riskCriteria.map((criteria) => {
+              this.state.risk.map((criteria) => {
                 return (
-                  <ListItem key={criteria.id}>
-                    <CheckBox checked={criteria.isCheck} />
+                  <ListItem key={criteria.id} onPress={() => this.handleCheckboxPress(criteria.id)}>
+                    <CheckBox checked={criteria.isCheck} onPress={() => this.handleCheckboxPress(criteria.id)} />
                     <Body>
                       <Text>{criteria.criteria}</Text>
                     </Body>

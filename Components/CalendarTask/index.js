@@ -107,7 +107,7 @@ class CalendarTask extends Component {
                 <List>
                 {
                   patients.filter((patient) => {
-                    return patient.braden < 18
+                    return patient.braden < 23
                   }).map((patient) => {
                     return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
                   })

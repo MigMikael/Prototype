@@ -30,12 +30,25 @@ import {
 export default class ChooseTask extends Component {
   constructor() {
     super()
+
+    this.state = {
+      taskList : tasks
+    }
   }
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
     navigate('PatientDetail', {
       message: "assessment success"
+    })
+  }
+
+  handleCheckBoxPress = (id) => {
+    let oldList = this.state.taskList
+    oldList[id-1].isCheck = !oldList[id-1].isCheck
+
+    this.setState({
+      taskList: oldList
     })
   }
 
@@ -50,10 +63,10 @@ export default class ChooseTask extends Component {
               <Text style={{ fontSize: 25, fontWeight: 'bold' }}>เลือกงานการดูแลผู้ป่วย</Text>
             </CardItem>
             {
-              tasks.map((task) => {
+              this.state.taskList.map((task) => {
                 return (
-                  <ListItem key={task.id}>
-                    <CheckBox checked={task.isCheck} />
+                  <ListItem key={task.id} onPress={() => this.handleCheckBoxPress(task.id)}>
+                    <CheckBox checked={task.isCheck} onPress={() => this.handleCheckBoxPress(task.id)} />
                     <Body>
                       <Text>{task.code}  {task.name}</Text>
                     </Body>

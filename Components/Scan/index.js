@@ -2,11 +2,26 @@ import React, { Component } from 'react';
 
 import {
   StyleSheet,
-  Text,
   TouchableOpacity,
-  Linking,
-  View
+  Linking
 } from 'react-native';
+
+import { 
+  Container, 
+  Header, 
+  Content, 
+  Form, 
+  Item, 
+  Input,
+  Left, 
+  Right, 
+  Body,
+  Button,
+  Icon,
+  Title,
+  Text,
+  View
+} from 'native-base';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
  
@@ -26,6 +41,9 @@ class Scan extends Component {
     this.setState({
       data: e.data
     })
+
+    const { navigation } = this.props;
+    navigation.navigate('PatientDetail')
   }
 
   componentDidMount() {
@@ -45,6 +63,7 @@ class Scan extends Component {
 
   render() {
     const { hasCameraPermission, focusedScreen } = this.state;
+    const { openDrawer, goBack } = this.props.navigation
     if (hasCameraPermission === null) {
       return <View />;
     } else if (hasCameraPermission === false) {
@@ -59,8 +78,8 @@ class Scan extends Component {
             </View>
           }
           bottomContent={
-            <TouchableOpacity style={styles.buttonTouchable}>
-              <Text style={styles.buttonText}>OK. Got it!</Text>
+            <TouchableOpacity style={styles.buttonTouchable} onPress={() => this.props.navigation.navigate("Search")}>
+              <Text style={styles.buttonText}>Back</Text>
             </TouchableOpacity>
           }
           reactivate={true}

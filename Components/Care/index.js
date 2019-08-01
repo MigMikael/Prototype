@@ -54,17 +54,19 @@ class Care extends Component {
                                 <Text style={{ 
                                     marginBottom: "1%",
                                     flex: 1,  
-                                }}>(19/ม.ค./2562 - 11.00)</Text>
+                                }}>(วันประเมิน 19/ม.ค./2562 - 11.00)</Text>
                             </View>
                             
-                            <Button primary style={{ flex: 3, alignItems: 'center' }} onPress={ () => nav('Assessment')} >
-                                <Text>ประเมิน</Text>
-                            </Button>
+                            <View style={{ flex: 3 }}>
+                                <Button primary onPress={ () => nav('Assessment')} >
+                                    <Text>ประเมิน</Text>
+                                </Button>
+                            </View>
                         </View>
                     </CardItem>
                     
                     <CardItem>
-                        <Text style={{ fontSize: 25, fontWeight: 'bold'}}>
+                        <Text style={{ fontSize: 21, fontWeight: 'bold'}}>
                             รายการงาน
                         </Text>
                     </CardItem>
@@ -89,7 +91,7 @@ class Care extends Component {
 
                 <Card>
                     <CardItem>
-                        <Text style={{ fontSize: 25, fontWeight: 'bold'}}>
+                        <Text style={{ fontSize: 21, fontWeight: 'bold'}}>
                             สถานะผู้ป่วย
                         </Text>
                     </CardItem>

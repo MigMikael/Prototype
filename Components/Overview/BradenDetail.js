@@ -46,63 +46,63 @@ export default class BradenDetail extends Component {
               <Text style={{ fontSize: 25, fontWeight: 'bold'}}>Score : 13 </Text>
             </CardItem>
             <ListItem bordered>                      
-              <Body>
-                <Text style={{ fontWeight: 'bold'}}>การรับรู้ : </Text>
+              <Body style={{ flex: 9}}>
+                <Text style={{ fontWeight: 'bold' }}>การรับรู้ : </Text>
                 <Text>มี Pain stimuli แต่สื่อสารไม่ได้ </Text>
               </Body>
-              <Badge success>
-                <Text>2</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>2</Text>
+              </Right>
             </ListItem>
 
             <ListItem bordered>                      
-              <Body>
+              <Body style={{ flex: 9}}>
                 <Text style={{ fontWeight: 'bold'}}>ความชื้นของผิวหนัง : </Text>
                 <Text>เปียกชุ่มตลอด เปลี่ยนผ้า1ครั้ง/เวร</Text>
               </Body>
-              <Badge success>
-                <Text>2</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>2</Text>
+              </Right>
             </ListItem>
 
             <ListItem bordered>                      
-              <Body>
+              <Body style={{ flex: 9}}>
                 <Text style={{ fontWeight: 'bold'}}>การมีกิจกรรม : </Text>
                 <Text>เดินได้ระยะสั้นต้องพยุง</Text>
               </Body>
-              <Badge success>
-                <Text>3</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>3</Text>
+              </Right>
             </ListItem>
 
             <ListItem bordered>                      
-              <Body>
+              <Body style={{ flex: 9}}>
                 <Text style={{ fontWeight: 'bold'}}>การเคลื่อนไหว : </Text>
                 <Text>ต้องช่วยบ้าง ขะยบแขนขาได้</Text>
               </Body>
-              <Badge success>
-                <Text>3</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>3</Text>
+              </Right>
             </ListItem>
 
             <ListItem bordered>                      
-              <Body>
+              <Body style={{ flex: 9}}>
                 <Text style={{ fontWeight: 'bold'}}>ภาวะโภชนาการ : </Text>
                 <Text>NPO กินได้1/3ถาด(ทางปาก)</Text>
               </Body>
-              <Badge success>
-                <Text>1</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>1</Text>
+              </Right>
             </ListItem>
 
             <ListItem bordered>                      
-              <Body>
+              <Body style={{ flex: 9}}>
                 <Text style={{ fontWeight: 'bold'}}>การเสียดสี : </Text>
                 <Text>จัดท่าได้อย่างอิสระ</Text>
               </Body>
-              <Badge success>
-                <Text>3</Text>
-              </Badge>
+              <Right style={{ flex: 1 }}>
+                <Text style={{ fontSize: 35, fontWeight: 'bold' }}>3</Text>
+              </Right>
             </ListItem>
           </Card>
 

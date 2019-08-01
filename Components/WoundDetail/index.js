@@ -35,6 +35,7 @@ import {
 
 import { Dimensions } from 'react-native'
 import Wound from '../Wound';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class WoundDetail extends Component {
 
@@ -43,10 +44,14 @@ class WoundDetail extends Component {
     navigate('ChoosePicture')
   }
 
+  handleHistoryCardPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('TreatmentDetail')
+  }
+
   render() {
     const { navigation: { navigate }} = this.props
     const { goBack } = this.props.navigation
-    const nav = this.props.nav
     return (
       <Container>
         <LargeHeader hasTab={false} navigation={this.props.navigation}/>
@@ -105,9 +110,15 @@ class WoundDetail extends Component {
                   </View>
                 </CardItem>
             </Card>
-            <HistoryCard />
-            <HistoryCard />
-            <HistoryCard />
+            <TouchableOpacity onPress={ this.handleHistoryCardPress }>
+              <HistoryCard />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={ this.handleHistoryCardPress }>
+              <HistoryCard />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={ this.handleHistoryCardPress }>
+              <HistoryCard />
+            </TouchableOpacity>
         </Content>
       </Container>
     );

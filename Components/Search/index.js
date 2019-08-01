@@ -24,6 +24,11 @@ class Search extends Component {
     navigate('Scan')
   }
 
+  handlePatientPress = () => {
+    const { navigation: { navigate }} = this.props
+    navigate('PatientDetail')
+  }
+
   componentDidMount() {
     console.log('Search DID MOUNT');
   }
@@ -54,7 +59,7 @@ class Search extends Component {
           <Form style={{ marginTop: "5%", marginStart: "5%", marginEnd: "5%"}}>
             <Item regular>
               <Input placeholder='HN/AN'/>
-              <Icon active name='search'/>
+              <Icon active name='search' onPress={this.handlePatientPress}/>
             </Item>
           </Form>
 

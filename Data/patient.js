@@ -83,6 +83,18 @@ const patients = [
     department: "แผนกผู้ป่วยใน",
     gender: 'female'
   },
+  {
+    id: 8,
+    name: "ดิเรก อิสรินทร์",
+    age: 65,
+    hn: "0958029-1",
+    an: "0958029-1",
+    braden: 19,
+    avatar: "../../assets/8.jpg",
+    isTakeCare: false,
+    department: "แผนกผู้ป่วยใน",
+    gender: 'male'
+  },
 ]
 /* 
 
