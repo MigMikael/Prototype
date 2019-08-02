@@ -101,7 +101,7 @@ class PatientDetail extends Component {
               <Icon name="add" />
             </Fab>
           </Tab>
-          <Tab heading="ประวัติ">
+          <Tab heading="จำหน่าย">
             <History nav={ navigate } />
           </Tab>
           <Tab heading="ภาพรวม">

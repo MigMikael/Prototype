@@ -5,6 +5,7 @@ import Task from '../Task/index';
 import Setting from '../Setting/index';
 import Scan from '../Scan/index'
 import PatientDetail from '../Patient/PatientDetail'
+import Task2 from '../Task/home2'
 
 const AppNavigator = createDrawerNavigator({
   Search: {
@@ -31,6 +32,12 @@ const AppNavigator = createDrawerNavigator({
       drawerLabel: 'ออกจากระบบ'
     }
   },
+  Task2: {
+    screen: Task2,
+    navigationOptions: {
+      drawerLabel: 'ตารางงาน2'
+    }
+  }
 },
 {
   initialRouteName: 'Search',

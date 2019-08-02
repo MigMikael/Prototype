@@ -5,7 +5,7 @@ const patients = [
     age: 71,
     hn: "0958029-1",
     an: "0958029-1",
-    braden: 4,
+    braden: 6,
     avatar: "../../assets/1.jpg",
     isTakeCare: false,
     department: "แผนกอายุรกรรม",
