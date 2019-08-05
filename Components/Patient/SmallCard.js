@@ -59,9 +59,9 @@ export default class SmallCard extends Component {
     const imgArray = [img1, img2, img3, img4, img5, img6, img7, img8]
     const style = {
       circle: {
-        width: 67,
-        height: 67,
-        borderRadius: 67/2,
+        width: 68,
+        height: 68,
+        borderRadius: 68/2,
         justifyContent: 'center', 
         alignItems: 'center'
       },
@@ -69,12 +69,10 @@ export default class SmallCard extends Component {
     const color = this.handleGroupColor(this.props.patient.braden)
     const bradenStr = this.handleBraden(this.props.patient.braden)
     return (
-      <ListItem avatar onPress={ () => nav('PatientDetail') } style={{ 
-        paddingLeft: '1%', 
-        marginLeft: '1%', 
-        paddingTop: 0, 
-        marginTop: 0,
-        paddingRight: 0,
+      <ListItem onPress={ () => nav('PatientDetail') } style={{ 
+        paddingLeft: '2%', 
+        marginLeft: '2%', 
+        paddingRight: '1%',
         marginRight: 0 
       }}>
         <Left style={{ flex: 6 }}>
@@ -83,7 +81,7 @@ export default class SmallCard extends Component {
           </View>
         </Left>
         <Body style={{ flex: 17 }}>
-          <Text>{this.props.patient.name}</Text>
+          <Text style={{ fontWeight: 'bold' , fontSize: 19 }}>{this.props.patient.name}</Text>
           <Text note>
             AN: {this.props.patient.an}
           </Text>
@@ -92,17 +90,17 @@ export default class SmallCard extends Component {
           </Text>
         </Body>
         <View style={{
-          height: "80%",
+          height: "100%",
           borderRightColor: "#e5e5e5",
           borderRightWidth: 1,
-          marginRight: "1%"
+          marginRight: "3%",
         }}/>
         <Right style={{ flex: 5, alignItems: 'flex-start' }}>
           <Text note style={{ paddingBottom: '2%'}}>
             Braden:
           </Text>
           <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: '5%' }}>
-            <Text style={{ fontSize: 19, fontWeight: 'bold', paddingRight: '10%' }}>{bradenStr}</Text>
+            <Text style={{ fontSize: 21, fontWeight: 'bold', paddingRight: '10%' }}>{bradenStr}</Text>
             <View>
               {
                 this.props.patient.isTakeCare ? 

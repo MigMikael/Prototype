@@ -113,7 +113,7 @@ class CalendarTask extends Component {
                 <List>
                 {
                   patients.filter((patient) => {
-                    return patient.braden < 5
+                    return patient.braden <= 6
                   }).map((patient) => {
                     return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
                   })
@@ -133,7 +133,7 @@ class CalendarTask extends Component {
                 <List>
                 {
                   patients.filter((patient) => {
-                    return patient.braden < 5
+                    return patient.braden <= 6
                   }).map((patient) => {
                     return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
                   })
@@ -173,7 +173,7 @@ class CalendarTask extends Component {
                 <List>
                 {
                   patients.filter((patient) => {
-                    return patient.braden < 5
+                    return patient.braden <= 6
                   }).map((patient) => {
                     return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)
                   })
@@ -204,16 +204,6 @@ class CalendarTask extends Component {
         </Content>
       </Container>
     );
-  }
-
-  handleTodayPress = () => {
-    const { navigation: { navigate }} = this.props
-    navigate('Task')
-  }
-
-  handleCalendarPress = () => {
-    const { navigation: { navigate }} = this.props
-    navigate('CalendarTask')
   }
 }
 

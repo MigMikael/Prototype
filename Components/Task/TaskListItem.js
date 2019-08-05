@@ -105,7 +105,7 @@ export default class TaskListItem extends Component {
                         : 
                         <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
                             <Icon active name='alert' style={{ color: "#fbc02d"}} />
-                            <Text note style={{ flex: 1 }}></Text>
+                            {/* <Text note style={{ flex: 1 }}></Text> */}
                         </View>
                     }
                     <Body style={{ alignItems: 'flex-start', flex: 12 }}>
