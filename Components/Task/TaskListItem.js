@@ -95,7 +95,7 @@ export default class TaskListItem extends Component {
         <View>
             { 
                 this.state.showCard ?
-                <ListItem bordered onLongPress={ this.handleLongPress } style={{ flexDirection: 'row' }}>
+                <ListItem bordered onLongPress={ this.handleLongPress } style={{ flexDirection: 'row', height: 80 }}>
                     {
                         this.state.count > 0 ? 
                         <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
@@ -112,14 +112,14 @@ export default class TaskListItem extends Component {
                         <Text>{this.props.task.code} {this.props.task.name}</Text>
                     </Body>
                     <Right style={{ flex: 3 }}>
-                        <Button primary onPress={ this.handlePlusPress }>
+                        <Button info small onPress={ this.handlePlusPress }>
                             <Icon name="save" />
                         </Button>
                     </Right>
                 </ListItem>
                 :
                 <TouchableOpacity onPress={ this.handleBackPress }>
-                    <CardItem style={{ flexDirection: 'row', backgroundColor: "#e5e5e5", paddingLeft: '5%' }}>
+                    <CardItem style={{ flexDirection: 'row', backgroundColor: "#f5f5f5", paddingLeft: '5%', height: 80 }}>
                         {/* <Left>
                             <Button danger block onPress={ this.handleDeletePress }>
                                 <Icon name="trash"/>

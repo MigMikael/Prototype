@@ -143,15 +143,15 @@ class Task extends Component {
           width: '100%', 
           backgroundColor: '#3f51b5',
           paddingTop: "3%",
-          paddingBottom: "1%"
+          paddingBottom: "2%"
         }}>
-          <Text style={{ color: '#fff', alignSelf: 'center', fontSize: 17 }}>Braden Score</Text>
+          <Text style={{ color: '#fff', alignSelf: 'center', fontSize: 21 }}>Braden Score</Text>
         </View>
         <Tabs scrollWithoutAnimation={true}>
           <Tab heading="< 10">
             <Content padder style={{ backgroundColor: "#e5e5e5" }}>
               <Card>
-                <List>
+                <List style={{ marginLeft: 0, paddingLeft: 0 }}>
                 {
                   patients.filter(function(patient) {
                     return patient.braden <= 9

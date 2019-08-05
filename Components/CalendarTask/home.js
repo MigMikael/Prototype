@@ -44,16 +44,10 @@ class CalendarTask extends Component {
             <Title>ปฏิทินงาน</Title>
           </Body>
           <Right >
-            {/* <Button transparent>
-              <Text>วันนี้</Text>
-            </Button>
-            <Button transparent>
-              <Text>ปฏิทิน</Text>
-            </Button> */}
             <Picker
               mode="dropdown"
-              iosIcon={<Icon name="arrow-down" style={{color: "#000"}} />}
-              style={{ color: "#fff"}}
+              iosIcon={<Icon name="arrow-down" style={{ color: "#ffffff" }} />}
+              style={{ color: "#ffffff" }}
               placeholder="หน่วยงาน"
               placeholderStyle={{ color: "#bfc6ea" }}
               placeholderIconColor="#007aff">
