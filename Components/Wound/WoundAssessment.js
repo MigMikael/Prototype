@@ -239,7 +239,10 @@ export default class WoundAssessment extends Component {
         <View>
           <Text style={ style.subSectionHeader }>1. ขนาดแผล</Text>
           <Item inlineLabel>
-            <Label style={{ marginStart: '2%', color: '#000000', fontWeight: 'bold'}}>ความกว้าง</Label>
+            <Label style={{ marginStart: '2%', color: '#000000', fontWeight: 'bold'}}>
+              ความกว้าง
+              <Text style={{ color: 'red' }}>*</Text>
+            </Label>
             <Input 
               placeholder="ความกว้างแผล"
               value={this.state.width} 
@@ -247,7 +250,10 @@ export default class WoundAssessment extends Component {
             <Label style={{ color: '#000000', fontWeight: 'bold'}}>cm</Label>
           </Item>
           <Item inlineLabel>
-            <Label style={{ marginStart: '2%', color: '#000000', fontWeight: 'bold'}}>ความยาว</Label>
+            <Label style={{ marginStart: '2%', color: '#000000', fontWeight: 'bold'}}>
+              ความยาว
+              <Text style={{ color: 'red' }}>*</Text>
+            </Label>
             <Input
               placeholder="ความยาวแผล" 
               value={this.state.height} 
@@ -281,38 +287,42 @@ export default class WoundAssessment extends Component {
             <Label style={{ color: '#000000', fontWeight: 'bold'}}>cm</Label>
           </Item>
 
-          <Text style={ style.subSectionHeader }>3. ปริมาณสิ่งคัดหลั่ง</Text>
-          <Picker
-            mode="dropdown"
-            iosIcon={<Icon name="arrow-down" />}
-            style={{ width: undefined, flex: 1}}
-            placeholder="เลือกลักษณะพื้นแผล"
-            selectedValue={this.state.exudate}
-            onValueChange={this.handleExudate}
-            placeholderStyle={{ color: "#bfc6ea" }}
-            placeholderIconColor="#007aff">
-            <Picker.Item label="0 %" value={0} />
-            <Picker.Item label="< 25 %" value={1} />
-            <Picker.Item label="25 - 75 %" value={2} />
-            <Picker.Item label="> 75%" value={3} />
-          </Picker>
+          <Item>
+            <Text style={ style.subSectionHeader }>3. ปริมาณสิ่งคัดหลั่ง<Text style={{ color: 'red', textDecorationLine:'none' }}>*</Text></Text>
+            <Picker
+              mode="dropdown"
+              iosIcon={<Icon name="arrow-down" />}
+              style={{ width: undefined, flex: 1}}
+              placeholder="เลือกลักษณะพื้นแผล"
+              selectedValue={this.state.exudate}
+              onValueChange={this.handleExudate}
+              placeholderStyle={{ color: "#bfc6ea" }}
+              placeholderIconColor="#007aff">
+              <Picker.Item label="0 %" value={0} />
+              <Picker.Item label="< 25 %" value={1} />
+              <Picker.Item label="25 - 75 %" value={2} />
+              <Picker.Item label="> 75%" value={3} />
+            </Picker>
+          </Item>
 
-          <Text style={ style.subSectionHeader }>4. ลักษณะพื้นแผล</Text>
-          <Picker
-            mode="dropdown"
-            iosIcon={<Icon name="arrow-down" />}
-            style={{ width: undefined, flex: 1}}
-            placeholder="เลือกลักษณะพื้นแผล"
-            selectedValue={this.state.woundBed}
-            onValueChange={this.onValueChange}
-            placeholderStyle={{ color: "#bfc6ea" }}
-            placeholderIconColor="#007aff">
-            <Picker.Item label="Closed" value={0} />
-            <Picker.Item label="Epithelial Tissue" value={1} />
-            <Picker.Item label="Granulation Tissue" value={2} />
-            <Picker.Item label="Slough" value={3} />
-            <Picker.Item label="Necrotic tissue" value={4} />
-          </Picker>
+          <Item>
+            <Text style={ style.subSectionHeader }>4. ลักษณะพื้นแผล<Text style={{ color: 'red', textDecorationLine:'none' }}>*</Text></Text>
+            <Picker
+              mode="dropdown"
+              iosIcon={<Icon name="arrow-down" />}
+              style={{ width: undefined, flex: 1}}
+              placeholder="เลือกลักษณะพื้นแผล"
+              selectedValue={this.state.woundBed}
+              onValueChange={this.onValueChange}
+              placeholderStyle={{ color: "#bfc6ea" }}
+              placeholderIconColor="#007aff">
+              <Picker.Item label="Closed" value={0} />
+              <Picker.Item label="Epithelial" value={1} />
+              <Picker.Item label="Granulation" value={2} />
+              <Picker.Item label="Slough" value={3} />
+              <Picker.Item label="Necrotic" value={4} />
+            </Picker>
+          </Item>
 
           <Text style={{
             fontSize: 23, 
@@ -328,7 +338,7 @@ export default class WoundAssessment extends Component {
     } else if (section.content === 2) {
       comp = (
         <View>
-          <Text style={ style.subSectionHeader }>1. Cleansing Solution</Text>
+          <Text style={ style.subSectionHeader }>1. Cleansing Solution<Text style={{ color: 'red' }}>*</Text></Text>
           <Picker
             mode="dropdown"
             iosIcon={<Icon name="arrow-down" />}
@@ -349,7 +359,7 @@ export default class WoundAssessment extends Component {
 
           <Text style={ style.subSectionHeader }>2. Dressing</Text>
           <Item inlineLabel>
-            <Label style={{ marginStart: '2%', color: '#000000'}}>1' Dressing</Label>
+            <Label style={{ marginStart: '2%', color: '#000000'}}>1' Dressing<Text style={{ color: 'red' }}>*</Text></Label>
             <Picker
               mode="dropdown"
               iosIcon={<Icon name="arrow-down" />}
@@ -417,6 +427,7 @@ export default class WoundAssessment extends Component {
             placeholder="เลือก Adhesive"
             placeholderStyle={{ color: "#bfc6ea" }}
             placeholderIconColor="#007aff">
+            <Picker.Item label="ไม่มี" value="" />
             <Picker.Item label="Adhesive #1" value="" />
             <Picker.Item label="Adhesive #2" value="" />
             <Picker.Item label="Adhesive #3" value="" />

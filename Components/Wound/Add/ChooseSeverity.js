@@ -1,5 +1,6 @@
 import React, { Component,  } from 'react'
 import SmallHeader from '../../Header/SmallHeader'
+import colors from '../../../Data/color'
 import { Image, ImageBackground, Dimensions, TouchableOpacity } from 'react-native'
 import { 
   Container, 
@@ -61,7 +62,16 @@ class ChooseSeverity extends Component {
             
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#ec407a', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[0], ...styles.circle }} />
+                <Text style={styles.text}>
+                ระดับที่ 0 แผลหาย
+                </Text>
+              </CardItem>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
+              <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
+                <View style={{ backgroundColor: colors[1], ...styles.circle }} />
                 <Text style={styles.text}>
                 ระดับที่ 1 บริเวณที่ถูกกดทับจะเป็นรอยแดง
                 </Text>
@@ -70,7 +80,7 @@ class ChooseSeverity extends Component {
             
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#d50000', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[2], ...styles.circle }} />
                 <Text style={styles.text}>
                 ระดับที่ 2 มีการฉีกขาดของผิวหนังชั้นนอก
                 </Text>
@@ -79,7 +89,7 @@ class ChooseSeverity extends Component {
 
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#ffeb3b', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[3], ...styles.circle }} />
                 <Text style={styles.text}>
                 ระดับที่ 3 เกิดแผลลึกถึงชั้นใต้ผิวหนัง
                 </Text>
@@ -88,7 +98,7 @@ class ChooseSeverity extends Component {
 
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#1b5e20', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[4], ...styles.circle }} />
                 <Text style={styles.text}>
                 ระดับที่ 4 มีการตายของเนื้อเยื่อ 
                 </Text>
@@ -97,7 +107,7 @@ class ChooseSeverity extends Component {
 
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#4a148c', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[5], ...styles.circle }} />
                 <Text style={styles.text}>
                 การบาดเจ็บของเนื้อเยื่อส่วนลึก
                 </Text>
@@ -106,7 +116,7 @@ class ChooseSeverity extends Component {
 
             <TouchableOpacity onPress={ this.handleNextPress } style={{ flex: 2 }}>
               <CardItem bordered style={{ flex: 1, flexDirection: 'row' }}>
-                <View style={{ backgroundColor: '#000000', ...styles.circle }} />
+                <View style={{ backgroundColor: colors[6], ...styles.circle }} />
                 <Text style={styles.text}>
                 ไม่สามารถประเมินระดับได้
                 </Text>

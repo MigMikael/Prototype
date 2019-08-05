@@ -22,7 +22,11 @@ import {
   ListItem,
   Thumbnail,
   Card,
-  CardItem
+  CardItem,
+  Tab,
+  Tabs,
+  ScrollableTab,
+  TabHeading
 } from 'native-base';
 
 class Task extends Component {
@@ -101,69 +105,125 @@ class Task extends Component {
 
   render() {
     const { openDrawer } = this.props.navigation
+    const { navigation: { navigate }} = this.props
     return (
       <Container>
-        <Header>
+        <Header hasTabs>
           <Left>
             <Button transparent onPress={() => openDrawer()}>
               <Icon name='menu' />
             </Button>
           </Left>
           <Body>
-            <Title>ตารางงาน</Title>
+            <Title>งานวันนี้</Title>
           </Body>
-          <Right />
+          <Right >
+            {/* <Button transparent>
+              <Text>วันนี้</Text>
+            </Button>
+            <Button transparent>
+              <Text>ปฏิทิน</Text>
+            </Button> */}
+            <Picker
+              mode="dropdown"
+              iosIcon={<Icon name="arrow-down" style={{color: "#000"}} />}
+              style={{ color: "#fff"}}
+              placeholder="หน่วยงาน"
+              placeholderStyle={{ color: "#bfc6ea" }}
+              placeholderIconColor="#007aff">
+              <Picker.Item label="หน่วยงาน 1" value="key0" />
+              <Picker.Item label="หน่วยงาน 2" value="key1" />
+              <Picker.Item label="หน่วยงาน 3" value="key2" />
+              <Picker.Item label="หน่วยงาน 4" value="key3" />
+              <Picker.Item label="หน่วยงาน 5" value="key4" />
+            </Picker>
+          </Right>
         </Header>
-        <Content padder style={{ backgroundColor: "#e5e5e5" }}>
-          <Card>
-            <CardItem style={{ 
-              flexDirection: "row",
-              flex: 1,
-              paddingLeft: 0,
-              paddingRight: 0,
-              paddingTop: 0,
-              paddingBottom: 0,
-            }}>
-              <Left>
-                <Picker
-                  mode="dropdown"
-                  iosIcon={<Icon name="arrow-down" />}
-                  style={{ width: undefined, flex: 0.5}}
-                  placeholder="หน่วยงาน"
-                  placeholderStyle={{ color: "#bfc6ea" }}
-                  placeholderIconColor="#007aff">
-                  <Picker.Item label="หน่วยงาน 1" value="key0" />
-                  <Picker.Item label="หน่วยงาน 2" value="key1" />
-                  <Picker.Item label="หน่วยงาน 3" value="key2" />
-                  <Picker.Item label="หน่วยงาน 4" value="key3" />
-                  <Picker.Item label="หน่วยงาน 5" value="key4" />
-                </Picker>
-              </Left>
-              <Right style={{ 
-                flexDirection: "row",
-                paddingLeft: 0,
-                paddingRight: 0,
-                paddingTop: 0,
-                paddingBottom: 0, 
-              }}>
-                <Button primary full style={{ flex: 0.5 }} onPress={ this.handleTodayPress }>
-                  <Text>วันนี้</Text>
-                </Button>
-                <Button info full style={{ flex: 0.5 }} onPress={ this.handleCalendarPress }>
-                  <Text>ปฏิทิน</Text>
-                </Button>
-              </Right>
-            </CardItem>
-          </Card>
-
-          <Card>
-            <Accordion 
-              expanded={0}
-              dataArray={ this.sections } 
-              headerStyle={{ backgroundColor: "#b7daf8" }}
-              renderContent={ this.renderAccordionContent } />
-          </Card>
-        </Content>
+        <View style={{ 
+          width: '100%', 
+          backgroundColor: '#3f51b5',
+          paddingTop: "3%",
+          paddingBottom: "1%"
+        }}>
+          <Text style={{ color: '#fff', alignSelf: 'center', fontSize: 17 }}>Braden Score</Text>
+        </View>
+        <Tabs scrollWithoutAnimation={true}>
+          <Tab heading="< 10">
+            <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+              <Card>
+                <List>
+                {
+                  patients.filter(function(patient) {
+                    return patient.braden <= 9
+                  }).map(patient => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+                  })
+                }
+                </List>
+              </Card>
+            </Content>
+          </Tab>
+          <Tab heading="10 - 12">
+            <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+              <Card>
+                <List>
+                {
+                  patients.filter(function(patient) {
+                    return patient.braden >= 10 && patient.braden <= 12
+                  }).map(patient => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+                  })
+                }
+                </List>
+              </Card>
+            </Content>
+          </Tab>
+          <Tab heading="13 - 14">
+            <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+              <Card>
+                <List>
+                {
+                  patients.filter(function(patient) {
+                    return patient.braden >= 13 && patient.braden <= 14
+                  }).map(patient => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+                  })
+                }
+                </List>
+              </Card>
+            </Content>
+          </Tab>
+          <Tab heading="15 - 18">
+            <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+              <Card>
+                <List>
+                {
+                  patients.filter(function(patient) {
+                    return patient.braden >= 15 && patient.braden <= 18
+                  }).map(patient => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+                  })
+                }
+                </List>
+              </Card>
+            </Content>
+          </Tab>
+          <Tab heading="> 18">
+            <Content padder style={{ backgroundColor: "#e5e5e5" }}>
+              <Card>
+                <List>
+                {
+                  patients.filter(function(patient) {
+                    return patient.braden >= 19
+                  }).map(patient => {
+                    return (<SmallCard nav={ navigate } patient={ patient } key={ patient.id }/>)    
+                  })
+                }
+                </List>
+              </Card>
+            </Content>
+          </Tab>
+        </Tabs>
       </Container>
     )
   }

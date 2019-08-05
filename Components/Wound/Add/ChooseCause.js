@@ -59,14 +59,14 @@ export default class ChooseCause extends Component {
               <Text style={{ fontSize: 25, fontWeight: 'bold' }}>สาเหตุของการเกิดแผล</Text>
             </CardItem>
             
-            <ListItem onPress={() => this.handleRadioPress(0)}>
+            {/* <ListItem onPress={() => this.handleRadioPress(0)}>
               <Left style={{ flex: 1 }}>
                 <Radio selected={this.state.isCheck[0]} onPress={() => this.handleRadioPress(0)} />
               </Left>
               <Body style={{ flex: 9 }}>
                 <Text>เกิดจากที่บ้าน</Text>
               </Body>
-            </ListItem>    
+            </ListItem>     */}
               
             <ListItem onPress={() => this.handleRadioPress(1)}>
               <Left style={{ flex: 1 }}>

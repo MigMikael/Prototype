@@ -25,7 +25,7 @@ import {
     CardItem,
     Badge,
 } from 'native-base';
-
+import colors from '../../Data/color'
 import img0 from '../../assets/inpitar.jpg'
 import img1 from '../../assets/foot_1_mark.png'
 import img2 from '../../assets/foot_2_mark.png'
@@ -52,9 +52,15 @@ class WoundCard extends Component {
     }
 
     handleLongPress() {
-        this.setState({
-            showCard: false
-        })
+        if (this.props.history) {
+            this.setState({
+                showCard: true
+            })
+        } else {
+            this.setState({
+                showCard: false
+            })
+        }
     }
 
     handlePress() {
@@ -64,20 +70,7 @@ class WoundCard extends Component {
     }
 
     handleSeverityColor = (severity) => {
-        let color = ""
-        if (severity === 1) {
-            color = '#ec407a'
-        } else if (severity === 2) {
-            color = '#d50000'
-        } else if (severity === 3) {
-            color = '#ffeb3b'
-        } else if (severity === 4) {
-            color = '#1b5e20'
-        } else if (severity === 5) {
-            color = '#4a148c'
-        } else {
-            color = '#000000'
-        }
+        let color = colors[severity]
         return color
     }
 
@@ -105,20 +98,40 @@ class WoundCard extends Component {
                             paddingLeft: "2%",
                             paddingRight: "2%",
                             paddingTop: 0,
-                            paddingBottom: 0
+                            paddingBottom: 0,
+                            flexDirection: 'column'
                         }}>
-                            {/* <Badge danger style={{ alignSelf: "flex-end" }}>
-                                <Text>4</Text>
-                            </Badge> */}
-                            <Text style={{ 
-                                fontSize: 17,
-                                fontWeight: 'bold', 
-                                lineHeight: 25 
-                            }}>Healing Score : {this.props.wound.healingScore}</Text>
-                            <Text style={{ lineHeight: 25 }}>วันที่ {this.props.wound.date}</Text>
-                            <Text style={{ lineHeight: 25 }}>พื้นที่ : {this.props.wound.width} x {this.props.wound.height}</Text>
-                            <Text style={{ lineHeight: 25 }}>สารคัดหลั่ง : {this.props.wound.exudate}</Text>
-                            <Text style={{ lineHeight: 25 }}>พื้นแผล : {this.props.wound.woundBed}</Text>
+                            <View style={{ flex: 1 , justifyContent: 'center'}}>
+                                <Text style={{ 
+                                    fontSize: 17,
+                                    fontWeight: 'bold', 
+                                    lineHeight: 25 
+                                }}>Healing Score : {this.props.wound.healingScore}</Text>
+                                <Text style={{ lineHeight: 25, fontWeight: 'bold' }}>
+                                    วันที่ {this.props.wound.date}
+                                </Text>
+                            </View>
+                            
+                            <View style={{
+                                width: "100%",
+                                borderBottomColor: "#e5e5e5",
+                                borderBottomWidth: 1,
+                                marginTop: '2%',
+                                marginBottom: 0
+                            }}/>
+                            {
+                                this.props.history ?
+                                <View style={{ flex: 2, justifyContent: 'center' }}>
+                                    <Text style={{ lineHeight: 25, fontWeight: 'bold' }}>หมายเหตุ : </Text>
+                                    <Text>{this.props.wound.remark}</Text>
+                                </View> 
+                                :
+                                <View style={{ flex: 2, justifyContent: 'center' }}>
+                                    <Text style={{ lineHeight: 25 }}>พื้นที่ : {this.props.wound.width} x {this.props.wound.height}</Text>
+                                    <Text style={{ lineHeight: 25 }}>สารคัดหลั่ง : {this.props.wound.exudate}</Text>
+                                    <Text style={{ lineHeight: 25 }}>พื้นแผล : {this.props.wound.woundBed}</Text>
+                                </View>
+                            }
                         </Right>
                         <View style={{
                             height: 180,
@@ -130,21 +143,30 @@ class WoundCard extends Component {
                 <TouchableOpacity onPress={ this.handlePress }>
                     <CardItem style={{
                         alignItems: 'center',
-                        flexDirection: "row",
+                        flexDirection: 'column',
                         height: 180, width: null , flex: 1,
-                        justifyContent:'center'
+                        backgroundColor: "#f5f5f5"
                     }}>
-                        <Button info style={{ flex: 1, justifyContent: 'center' }}>
-                            <Text>ลบ</Text>
+                        <Button onPress={ this.handlePress } transparent style={{ 
+                            flex: 1, 
+                            alignSelf: 'flex-end'
+                        }}>
+                            <Icon name="close"/>
                         </Button>
-                        {
-                            this.props.history? 
-                                null
-                            :
-                            <Button primary style={{ flex: 1, justifyContent: 'center' }}>
-                                <Text>จำหน่าย</Text>
+
+                        <View style={{ flexDirection: 'row', flex: 2 }}>
+                            <Button danger style={{ flex: 1, justifyContent: 'center' }}>
+                                <Text>ลบ</Text>
                             </Button>
-                        }
+                            {
+                                this.props.history? 
+                                    null
+                                :
+                                <Button primary style={{ flex: 1, justifyContent: 'center' }}>
+                                    <Text>จำหน่าย</Text>
+                                </Button>
+                            }
+                        </View>
                     </CardItem>
                 </TouchableOpacity>
             }

@@ -54,7 +54,7 @@ class Care extends Component {
                                 <Text style={{ 
                                     marginBottom: "1%",
                                     flex: 1,  
-                                }}>(วันประเมิน 19/ม.ค./2562 - 11.00)</Text>
+                                }}>(ประเมินล่าสุด 19/ม.ค./2562 - 11.00)</Text>
                             </View>
                             
                             <View style={{ flex: 3 }}>
@@ -66,9 +66,18 @@ class Care extends Component {
                     </CardItem>
                     
                     <CardItem>
-                        <Text style={{ fontSize: 21, fontWeight: 'bold'}}>
-                            รายการงาน
-                        </Text>
+                        <Left>
+                            <Text style={{ fontSize: 21, fontWeight: 'bold'}}>
+                                รายการงาน
+                            </Text>
+                        </Left>
+                        <Body/>
+                        <Right>
+                            <Button  primary small bordered onPress={ () => nav('ChooseTask')} >
+                                <Icon name="create"/>
+                                {/* <Text>แก้ไข</Text> */}
+                            </Button>
+                        </Right>
                     </CardItem>
                     {
                         tasks.filter(function(task) {
@@ -80,13 +89,11 @@ class Care extends Component {
                         })
                     }
                     
-                    <CardItem footer style={{ flex: 1}}>
+                    {/* <CardItem footer style={{ flex: 1}}>
                         <Body style={{ alignItems: 'flex-end' }}>
-                            <Button  primary small bordered onPress={ () => nav('ChooseTask')} >
-                                <Text>แก้ไข</Text>
-                            </Button>
+                            
                         </Body>
-                    </CardItem>
+                    </CardItem> */}
                 </Card>
 
                 <Card>

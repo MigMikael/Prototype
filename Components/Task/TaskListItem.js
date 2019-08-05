@@ -31,10 +31,13 @@ export default class TaskListItem extends Component {
   constructor() {
     super()
     this.state = {
-        count: 0
+        count: 0,
+        showCard: true
     }
     this.handlePlusPress = this.handlePlusPress.bind(this)
-    this.handleMinusPress = this.handleMinusPress.bind(this)
+    this.handleLongPress = this.handleLongPress.bind(this)
+    this.handleDeletePress =  this.handleDeletePress.bind(this)
+    this.handleBackPress = this.handleBackPress.bind(this)
   }
 
   zeroPad(num, places) {
@@ -56,17 +59,24 @@ export default class TaskListItem extends Component {
     })
   }
 
-  handleMinusPress() {
+  handleLongPress() {
     this.setState(prevState => {
-        if (prevState.count !== 0) {
-            return {
-                count: prevState.count - 1
-            }
-        } else {
-            return {
-                count: 0
-            }
+        return {
+            showCard: !prevState.showCard
         }
+    })
+  }
+
+  handleBackPress() {
+    this.setState({
+        showCard: true
+    })  
+  }
+
+  handleDeletePress() {
+    this.setState({
+        count: 0,
+        showCard: true
     })
   }
 
@@ -80,33 +90,61 @@ export default class TaskListItem extends Component {
     if (min.toString().length == 1) {
         min = this.zeroPad(min, 2)
     }
+
     return (
-        <ListItem bordered onPress={ this.handlePlusPress } onLongPress={ this.handleMinusPress }>
-            <Button primary rounded onPress={ this.handlePlusPress }>
-                <Icon active name='add' style={{ color: "#ffffff"}} />
-            </Button>
-            <Body>
-                <Text>{this.props.task.code} {this.props.task.name}</Text>
-            </Body>
-            {
-                this.state.count > 0 ? 
-                <View style={{ flexDirection: 'column', alignItems: 'flex-end'}}>
-                    {/* <Badge success style={{ flex: 1 }}>
-                        <Text>{this.state.count}</Text>
-                    </Badge>     */}
-                    <Icon active name='checkmark-circle' style={{ color: "#00ff00"}} />
-                    <Text note style={{ flex: 1 }}>{hours}.{min}</Text>
-                </View>
-                : 
-                // <Badge danger>
-                //     <Text>{this.state.count}</Text>
-                // </Badge>
-                <View style={{ flexDirection: 'column', alignItems: 'flex-end'}}>
-                    <Icon active name='close-circle' style={{ color: "#fbc02d"}} />
-                    <Text note style={{ flex: 1 }}></Text>
-                </View>
+        <View>
+            { 
+                this.state.showCard ?
+                <ListItem bordered onLongPress={ this.handleLongPress } style={{ flexDirection: 'row' }}>
+                    {
+                        this.state.count > 0 ? 
+                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
+                            <Icon active name='checkmark-circle' style={{ color: "#00ff00"}} />
+                            <Text note style={{ flex: 1 }}>{hours}.{min} น.</Text>
+                        </View>
+                        : 
+                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
+                            <Icon active name='alert' style={{ color: "#fbc02d"}} />
+                            <Text note style={{ flex: 1 }}></Text>
+                        </View>
+                    }
+                    <Body style={{ alignItems: 'flex-start', flex: 12 }}>
+                        <Text>{this.props.task.code} {this.props.task.name}</Text>
+                    </Body>
+                    <Right style={{ flex: 3 }}>
+                        <Button primary onPress={ this.handlePlusPress }>
+                            <Icon name="save" />
+                        </Button>
+                    </Right>
+                </ListItem>
+                :
+                <TouchableOpacity onPress={ this.handleBackPress }>
+                    <CardItem style={{ flexDirection: 'row', backgroundColor: "#e5e5e5", paddingLeft: '5%' }}>
+                        {/* <Left>
+                            <Button danger block onPress={ this.handleDeletePress }>
+                                <Icon name="trash"/>
+                                <Text>ลบการบันทีกครั้งล่าสุด</Text>
+                            </Button>
+                        </Left>
+                        <Right>
+                            <Button transparent block onPress={ this.handleBackPress }>
+                                <Icon name="close"/>
+                            </Button>
+                        </Right> */}
+                        <Body style={{ alignItems: 'flex-start', flex: 5 }}>
+                            <Button danger block onPress={ this.handleDeletePress }>
+                                <Text>ลบการบันทีกครั้งล่าสุด</Text>
+                            </Button>
+                        </Body>
+                        <Right style={{ flex: 5 }}>
+                            <Button transparent block onPress={ this.handleBackPress }>
+                                <Icon name="close"/>
+                            </Button>
+                        </Right>
+                    </CardItem>
+                </TouchableOpacity>
             }
-        </ListItem>
+        </View>
     )
   }
 }

@@ -1,5 +1,9 @@
 const secondDressings = [
   {
+    id: 0,
+    name: "ไม่มี"
+  },
+  {
     id: 1,
     name: "Gauze dressing"
   },

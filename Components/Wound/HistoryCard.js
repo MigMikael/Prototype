@@ -71,9 +71,8 @@ class HistoryCard extends Component {
                             lineHeight: 25 
                         }}>Healing Score : 14</Text>
                         <Text style={{ fontWeight: 'bold', lineHeight: 25 }}>วันที่ 01/ม.ค./2562</Text>
-                        <Text style={{ lineHeight: 25 }}>Healing Score : 14</Text>
-                        <Text style={{ lineHeight: 25 }}>กว้าง x ยาว : 0.2 x 0.2</Text>
-                        <Text style={{ lineHeight: 25 }}>ปริมาณสารคัดหลั่ง : 25%</Text>
+                        <Text style={{ lineHeight: 25 }}>พื้นที่ : 0.2 x 0.2</Text>
+                        <Text style={{ lineHeight: 25 }}>สารคัดหลั่ง : 25%</Text>
                         <Text style={{ lineHeight: 25 }}>พื้นแผล : Granulation</Text>
                     </Right>
                     <View style={{

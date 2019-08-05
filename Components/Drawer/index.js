@@ -3,9 +3,7 @@ import Login from '../Login/index';
 import Search from '../Search/index';
 import Task from '../Task/index';
 import Setting from '../Setting/index';
-import Scan from '../Scan/index'
-import PatientDetail from '../Patient/PatientDetail'
-import Task2 from '../Task/home2'
+import CalendarTask from '../CalendarTask/index'
 
 const AppNavigator = createDrawerNavigator({
   Search: {
@@ -17,9 +15,15 @@ const AppNavigator = createDrawerNavigator({
   Task: {
     screen: Task,
     navigationOptions: {
-      drawerLabel: 'ตารางงาน'
+      drawerLabel: 'งานวันนี้'
     }
   },
+  CalendarTask: {
+    screen: CalendarTask,
+    navigationOptions: {
+      drawerLabel: 'ปฎิทินงาน'
+    }
+  }, 
   Setting: {
     screen: Setting,
     navigationOptions: {
@@ -32,12 +36,6 @@ const AppNavigator = createDrawerNavigator({
       drawerLabel: 'ออกจากระบบ'
     }
   },
-  Task2: {
-    screen: Task2,
-    navigationOptions: {
-      drawerLabel: 'ตารางงาน2'
-    }
-  }
 },
 {
   initialRouteName: 'Search',

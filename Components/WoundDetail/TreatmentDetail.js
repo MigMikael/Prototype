@@ -34,20 +34,7 @@ export default class TreatmentDetail extends Component {
   }
 
   handleSeverityColor = (severity) => {
-    let color = ""
-    if (severity === 1) {
-        color = '#ec407a'
-    } else if (severity === 2) {
-        color = '#d50000'
-    } else if (severity === 3) {
-        color = '#ffeb3b'
-    } else if (severity === 4) {
-        color = '#1b5e20'
-    } else if (severity === 5) {
-        color = '#4a148c'
-    } else {
-        color = '#000000'
-    }
+    let color = colors[severity]
     return color
   }
 
@@ -145,6 +132,17 @@ export default class TreatmentDetail extends Component {
               <Body>
                 <Text style={{ fontWeight: 'bold'}}>Adhersive</Text>
                 <Text>Adhersive #2</Text>
+              </Body>
+            </ListItem>
+          </Card>
+
+          <Card>
+            <CardItem>
+              <Text style={{ fontSize: 25, fontWeight: 'bold'}}>หมายเหตุ</Text>
+            </CardItem>
+            <ListItem bordered>                      
+              <Body>
+                <Text>แผลมีแนวโน้มการหายที่ดี</Text>
               </Body>
             </ListItem>
           </Card>

@@ -6,10 +6,11 @@ const wounds = [
     width: 2,
     height: 4,
     exudate: "< 25%",
-    woundBed: "Granulation Tissue",
+    woundBed: "Granulation",
     severity: 1,
     status: 'active',
-    image: 1
+    image: 1,
+    remark: ""
   },
   {
     id: 2,
@@ -18,10 +19,11 @@ const wounds = [
     width: 3.5,
     height: 2.4,
     exudate: "25-75%",
-    woundBed: "Epithelial Tissue",
+    woundBed: "Epithelial",
     severity: 2,
     status: 'active',
-    image: 2
+    image: 2,
+    remark: ""
   },
   {
     id: 3,
@@ -33,7 +35,8 @@ const wounds = [
     woundBed: "Slough",
     severity: 3,
     status: 'active',
-    image: 3
+    image: 3,
+    remark: ""
   },
   {
     id: 4,
@@ -42,10 +45,11 @@ const wounds = [
     width: 5.1,
     height: 3.4,
     exudate: "25%",
-    woundBed: "Epithelial Tissue",
+    woundBed: "Epithelial",
     severity: 3,
     status: 'active',
-    image: 4
+    image: 4,
+    remark: ""
   },
   {
     id: 5,
@@ -54,10 +58,11 @@ const wounds = [
     width: 4.8,
     height: 3.7,
     exudate: "> 75%",
-    woundBed: "Necrotic Tissue",
+    woundBed: "Necrotic",
     severity: 4,
     status: 'active',
-    image: 5
+    image: 5,
+    remark: ""
   },
   {
     id: 6,
@@ -66,22 +71,37 @@ const wounds = [
     width: 5.3,
     height: 5.3,
     exudate: "25%",
-    woundBed: "Epithelial Tissue",
+    woundBed: "Epithelial",
     severity: 5,
     status: 'active',
-    image: 6
+    image: 6,
+    remark: ""
   },
   {
     id: 7,
-    healingScore: 2,
+    healingScore: 18,
     date: "15/ธ.ค./2561",
-    width: 5.3,
-    height: 5.3,
+    width: 6.3,
+    height: 6.3,
     exudate: "25%",
-    woundBed: "Epithelial Tissue",
+    woundBed: "Epithelial",
     severity: 6,
     status: 'archrive',
-    image: 1
+    image: 1,
+    remark: "แผลติดเชื้อรุนแรง ตัดอวัยวะทั้ง"
+  },
+  {
+    id: 8,
+    healingScore: 2,
+    date: "15/ธ.ค./2561",
+    width: 6.3,
+    height: 6.3,
+    exudate: "25%",
+    woundBed: "Epithelial",
+    severity: 0,
+    status: 'archrive',
+    image: 3,
+    remark: "แผลหาย"
   },
 ]
 

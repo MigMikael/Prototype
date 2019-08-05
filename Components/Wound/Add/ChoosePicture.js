@@ -39,7 +39,14 @@ class ChoosePicture extends Component {
 
   handleNextPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('ChooseCause')
+    const { navigation } = this.props
+    const msg = navigation.getParam('message', '')
+
+    if (msg === 'wound assessment') {
+      navigate('ChooseSeverity')
+    } else {
+      navigate('ChooseCause')
+    }
   }
 
   render() {

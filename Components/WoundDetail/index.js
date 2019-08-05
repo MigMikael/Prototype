@@ -41,7 +41,7 @@ class WoundDetail extends Component {
 
   handleAssessmentPress = () => {
     const { navigation: { navigate }} = this.props
-    navigate('ChoosePicture')
+    navigate('ChoosePicture', { message: "wound assessment" })
   }
 
   handleHistoryCardPress = () => {
@@ -84,32 +84,38 @@ class WoundDetail extends Component {
                             decimalPlaces: 2,
                             color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
                             style: {
-                                borderRadius: 16
+                                borderRadius: 0
                             }
                         }}
                         style={{
-                            marginVertical: 8,
-                            borderRadius: 16
+                            marginVertical: 0,
+                            borderRadius: 0
                         }}
                     />
-                </CardItem>
-                <CardItem bordered>
-                  <Left>
-                    <Button primary style={{ justifyContent: 'center' }}>
-                      <Text>ออกรายงาน</Text>
-                    </Button>
-                  </Left>
-                  <Right>
-                  {
-                    history ?
-                    null
-                    :
-                    <Button info style={{ justifyContent: 'center' }} onPress={ this.handleAssessmentPress }>
-                      <Text>ประเมินแผล</Text>
-                    </Button>
-                  }
-                  </Right>
-                </CardItem>
+                </CardItem>  
+                {
+                  history ?
+                  <CardItem bordered>
+                    <Body>
+                      <Button primary block style={{ justifyContent: 'center' }}>
+                        <Text>ออกรายงาน</Text>
+                      </Button>
+                    </Body>
+                  </CardItem>
+                  :
+                  <CardItem bordered>
+                    <Left>
+                      <Button primary style={{ justifyContent: 'center' }}>
+                        <Text>ออกรายงาน</Text>
+                      </Button>
+                    </Left>
+                    <Right>
+                      <Button info style={{ justifyContent: 'center' }} onPress={ this.handleAssessmentPress }>
+                        <Text>ประเมินแผล</Text>
+                      </Button>
+                    </Right>
+                  </CardItem>
+                }
             </Card>
             <TouchableOpacity onPress={ this.handleHistoryCardPress }>
               <HistoryCard />

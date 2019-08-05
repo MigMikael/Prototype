@@ -92,7 +92,7 @@ class PatientDetail extends Component {
           <Tab heading="ดูแล">
             <Care nav={ navigate } />
           </Tab>
-          <Tab heading="ทำแผล">
+          <Tab heading="จัดการแผล">
             <Wound nav={ navigate } />
             <Fab
               onPress={ this.handleFabPress } 
@@ -101,7 +101,7 @@ class PatientDetail extends Component {
               <Icon name="add" />
             </Fab>
           </Tab>
-          <Tab heading="จำหน่าย">
+          <Tab heading="ประวัติแผล">
             <History nav={ navigate } />
           </Tab>
           <Tab heading="ภาพรวม">
