@@ -98,18 +98,20 @@ export default class TaskListItem extends Component {
                 <ListItem bordered onLongPress={ this.handleLongPress } style={{ flexDirection: 'row', height: 80 }}>
                     {
                         this.state.count > 0 ? 
-                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
+                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 3 }}>
                             <Icon active name='checkmark-circle' style={{ color: "#00ff00"}} />
                             <Text note style={{ flex: 1 }}>{hours}.{min} น.</Text>
                         </View>
                         : 
-                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 4 }}>
+                        <View style={{ flexDirection: 'column', alignItems: 'center', flex: 3 }}>
                             <Icon active name='alert' style={{ color: "#fbc02d"}} />
                             {/* <Text note style={{ flex: 1 }}></Text> */}
                         </View>
                     }
                     <Body style={{ alignItems: 'flex-start', flex: 12 }}>
-                        <Text>{this.props.task.code} {this.props.task.name}</Text>
+                        <Text>
+                            <Text style={{ fontWeight: 'bold' }}>{this.props.task.code}</Text>  {this.props.task.name}
+                        </Text>
                     </Body>
                     <Right style={{ flex: 3 }}>
                         <Button info small onPress={ this.handlePlusPress }>

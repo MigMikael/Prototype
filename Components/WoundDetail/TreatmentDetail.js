@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LargeHeader from '../Header/LargeHeader'
 import { Image, TouchableOpacity } from 'react-native'
+import colors from '../../Data/color'
 import { 
     Container, 
     Header, 

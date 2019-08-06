@@ -50,15 +50,15 @@ class Care extends Component {
                                     flex: 1,
                                     fontSize: 25,
                                     fontWeight: 'bold'  
-                                }}>Braden Score : 18</Text>
+                                }}>Braden Score : 7</Text>
                                 <Text style={{ 
                                     marginBottom: "1%",
                                     flex: 1,  
                                 }}>(ประเมินล่าสุด 19/ม.ค./2562 - 11.00)</Text>
                             </View>
                             
-                            <View style={{ flex: 3 }}>
-                                <Button primary onPress={ () => nav('Assessment')} >
+                            <View style={{ flex: 3, alignItems: 'flex-end' }}>
+                                <Button primary onPress={ () => nav('Assessment')}>
                                     <Text>ประเมิน</Text>
                                 </Button>
                             </View>

@@ -22,6 +22,7 @@ import {
   Card,
   CardItem,
   CheckBox,
+  Switch
 } from 'native-base';
 
 export default class Setting extends Component {
@@ -52,7 +53,7 @@ export default class Setting extends Component {
                 <Text>รับการแจ้งเตือน</Text>
               </Body>
               <Right>
-                <CheckBox checked={true}/>
+                <Switch value={true} />
               </Right>
             </CardItem>
           </Card>

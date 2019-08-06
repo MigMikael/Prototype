@@ -59,9 +59,9 @@ export default class SmallCard extends Component {
     const imgArray = [img1, img2, img3, img4, img5, img6, img7, img8]
     const style = {
       circle: {
-        width: 68,
-        height: 68,
-        borderRadius: 68/2,
+        width: 70,
+        height: 70,
+        borderRadius: 70/2,
         justifyContent: 'center', 
         alignItems: 'center'
       },
@@ -71,17 +71,17 @@ export default class SmallCard extends Component {
     return (
       <ListItem onPress={ () => nav('PatientDetail') } style={{ 
         paddingLeft: '2%', 
-        marginLeft: '2%', 
         paddingRight: '1%',
+        marginLeft: 0,
         marginRight: 0 
       }}>
-        <Left style={{ flex: 6 }}>
+        <Left style={{ flex: 5 }}>
           <View style={{ backgroundColor: color, ...style.circle }}>
             <Thumbnail source={ imgArray[this.props.patient.id-1] } />
           </View>
         </Left>
-        <Body style={{ flex: 17 }}>
-          <Text style={{ fontWeight: 'bold' , fontSize: 19 }}>{this.props.patient.name}</Text>
+        <Body style={{ flex: 14 }}>
+          <Text style={{ fontWeight: 'bold' , fontSize: 15 }}>{this.props.patient.name}</Text>
           <Text note>
             AN: {this.props.patient.an}
           </Text>
@@ -90,17 +90,28 @@ export default class SmallCard extends Component {
           </Text>
         </Body>
         <View style={{
-          height: "100%",
+          height: "90%",
           borderRightColor: "#e5e5e5",
           borderRightWidth: 1,
-          marginRight: "3%",
+          marginRight: "1%"
         }}/>
-        <Right style={{ flex: 5, alignItems: 'flex-start' }}>
+
+        <View style={{ flex: 4, alignItems: 'center' }}>
           <Text note style={{ paddingBottom: '2%'}}>
-            Braden:
+          Braden
           </Text>
+          <Text style={{ fontSize: 23, fontWeight: 'bold' }}>{bradenStr}</Text>
+        </View>
+
+        <View style={{
+          height: "90%",
+          borderRightColor: "#e5e5e5",
+          borderRightWidth: 1,
+          marginRight: "2%",
+          marginLeft: "1%"
+        }}/>
+        <Right style={{ flex: 2, alignItems: 'flex-start', marginRight: 0, paddingRight: 0 }}>  
           <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'flex-end', marginTop: '5%' }}>
-            <Text style={{ fontSize: 21, fontWeight: 'bold', paddingRight: '10%' }}>{bradenStr}</Text>
             <View>
               {
                 this.props.patient.isTakeCare ? 
@@ -108,12 +119,12 @@ export default class SmallCard extends Component {
                 :
                   <Icon name='alert' style={{ color: "#fbc02d"}} />
               }
-              {/* {
+              {
                 this.props.patient.braden <= 8 ?
-                <Icon name='alarm' style={{ color: "#ff0000"}}/>
+                <Icon name='bed' style={{ color: "#ff0000"}}/>
                 :
                 null
-              } */}
+              }
             </View>
           </View>
         </Right>

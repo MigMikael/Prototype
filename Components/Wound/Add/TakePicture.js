@@ -98,7 +98,7 @@ class TakePicture extends Component {
           />
           <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center' }}>
             <Button block onPress={ this.takePicture.bind(this) }>
-              <Text>SNAP</Text>
+              <Text>ถ่ายภาพ</Text>
             </Button>
             <View style={{ width: w, backgroundColor: '#ff0000' }}>
             { 

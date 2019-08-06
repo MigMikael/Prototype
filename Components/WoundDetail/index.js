@@ -117,6 +117,13 @@ class WoundDetail extends Component {
                   </CardItem>
                 }
             </Card>
+            <Text style={{ 
+              marginLeft: '1%',
+              marginTop: '5%',
+              marginBottom: '5%',
+              fontSize: 21,
+              fontWeight: 'bold' 
+            }}>ประวัติประเมินแผล</Text>
             <TouchableOpacity onPress={ this.handleHistoryCardPress }>
               <HistoryCard />
             </TouchableOpacity>
