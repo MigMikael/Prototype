@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20190807 19:20:09.008" generator="Robot 3.1.2 (Python 2.7.16 on darwin)">
+<suite source="/Users/migmikael/ReactProject/ReactNative/Prototype/testing/test_1.robot" id="s1" name="Test 1">
+<kw type="setup" name="Open App">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>app=${APP_LOCATION}</arg>
+<arg>automationName=appium</arg>
+<arg>bundleId=${BUNDLE_ID}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:17.744" starttime="20190807 19:20:09.521"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:17.744" starttime="20190807 19:20:09.520"></status>
+</kw>
+<test id="s1-t1" name="Patiant">
+<kw name="Wait">
+<arguments>
+<arg>text=HN/AN</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:22.777" starttime="20190807 19:20:17.745"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:22.778" starttime="20190807 19:20:17.745"></status>
+</kw>
+<kw name="Click Task">
+<kw name="Click A Point" library="AppiumLibrary">
+<doc>Click on a point</doc>
+<arguments>
+<arg>140</arg>
+<arg>160</arg>
+</arguments>
+<msg timestamp="20190807 19:20:22.782" level="INFO">Clicking on a point (140,160).</msg>
+<status status="PASS" endtime="20190807 19:20:22.948" starttime="20190807 19:20:22.779"></status>
+</kw>
+<kw name="Wait">
+<arguments>
+<arg>งานวันนี้</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:24.186" starttime="20190807 19:20:22.949"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:24.187" starttime="20190807 19:20:22.948"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@text="งานวันนี้"]</arg>
+</arguments>
+<msg timestamp="20190807 19:20:24.191" level="INFO">Clicking element 'xpath=//*[@text="งานวันนี้"]'.</msg>
+<status status="PASS" endtime="20190807 19:20:26.785" starttime="20190807 19:20:24.187"></status>
+</kw>
+<kw name="Wait">
+<arguments>
+<arg>71</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:28.024" starttime="20190807 19:20:26.786"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:28.025" starttime="20190807 19:20:26.785"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//*[@text="มาศิตา ตฤณนิธิ"]</arg>
+</arguments>
+<msg timestamp="20190807 19:20:28.035" level="INFO">Clicking element 'xpath=//*[@text="มาศิตา ตฤณนิธิ"]'.</msg>
+<status status="PASS" endtime="20190807 19:20:31.991" starttime="20190807 19:20:28.026"></status>
+</kw>
+<kw name="Wait">
+<arguments>
+<arg>ประเมิน</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:33.328" starttime="20190807 19:20:31.993"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:33.329" starttime="20190807 19:20:31.992"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>xpath=//*[@text="ประเมิน"]</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:33.506" starttime="20190807 19:20:33.329"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:34.874" starttime="20190807 19:20:33.506"></status>
+</kw>
+<kw name="Wait">
+<arguments>
+<arg>พื้นที่</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:36.681" starttime="20190807 19:20:34.877"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:36.681" starttime="20190807 19:20:34.874"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:37.998" starttime="20190807 19:20:36.681"></status>
+</kw>
+<kw name="Wait">
+<arguments>
+<arg>หมายเหตุ</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:39.350" starttime="20190807 19:20:38.000"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:39.350" starttime="20190807 19:20:37.999"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:40.599" starttime="20190807 19:20:39.350"></status>
+</kw>
+<kw name="Swipe By Percent" library="AppiumLibrary">
+<doc>Swipe from one percent of the screen to another percent, for an optional duration.
+Normal swipe fails to scale for different screen resolutions, this can be avoided using percent.</doc>
+<arguments>
+<arg>90</arg>
+<arg>50</arg>
+<arg>10</arg>
+<arg>50</arg>
+</arguments>
+<status status="PASS" endtime="20190807 19:20:42.317" starttime="20190807 19:20:40.599"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:42.320" starttime="20190807 19:20:22.778"></status>
+</kw>
+<status status="PASS" endtime="20190807 19:20:42.322" critical="yes" starttime="20190807 19:20:17.744"></status>
+</test>
+<status status="PASS" endtime="20190807 19:20:42.325" starttime="20190807 19:20:09.010"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test 1" pass="1">Test 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

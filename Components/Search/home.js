@@ -58,12 +58,14 @@ class Search extends Component {
           </Text>
           <Form style={{ marginTop: "5%", marginStart: "5%", marginEnd: "5%"}}>
             <Item regular>
-              <Input placeholder='HN/AN'/>
-              <Icon active name='search' onPress={this.handlePatientPress}/>
+              <Input placeholder='HN/AN' style={{ flex: 8 }}/>
+              <Button primary full style={{ flex: 2, height: '100%' }} onPress={ this.handlePatientPress }>
+                <Icon active name='search'/> 
+              </Button>
             </Item>
           </Form>
 
-          <View style={{ marginTop: "10%", marginStart: "5%", marginEnd: "5%"}}>
+          <View style={{ marginTop: "10%", marginStart: "5%", marginEnd: "5%"}} accessibilityLabel="FOO" id="FOO">
             <Button primary block onPress={this.handleScanPress}>
               <Text>Scan Barcode</Text>
             </Button>

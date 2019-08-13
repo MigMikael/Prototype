@@ -59,9 +59,9 @@ export default class SmallCard extends Component {
     const imgArray = [img1, img2, img3, img4, img5, img6, img7, img8]
     const style = {
       circle: {
-        width: 70,
-        height: 70,
-        borderRadius: 70/2,
+        width: 68,
+        height: 68,
+        borderRadius: 68/2,
         justifyContent: 'center', 
         alignItems: 'center'
       },
